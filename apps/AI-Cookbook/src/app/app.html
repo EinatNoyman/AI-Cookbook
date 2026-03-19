@@ -44,7 +44,7 @@
           @for (tool of toolPlatforms; track tool.name) {
             <span class="flex items-center gap-1 rounded px-1.5 py-0.5 text-xs text-slate-500 dark:text-slate-400"
                   [title]="tool.name">
-              <img [src]="'/icons/' + tool.id + '.png'" alt="" class="h-4 w-4 object-contain" aria-hidden="true" />
+              <img [src]="'icons/' + tool.id + '.png'" alt="" class="h-4 w-4 object-contain" aria-hidden="true" />
               <span class="hidden xl:inline">{{ tool.name }}</span>
             </span>
           }
