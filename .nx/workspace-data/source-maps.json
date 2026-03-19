@@ -731,64 +731,6 @@
       "nx/target-defaults"
     ]
   },
-  "libs/feature-ai-tools": {
-    "root": [
-      "libs/feature-ai-tools/project.json",
-      "nx/core/project-json"
-    ],
-    "targets": [
-      "eslint.config.mjs",
-      "@nx/eslint/plugin"
-    ],
-    "name": [
-      "libs/feature-ai-tools/project.json",
-      "nx/core/project-json"
-    ],
-    "$schema": [
-      "libs/feature-ai-tools/project.json",
-      "nx/core/project-json"
-    ],
-    "sourceRoot": [
-      "libs/feature-ai-tools/project.json",
-      "nx/core/project-json"
-    ],
-    "prefix": [
-      "libs/feature-ai-tools/project.json",
-      "nx/core/project-json"
-    ],
-    "projectType": [
-      "libs/feature-ai-tools/project.json",
-      "nx/core/project-json"
-    ],
-    "tags": [
-      "libs/feature-ai-tools/project.json",
-      "nx/core/project-json"
-    ],
-    "tags.scope:feature-ai-tools": [
-      "libs/feature-ai-tools/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.lint": [
-      "libs/feature-ai-tools/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.lint.executor": [
-      "libs/feature-ai-tools/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.lint.cache": [
-      "nx.json",
-      "nx/target-defaults"
-    ],
-    "targets.lint.inputs": [
-      "nx.json",
-      "nx/target-defaults"
-    ],
-    "targets.lint.parallelism": [
-      "nx.json",
-      "nx/target-defaults"
-    ]
-  },
   "libs/feature-cookbook": {
     "root": [
       "libs/feature-cookbook/project.json",
@@ -2370,6 +2312,64 @@
     ],
     "targets.lint.executor": [
       "libs/shared/ui/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/feature-ai-tools": {
+    "root": [
+      "libs/feature-ai-tools/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/feature-ai-tools/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/feature-ai-tools/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/feature-ai-tools/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/feature-ai-tools/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/feature-ai-tools/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/feature-ai-tools/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.scope:feature-ai-tools": [
+      "libs/feature-ai-tools/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/feature-ai-tools/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/feature-ai-tools/project.json",
       "nx/core/project-json"
     ],
     "targets.lint.cache": [

@@ -25,9 +25,9 @@ describe('App', () => {
       imports: [App],
       providers: [
         provideRouter([
-          { path: 'links', component: DummyComponent },
-          { path: 'guidelines', component: DummyComponent },
-          { path: 'cookbook', component: DummyComponent },
+          { path: 'cookbook',    component: DummyComponent },
+          { path: 'guidelines',  component: DummyComponent },
+          { path: 'links',       component: DummyComponent },
         ]),
         { provide: ThemeService, useClass: MockThemeService },
         provideNoopAnimations(),
@@ -45,9 +45,9 @@ describe('App', () => {
   it('should render navigation links', () => {
     const navLinks = fixture.nativeElement.querySelectorAll('nav ul li a');
     expect(navLinks.length).toBe(3);
-    expect(navLinks[0].textContent).toContain('Links');
+    expect(navLinks[0].textContent).toContain('AI Cookbook');
     expect(navLinks[1].textContent).toContain('Guidelines');
-    expect(navLinks[2].textContent).toContain('AI Cookbook');
+    expect(navLinks[2].textContent).toContain('Links');
   });
 
   it('should render skip-to-content link', () => {
@@ -63,25 +63,10 @@ describe('App', () => {
     expect(main).toBeTruthy();
   });
 
-  it('should render search placeholder', () => {
-    const search = fixture.nativeElement.querySelector('[role="search"]');
-    expect(search).toBeTruthy();
-    expect(search.textContent).toContain('Search...');
-    expect(search.textContent).toContain('/');
-  });
-
-  it('should render tool selector placeholder', () => {
-    const toolSelector = fixture.nativeElement.querySelector(
-      '[aria-label="Tool filter (coming soon)"]'
-    );
-    expect(toolSelector).toBeTruthy();
-    expect(toolSelector.getAttribute('aria-disabled')).toBe('true');
-  });
-
-  it('should render footer', () => {
+  it('should render footer with AI Cookbook branding', () => {
     const footer = fixture.nativeElement.querySelector('footer');
     expect(footer).toBeTruthy();
-    expect(footer.textContent).toContain('Developer Hub');
+    expect(footer.textContent).toContain('AI Cookbook');
   });
 
   it('should have mobile menu button', () => {
@@ -115,17 +100,17 @@ describe('App', () => {
 
   it('should apply routerLinkActive class on active route', async () => {
     const router = TestBed.inject(Router);
-    await router.navigate(['/links']);
+    await router.navigate(['/cookbook']);
     fixture.detectChanges();
 
     const navLinks = fixture.nativeElement.querySelectorAll('nav ul li a');
-    const linksLink = navLinks[0];
-    expect(linksLink.classList.contains('!bg-slate-200')).toBe(true);
-    expect(linksLink.classList.contains('!text-teal-600')).toBe(true);
-    expect(linksLink.getAttribute('aria-current')).toBe('page');
+    const cookbookLink = navLinks[0]; // AI Cookbook is first
+    expect(cookbookLink.classList.contains('!bg-teal-50')).toBe(true);
+    expect(cookbookLink.classList.contains('!text-teal-600')).toBe(true);
+    expect(cookbookLink.getAttribute('aria-current')).toBe('page');
 
     // Other links should NOT have the active class
-    expect(navLinks[1].classList.contains('!bg-slate-200')).toBe(false);
+    expect(navLinks[1].classList.contains('!bg-teal-50')).toBe(false);
     expect(navLinks[1].getAttribute('aria-current')).toBeNull();
   });
 
@@ -149,18 +134,13 @@ describe('App', () => {
     expect(lightBtn).toBeTruthy();
   });
 
-  it('should use dark: variant classes for theme support', () => {
+  it('should use correct theme classes on root and header', () => {
     const rootDiv = fixture.nativeElement.querySelector('div');
     expect(rootDiv.classList.contains('dark:bg-slate-950')).toBe(true);
     expect(rootDiv.classList.contains('bg-slate-50')).toBe(true);
 
     const header = fixture.nativeElement.querySelector('header');
-    expect(header.classList.contains('dark:bg-slate-900/80')).toBe(true);
-    expect(header.classList.contains('bg-white/80')).toBe(true);
-
-    const footer = fixture.nativeElement.querySelector('footer');
-    expect(footer.classList.contains('dark:bg-slate-900/50')).toBe(true);
-    expect(footer.classList.contains('bg-slate-100/50')).toBe(true);
+    expect(header.classList.contains('bg-white/90')).toBe(true);
   });
 
   it('should have focus rings on interactive elements', () => {

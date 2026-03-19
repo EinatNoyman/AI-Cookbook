@@ -3,3 +3,4 @@ vitest.config.*.timestamp*
 node_modules
 _bmad
 dist
+.nx

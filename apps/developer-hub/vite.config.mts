@@ -45,7 +45,7 @@ export default defineConfig(() => ({
     nxCopyAssetsPlugin(['*.md']),
   ],
   test: {
-    name: 'developer-hub',
+    name: 'ai-cookbook',
     watch: false,
     globals: true,
     environment: 'jsdom',

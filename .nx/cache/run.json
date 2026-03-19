@@ -1,18 +1,18 @@
 {
   "run": {
-    "command": "nx build developer-hub --skip-nx-cache",
-    "startTime": "2026-03-17T20:36:25.193Z",
-    "endTime": "2026-03-17T20:36:34.915Z",
+    "command": "nx test ai-cookbook",
+    "startTime": "2026-03-19T21:49:31.997Z",
+    "endTime": "2026-03-19T21:49:41.393Z",
     "inner": false
   },
   "tasks": [
     {
-      "taskId": "developer-hub:build:production",
-      "target": "build",
-      "projectName": "developer-hub",
-      "hash": "8937592927944213725",
-      "startTime": "2026-03-17T20:36:25.237Z",
-      "endTime": "2026-03-17T20:36:34.634Z",
+      "taskId": "ai-cookbook:test",
+      "target": "test",
+      "projectName": "ai-cookbook",
+      "hash": "12891631657202306133",
+      "startTime": "2026-03-19T21:49:32.022Z",
+      "endTime": "2026-03-19T21:49:41.383Z",
       "params": "",
       "cacheStatus": "cache-miss",
       "status": 0
