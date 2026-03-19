@@ -1,18 +1,18 @@
 {
   "run": {
-    "command": "nx test ai-cookbook",
-    "startTime": "2026-03-19T21:49:31.997Z",
-    "endTime": "2026-03-19T21:49:41.393Z",
+    "command": "nx build AI-Cookbook --base-href=/AI-Cookbook/",
+    "startTime": "2026-03-19T21:59:05.560Z",
+    "endTime": "2026-03-19T21:59:17.125Z",
     "inner": false
   },
   "tasks": [
     {
-      "taskId": "ai-cookbook:test",
-      "target": "test",
+      "taskId": "ai-cookbook:build:production",
+      "target": "build",
       "projectName": "ai-cookbook",
-      "hash": "12891631657202306133",
-      "startTime": "2026-03-19T21:49:32.022Z",
-      "endTime": "2026-03-19T21:49:41.383Z",
+      "hash": "10177376791484439787",
+      "startTime": "2026-03-19T21:59:05.579Z",
+      "endTime": "2026-03-19T21:59:17.012Z",
       "params": "",
       "cacheStatus": "cache-miss",
       "status": 0
