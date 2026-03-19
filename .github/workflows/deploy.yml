@@ -26,7 +26,7 @@ jobs:
           node-version: '20'
           cache: 'npm'
       - run: npm ci
-      - run: npx nx build ai-cookbook --configuration=production --base-href="/AI-Cookbook/"
+      - run: npx nx build ai-cookbook --configuration=production --base-href="/AI-Cookbook/" --skip-nx-cache
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
