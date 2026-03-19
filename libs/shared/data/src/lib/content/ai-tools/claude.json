@@ -1,0 +1,472 @@
+{
+  "id": "claude",
+  "name": "Claude",
+  "icon": "✦",
+  "tagline": "Anthropic's AI for nuanced reasoning, long-context code work, and thoughtful collaboration",
+  "overview": {
+    "description": "Claude is Anthropic's AI assistant, built with a focus on safety, nuanced reasoning, and helpfulness. Unlike IDE-integrated tools, Claude excels in long conversations, complex architectural discussions, and tasks that require careful reasoning over large amounts of context. It is available via claude.ai, the Claude Code CLI, and API integrations — making it equally useful for exploratory conversations and automated workflows. Claude Code, Anthropic's agentic CLI, brings Claude's capabilities directly into your terminal with tool-based actions: reading/writing files, running commands, executing tests, and even controlling browsers via MCP servers.",
+    "pros": [
+      "Exceptional at complex reasoning and multi-step problem solving",
+      "Handles very long contexts (200K+ tokens) for large codebases",
+      "Outstanding at code review, refactoring, and explaining existing code",
+      "Follows nuanced, numbered instructions consistently across long conversations",
+      "Projects feature provides persistent context across all sessions",
+      "Claude Code CLI brings full agentic coding into your terminal workflow",
+      "Excellent at writing and updating technical documentation",
+      "Superior tool use capabilities — better at combining tools for complex tasks than competitors",
+      "Claude Code is extensible via MCP servers for browser automation, external APIs, and more",
+      "GitHub Actions integration for automated PR reviews and issue resolution",
+      "Hooks system enables automated quality checks (type checking, duplicate detection) during code edits",
+      "SDK available in CLI, TypeScript, and Python for pipeline integration"
+    ],
+    "cons": [
+      "Not natively embedded in IDEs — requires extensions or CLI setup",
+      "No real-time codebase awareness without explicitly sharing files",
+      "Can be verbose — sometimes requires an explicit instruction to be concise",
+      "Best models (Opus, Sonnet) require a paid subscription",
+      "Too much irrelevant context decreases performance — requires deliberate context management",
+      "Plan Mode and Thinking Mode consume additional tokens (cost consideration)"
+    ],
+    "whenToUse": [
+      "Complex refactoring that requires understanding intent across multiple files",
+      "Architecture decisions and technical design discussions",
+      "Deep code review with nuanced security or performance analysis",
+      "Writing, improving, or updating technical documentation",
+      "Explaining unfamiliar codebases or legacy code to a new team member",
+      "Migrating patterns or APIs systematically across a large codebase",
+      "Brainstorming solutions to tricky bugs with full context attached",
+      "Automated PR reviews and issue handling via GitHub Actions integration",
+      "Performance optimization — profiling, benchmarking, and implementing fixes",
+      "Data analysis using Jupyter notebooks with iterative exploration",
+      "Browser automation and UI testing via Playwright MCP server"
+    ],
+    "strengths": {
+      "title": "What Claude Does Especially Well for Developers",
+      "areas": [
+        {
+          "title": "Agentic Code Execution (Claude Code)",
+          "details": [
+            "Reads, writes, and edits files directly in your project from the terminal",
+            "Runs commands, executes tests, and iterates on results autonomously",
+            "Plans multi-step implementations before executing via Plan Mode",
+            "Commits changes with descriptive git messages automatically",
+            "Demonstrated 3.9x throughput improvement when optimizing the Chalk JS library"
+          ]
+        },
+        {
+          "title": "Complex Reasoning and Architecture",
+          "details": [
+            "Extended Thinking mode for deep algorithmic and architectural analysis",
+            "Handles multi-file refactoring with intent preservation across boundaries",
+            "Detects PII exposure risks by analyzing infrastructure flow (e.g., Terraform + Lambda + S3)",
+            "Excels at trade-off analysis and design decision documentation"
+          ]
+        },
+        {
+          "title": "Extensibility via MCP Servers",
+          "details": [
+            "Connects to external tools like Playwright for browser automation",
+            "Can navigate apps, take screenshots, and iterate on UI styling automatically",
+            "Supports custom MCP servers for team-specific workflows",
+            "Enables end-to-end development automation beyond code editing"
+          ]
+        },
+        {
+          "title": "Automated Quality Assurance via Hooks",
+          "details": [
+            "Pre-tool hooks can block sensitive file access (e.g., .env files)",
+            "Post-tool hooks run type checkers (tsc --no-emit) after every file edit",
+            "Duplicate code prevention hooks catch redundant functions before they land",
+            "Hooks feed errors back to Claude for automatic self-correction"
+          ]
+        },
+        {
+          "title": "CI/CD and GitHub Integration",
+          "details": [
+            "Runs inside GitHub Actions triggered by PRs and issues",
+            "@Claude mentions in issues/PRs assign tasks directly",
+            "Automatic code review on new pull requests",
+            "Can run browser tests and create verification checklists in CI"
+          ]
+        }
+      ]
+    },
+    "lesserKnownCapabilities": {
+      "title": "Capabilities Most People Don't Know About",
+      "items": [
+        {
+          "title": "Custom Commands",
+          "details": [
+            "Create reusable slash commands by placing .md files in .claude/commands/",
+            "Commands accept runtime arguments via $arguments placeholder",
+            "Automate repetitive tasks: dependency auditing, test generation, vulnerability fixes",
+            "Share commands across the team by committing them to source control"
+          ]
+        },
+        {
+          "title": "Context Control Shortcuts",
+          "details": [
+            "Escape — stop Claude mid-response to redirect",
+            "Escape + # (Memory) — save a correction so Claude never repeats that mistake",
+            "Double Escape — rewind conversation to an earlier point, skip irrelevant back-and-forth",
+            "Compact command — summarize conversation history while preserving learned knowledge",
+            "Clear command — fresh start for unrelated tasks"
+          ]
+        },
+        {
+          "title": "Screenshot Integration",
+          "details": [
+            "Paste screenshots with Control-V (not Command-V on macOS) in Claude Code",
+            "Claude analyzes UI elements to understand what to modify",
+            "Useful for visual debugging and UI iteration"
+          ]
+        },
+        {
+          "title": "Plan Mode and Thinking Mode",
+          "details": [
+            "Plan Mode (Shift + Tab twice) — researches more files, creates detailed implementation plan before executing",
+            "Thinking Mode ('Ultra think') — extended reasoning budget for complex logic",
+            "Plan = breadth (multi-step tasks), Think = depth (tricky bugs)",
+            "Can combine both for maximum effectiveness on hard problems"
+          ]
+        },
+        {
+          "title": "Claude Code SDK for Pipeline Integration",
+          "details": [
+            "Programmatic interface via CLI, TypeScript, or Python libraries",
+            "Same tools as the terminal version, embeddable in scripts and workflows",
+            "Default read-only permissions; write permissions enabled via options.allowTools",
+            "Best for helper commands, hooks, and automation within existing projects"
+          ]
+        },
+        {
+          "title": "Hooks for Automated Guardrails",
+          "details": [
+            "Pre-tool hooks block operations (exit code 2) — e.g., prevent reading .env files",
+            "Post-tool hooks run checks after edits — e.g., TypeScript type checker, lint",
+            "Hooks receive tool call data as JSON via stdin for flexible logic",
+            "Configure via settings.local.json or the /hooks command"
+          ]
+        }
+      ]
+    }
+  },
+  "guidelines": {
+    "installation": {
+      "title": "Installation & Setup",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Access Claude Web",
+          "description": "Go to claude.ai and sign up or log in. The free tier includes Claude Sonnet. Subscribe to Claude Pro for priority access, higher limits, and access to Opus.",
+          "code": null
+        },
+        {
+          "step": 2,
+          "title": "Install Claude Code CLI",
+          "description": "Claude Code is Anthropic's official agentic CLI. It reads, edits, and runs code in your project directly from the terminal. After installation, authenticate with your Anthropic account.",
+          "code": "npm install -g @anthropic-ai/claude-code\nclaude auth login"
+        },
+        {
+          "step": 3,
+          "title": "Initialize your project with /init",
+          "description": "Run /init in Claude Code on first use. It analyzes your entire codebase and creates a CLAUDE.md file with a project summary, architecture overview, and key files. This file is automatically included in every request.",
+          "code": null
+        },
+        {
+          "step": 4,
+          "title": "Create a Project on claude.ai",
+          "description": "In claude.ai, create a Project for your codebase. Upload key files — architecture docs, component examples, coding standards — to give Claude persistent context across all conversations in that project.",
+          "code": null
+        },
+        {
+          "step": 5,
+          "title": "Add a CLAUDE.md to your repo",
+          "description": "Claude Code reads CLAUDE.md at the project root automatically. Use it to describe your stack, conventions, and preferences so every session starts with full context. There are three levels: project-level (committed, shared with team), local-level (personal, not committed), and machine-level (global for all projects).",
+          "code": "# Project: My App\n## Stack: Angular 21, Nx, Tailwind CSS 4\n## Conventions: Standalone components, signals over RxJS\n## Testing: Vitest + @testing-library/angular\n## Prefer: concise responses, code over explanation"
+        },
+        {
+          "step": 6,
+          "title": "Set up GitHub Integration (optional)",
+          "description": "Run /install GitHub app in Claude Code. Install the Claude Code app on GitHub, add your API key, and an auto-generated PR will add two GitHub Actions: @Claude mention support in issues/PRs, and automatic PR code review.",
+          "code": null
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Best Configurations",
+      "tips": [
+        {
+          "title": "Choose the right model for the task",
+          "description": "Use claude-opus-4 for complex architecture discussions and multi-step reasoning. Use claude-sonnet-4 for everyday coding tasks — it is significantly faster and more cost-effective while still very capable.",
+          "code": null
+        },
+        {
+          "title": "Write a strong system prompt",
+          "description": "If using the API, define your context once in the system prompt. This avoids repeating yourself in every user message and ensures consistent behavior.",
+          "code": "You are a senior frontend engineer in an Angular 21 Nx monorepo.\nAlways use standalone components, signal-based state, and Tailwind CSS.\nRespond concisely. Prefer code over prose. Never add unnecessary comments."
+        },
+        {
+          "title": "Reference critical files in CLAUDE.md",
+          "description": "Add references to key files like database schemas, shared types, or API contracts in CLAUDE.md so they are always available as context without manual re-uploading.",
+          "code": null
+        },
+        {
+          "title": "Upload key files to your Project",
+          "description": "Add your tsconfig.base.json, a representative component, your design tokens file, and any architecture docs to the Project. This context persists and eliminates the need to re-explain your setup.",
+          "code": null
+        },
+        {
+          "title": "Enable extended thinking for hard problems",
+          "description": "For complex algorithmic challenges or architectural trade-off analysis, use Extended Thinking mode. Claude will reason through the problem step-by-step before responding.",
+          "code": null
+        },
+        {
+          "title": "Add MCP servers for extended capabilities",
+          "description": "Use claude mcp add [name] [start-command] to connect external tools. For example, add Playwright for browser automation. Auto-approve tools by adding 'MCP__[servername]' to settings.local.json allow array.",
+          "code": "claude mcp add playwright npx @anthropic-ai/playwright-mcp"
+        },
+        {
+          "title": "Set up hooks for automated quality checks",
+          "description": "Add pre-tool and post-tool hooks to your settings.local.json to automatically run type checks after edits, block access to sensitive files, or enforce code quality standards. Use /hooks command or edit the config manually.",
+          "code": null
+        }
+      ]
+    },
+    "bestPractices": {
+      "title": "Tips & Best Practices",
+      "tips": [
+        {
+          "title": "Share full context before asking",
+          "description": "Do not ask Claude to guess. Paste the relevant file(s), describe the goal clearly, and specify constraints — 'do not add dependencies', 'keep the same public API surface', 'TypeScript strict mode'. Context quality directly drives output quality."
+        },
+        {
+          "title": "Use @ mentions for targeted context",
+          "description": "In Claude Code, use @filename to include specific files in your request. This provides targeted context instead of letting Claude search the entire codebase, leading to faster and more accurate results."
+        },
+        {
+          "title": "Use # (Memory) to save corrections",
+          "description": "When Claude makes a repeated mistake, press Escape then use # to save the correction to CLAUDE.md. This prevents the same error from occurring in future sessions — it's like training Claude on your team's patterns."
+        },
+        {
+          "title": "Ask for reasoning before code",
+          "description": "For complex tasks, prepend 'explain your approach before writing any code'. This forces structured thinking, surfaces assumptions early, and lets you redirect before Claude writes 200 lines in the wrong direction."
+        },
+        {
+          "title": "Use numbered requirement lists",
+          "description": "List requirements as numbered items: 1. Keep same function signature. 2. Add error handling for null. 3. Write Vitest tests. Claude is excellent at tracking and satisfying structured lists — it will even confirm each one was addressed."
+        },
+        {
+          "title": "Use Plan Mode for breadth, Think Mode for depth",
+          "description": "Activate Plan Mode (Shift + Tab twice) for multi-step tasks that span many files. Use Thinking Mode ('Ultra think') for tricky logic or debugging. Combine both for the hardest problems. Note: both consume extra tokens."
+        },
+        {
+          "title": "Use Compact instead of restarting",
+          "description": "When a conversation gets long and cluttered, use the Compact command to summarize history while preserving what Claude has learned. Use Clear only when switching to a completely unrelated task."
+        },
+        {
+          "title": "Iterate rather than restart",
+          "description": "Claude handles progressive corrections very well. Instead of starting over, say 'almost right, but the return type should be Observable not Signal, and the method should be private'. Multi-turn refinement consistently beats giant single prompts."
+        },
+        {
+          "title": "Request before/after comparisons",
+          "description": "For refactoring tasks, ask for a side-by-side before/after breakdown. This makes it easy to verify that behavior is preserved and understand the intent of each change."
+        }
+      ]
+    },
+    "keyboardShortcuts": {
+      "title": "Claude Code Keyboard Shortcuts & Commands",
+      "shortcuts": [
+        { "key": "Escape", "action": "Stop Claude mid-response to redirect" },
+        { "key": "Escape + #", "action": "Save a correction to CLAUDE.md memory" },
+        { "key": "Double Escape", "action": "Rewind conversation to earlier point" },
+        { "key": "Shift + Tab (twice)", "action": "Activate Plan Mode" },
+        { "key": "Control-V", "action": "Paste screenshot (macOS: Control-V, not Command-V)" },
+        { "key": "/init", "action": "Initialize project — creates CLAUDE.md" },
+        { "key": "/compact", "action": "Summarize conversation, preserve knowledge" },
+        { "key": "/clear", "action": "Clear conversation for fresh start" },
+        { "key": "/hooks", "action": "Configure pre/post tool hooks" },
+        { "key": "/install GitHub app", "action": "Set up GitHub Actions integration" },
+        { "key": "@filename", "action": "Include specific file as context" },
+        { "key": "# instruction", "action": "Add memory to CLAUDE.md" }
+      ]
+    },
+    "claudeCodeContextTags": {
+      "title": "Claude Code Context References",
+      "tags": [
+        { "tag": "@filename", "description": "Include a specific file as targeted context" },
+        { "tag": "#", "description": "Memory mode — edit CLAUDE.md with natural language" },
+        { "tag": "CLAUDE.md (project)", "description": "Shared with team, committed to source control" },
+        { "tag": "CLAUDE.md (local)", "description": "Personal instructions, not committed" },
+        { "tag": "CLAUDE.md (machine)", "description": "Global instructions for all projects" }
+      ]
+    },
+    "mcpServers": {
+      "title": "Extending Claude Code with MCP Servers",
+      "description": "MCP servers are external tools that extend Claude Code's capabilities. They run locally or remotely and enable Claude to interact with browsers, APIs, databases, and other external systems.",
+      "setup": "claude mcp add [name] [start-command]",
+      "autoApprove": "Add 'MCP__[servername]' to settings.local.json allow array to skip permission prompts.",
+      "examples": [
+        {
+          "name": "Playwright",
+          "purpose": "Browser automation — navigate pages, take screenshots, test UI, iterate on styling",
+          "install": "claude mcp add playwright npx @anthropic-ai/playwright-mcp"
+        }
+      ]
+    },
+    "hooks": {
+      "title": "Hooks — Automated Guardrails for Claude Code",
+      "description": "Hooks are custom commands that run before or after Claude executes tools. They enable automated quality checks, file access control, and feedback loops.",
+      "types": [
+        {
+          "type": "Pre-tool use",
+          "description": "Runs before tool execution. Can inspect and block operations (exit code 2). Blocked hooks send stderr output as feedback to Claude.",
+          "useCases": ["Block .env file access", "Prevent writes to protected directories", "Validate inputs before execution"]
+        },
+        {
+          "type": "Post-tool use",
+          "description": "Runs after tool execution. Cannot block, but can provide feedback to Claude for self-correction.",
+          "useCases": ["Run tsc --no-emit after TypeScript edits to catch type errors", "Detect duplicate code by launching a secondary Claude instance", "Auto-format files after creation", "Run tests after code changes"]
+        }
+      ],
+      "configuration": {
+        "location": "settings.local.json (or global/project settings)",
+        "structure": "Each hook has a matcher (tool names, e.g., 'read|grep') and a command to execute",
+        "exitCodes": {
+          "0": "Allow tool call to proceed",
+          "2": "Block tool call (pre-hooks only), stderr sent as feedback to Claude"
+        }
+      },
+      "recommendedHooks": [
+        {
+          "name": "TypeScript Type Checker",
+          "type": "post-tool",
+          "purpose": "Catch type errors immediately after file edits by running tsc --no-emit",
+          "benefit": "Claude automatically fixes broken call sites when function signatures change"
+        },
+        {
+          "name": "Duplicate Code Prevention",
+          "type": "post-tool",
+          "purpose": "Launches a secondary Claude instance to review changes in watched directories for duplicate functions/queries",
+          "benefit": "Prevents redundant code, especially in complex multi-step tasks. Apply only to critical directories to minimize overhead."
+        },
+        {
+          "name": "Sensitive File Blocker",
+          "type": "pre-tool",
+          "purpose": "Blocks Claude from reading .env and other sensitive files via read/grep tools",
+          "benefit": "Protects secrets and credentials from accidental exposure"
+        }
+      ]
+    },
+    "githubIntegration": {
+      "title": "GitHub Actions Integration",
+      "description": "Claude Code runs inside GitHub Actions, triggered by pull requests and issues. It gets GitHub-specific tools for commenting, committing, and creating PRs.",
+      "setup": [
+        "Run /install GitHub app in Claude Code",
+        "Install the Claude Code app on your GitHub organization",
+        "Add your Anthropic API key",
+        "An auto-generated PR adds two GitHub Actions workflows"
+      ],
+      "defaultActions": [
+        "@Claude mention support — tag Claude in issues or PRs to assign tasks",
+        "Automatic PR code review on new pull requests"
+      ],
+      "customization": [
+        "Customize workflows via .github/workflows config files",
+        "Add custom instructions for context/directions",
+        "Integrate MCP servers (e.g., Playwright for browser testing in CI)",
+        "All permissions and MCP tools must be explicitly listed"
+      ]
+    }
+  },
+  "prompts": [
+    {
+      "id": "claude-refactor",
+      "title": "Refactor with Confidence",
+      "description": "Refactor a function while preserving all existing behavior and adding tests.",
+      "category": "Refactoring",
+      "content": "Refactor the following function to improve readability and maintainability. Preserve all existing behavior.\n\n```typescript\n[paste your function here]\n```\n\nRequirements:\n1. Keep the same function signature\n2. Extract complex conditions into named variables\n3. Add JSDoc comments\n4. Write at least 3 unit tests that verify the original behavior is preserved\n5. Show a before/after summary of the key changes",
+      "tags": ["refactoring", "testing", "clean-code"]
+    },
+    {
+      "id": "claude-review",
+      "title": "Deep Code Review",
+      "description": "Get a structured code review with severity ratings and concrete fixes.",
+      "category": "Code Review",
+      "content": "Review the following code changes. For each issue found, provide:\n1. Severity: blocker / warning / suggestion\n2. Location: file and approximate line\n3. Problem: what is wrong and why it matters\n4. Fix: a concrete code change\n\nFocus on: logic errors, edge cases, security vulnerabilities, performance, and readability.\n\n```diff\n[paste your git diff here]\n```",
+      "tags": ["code-review", "quality", "security"]
+    },
+    {
+      "id": "claude-explain",
+      "title": "Explain This Codebase",
+      "description": "Build a clear mental model of unfamiliar code quickly.",
+      "category": "Documentation",
+      "content": "I am new to this codebase. Analyze the following code and give me:\n1. A high-level overview of what it does (2–3 sentences)\n2. The main components and how they interact\n3. Key patterns and conventions used\n4. Notable design decisions or trade-offs\n5. What I must understand before modifying this safely\n\n[paste your code or describe the repo structure]",
+      "tags": ["documentation", "onboarding", "architecture"]
+    },
+    {
+      "id": "claude-migrate-signals",
+      "title": "RxJS → Angular Signals Migration",
+      "description": "Convert BehaviorSubject/Observable state management to Angular Signals.",
+      "category": "Migration",
+      "content": "Convert this RxJS-based state management to Angular Signals:\n\n```typescript\n[paste your service with BehaviorSubjects / Observables]\n```\n\nRules:\n1. Replace BehaviorSubject with signal()\n2. Replace Observable pipe() chains with computed()\n3. Replace subscribe() calls with effect()\n4. Keep the same public API surface\n5. Mark all public state as readonly\n6. Show a before/after diff for each changed section",
+      "tags": ["signals", "rxjs", "migration", "angular"]
+    },
+    {
+      "id": "claude-architecture",
+      "title": "Architecture Review",
+      "description": "Get a high-level critique with ranked improvement suggestions.",
+      "category": "Architecture",
+      "content": "Review this architecture and identify:\n1. Single points of failure\n2. Scalability bottlenecks\n3. Tight coupling that will hurt maintainability\n4. Missing error handling or resilience patterns\n5. Security surface area that needs attention\n\nThen suggest 3 concrete improvements ranked by impact vs. effort.\n\n[describe your architecture or paste a file structure / diagram]",
+      "tags": ["architecture", "design", "scalability"]
+    },
+    {
+      "id": "claude-test-strategy",
+      "title": "Test Strategy for a Component",
+      "description": "Generate a comprehensive test plan and test suite for an Angular component.",
+      "category": "Testing",
+      "content": "Generate a comprehensive test suite for this Angular component:\n\n```typescript\n[paste your component here]\n```\n\nInclude:\n1. Happy path — all primary flows\n2. Edge cases — empty data, null inputs, max values\n3. Error states — failed API calls, invalid inputs\n4. Accessibility checks — keyboard navigation, ARIA attributes\n5. Use Vitest + @testing-library/angular\n6. Use Angular signals testing patterns (toSignal, fakeAsync where needed)",
+      "tags": ["testing", "vitest", "angular", "accessibility"]
+    },
+    {
+      "id": "claude-performance-optimize",
+      "title": "Performance Optimization",
+      "description": "Analyze and optimize a module's performance with benchmarks and profiling.",
+      "category": "Performance",
+      "content": "Analyze the following code for performance issues:\n\n```typescript\n[paste your code here]\n```\n\nPlease:\n1. Identify the main performance bottlenecks\n2. Profile the critical paths and explain where time is spent\n3. Propose optimizations ranked by impact\n4. Implement the top improvements\n5. Show before/after benchmark comparisons\n6. Note any trade-offs (readability, memory, complexity)",
+      "tags": ["performance", "optimization", "profiling"]
+    },
+    {
+      "id": "claude-pr-review-auto",
+      "title": "PR Review (Claude Code / GitHub)",
+      "description": "Automated pull request review — paste a diff or use in GitHub Actions.",
+      "category": "Code Review",
+      "content": "Review this pull request diff:\n\n```diff\n[paste your diff here]\n```\n\nFor each issue:\n1. Severity: blocker / warning / suggestion\n2. What changed and why it might be problematic\n3. Check for: PII exposure, security risks, missing error handling, breaking changes\n4. Suggest missing tests\n5. Provide a brief summary suitable for the PR comment",
+      "tags": ["code-review", "pull-request", "github", "security"]
+    },
+    {
+      "id": "claude-hook-setup",
+      "title": "Set Up a Claude Code Hook",
+      "description": "Create a pre-tool or post-tool hook for automated quality checks.",
+      "category": "DevOps",
+      "content": "I want to create a Claude Code hook that [describe what you want].\n\nContext:\n- Hook type: [pre-tool / post-tool]\n- Target tools: [read / grep / edit / write — or describe the action]\n- Desired behavior: [block / warn / run a check / auto-format]\n- Project language: [TypeScript / Python / etc.]\n\nPlease:\n1. Create the hook script\n2. Show the settings.local.json configuration\n3. Explain the exit codes and feedback mechanism\n4. Provide a test scenario to verify it works",
+      "tags": ["hooks", "devops", "automation", "claude-code"]
+    },
+    {
+      "id": "claude-custom-command",
+      "title": "Create a Custom Claude Code Command",
+      "description": "Build a reusable slash command for your team's common workflows.",
+      "category": "Automation",
+      "content": "Create a custom Claude Code command for the following task:\n\n[describe the repetitive task — e.g., 'audit dependencies for vulnerabilities', 'generate a component with tests', 'check for unused exports']\n\nThe command should:\n1. Be a .md file I can place in .claude/commands/\n2. Accept arguments via $arguments where needed\n3. Include clear instructions for Claude to follow\n4. Handle edge cases gracefully\n5. Be shareable with the team via source control",
+      "tags": ["custom-commands", "automation", "claude-code", "workflow"]
+    },
+    {
+      "id": "claude-mcp-browser-test",
+      "title": "Browser Testing with Playwright MCP",
+      "description": "Use Claude Code + Playwright MCP to navigate, screenshot, and test your app's UI.",
+      "category": "Testing",
+      "content": "Using the Playwright MCP server, please:\n\n1. Navigate to [URL, e.g., http://localhost:4200]\n2. Take a screenshot of the [page / component / section]\n3. Analyze the UI for: layout issues, accessibility problems, visual inconsistencies\n4. Suggest specific CSS/HTML fixes\n5. Apply the fixes and take a new screenshot to compare\n\nContext: [Angular / React / etc.], using [Tailwind / SCSS / etc.]",
+      "tags": ["testing", "playwright", "mcp", "ui", "browser-automation"]
+    }
+  ]
+}

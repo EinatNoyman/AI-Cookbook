@@ -1,0 +1,134 @@
+[
+  {
+    "id": "claude-refactor",
+    "title": "Refactor with Confidence",
+    "description": "Ask Claude to refactor a function while preserving behavior and adding tests.",
+    "platform": "claude",
+    "category": "Refactoring",
+    "copyContent": "Refactor the following function to improve readability and maintainability. Preserve all existing behavior. Add unit tests that verify the original behavior still works after refactoring.\n\n```\n[paste your function here]\n```\n\nRequirements:\n- Keep the same function signature\n- Extract complex conditions into named variables\n- Add JSDoc comments\n- Write at least 3 unit tests",
+    "language": "typescript",
+    "usage": "Paste this into Claude with your function code to get a clean refactor with test coverage.",
+    "tags": ["refactoring", "testing", "clean-code"]
+  },
+  {
+    "id": "claude-review",
+    "title": "Code Review Assistant",
+    "description": "Get a thorough code review from Claude with actionable feedback.",
+    "platform": "claude",
+    "category": "Code Review",
+    "copyContent": "Review the following code changes. For each issue found, provide:\n1. Severity (blocker/suggestion/nit)\n2. The specific line or section\n3. What's wrong and why\n4. A concrete fix\n\nFocus on:\n- Logic errors and edge cases\n- Security vulnerabilities\n- Performance implications\n- Readability improvements\n\n```diff\n[paste your diff here]\n```",
+    "language": "markdown",
+    "usage": "Paste your git diff to get a structured code review.",
+    "tags": ["code-review", "quality", "security"]
+  },
+  {
+    "id": "copilot-test-gen",
+    "title": "Generate Test Suite",
+    "description": "Use Copilot to scaffold comprehensive test suites from existing code.",
+    "platform": "copilot",
+    "category": "Testing",
+    "copyContent": "// Generate a comprehensive test suite for this module\n// Include: happy path, edge cases, error handling, boundary values\n// Use: describe/it blocks, arrange-act-assert pattern\n// Framework: Vitest with @testing-library\n\n// [place cursor here after pasting your code above]",
+    "language": "typescript",
+    "usage": "Place this comment block above your code in VS Code and let Copilot generate tests.",
+    "tags": ["testing", "vitest", "automation"]
+  },
+  {
+    "id": "copilot-component",
+    "title": "Angular Component Scaffold",
+    "description": "Copilot prompt for generating Angular 21 components with signals.",
+    "platform": "copilot",
+    "category": "Components",
+    "copyContent": "// Generate an Angular 21 standalone component with:\n// - Signal-based inputs using input() function\n// - Signal-based outputs using output() function  \n// - Computed signals for derived state\n// - @if/@for control flow in template\n// - Tailwind CSS classes for styling\n// - Accessibility: ARIA labels, keyboard handlers\n\n// Component: [describe your component]",
+    "language": "typescript",
+    "usage": "Add this prompt in your editor and describe the component you need.",
+    "tags": ["angular", "component", "signals"]
+  },
+  {
+    "id": "cursor-debug",
+    "title": "Debug with Context",
+    "description": "Use Cursor's codebase awareness to diagnose bugs with full context.",
+    "platform": "cursor",
+    "category": "Debugging",
+    "copyContent": "I'm seeing this error:\n\n```\n[paste error message]\n```\n\nIn this file: @[filename]\n\nThe expected behavior is: [describe what should happen]\nThe actual behavior is: [describe what's happening]\n\nPlease:\n1. Identify the root cause by examining the relevant files\n2. Explain why this error occurs\n3. Provide a fix with the minimal changes needed\n4. Suggest how to prevent this type of error in the future",
+    "language": "markdown",
+    "usage": "Use in Cursor chat with @ references to relevant files for context-aware debugging.",
+    "tags": ["debugging", "errors", "troubleshooting"]
+  },
+  {
+    "id": "cursor-migrate",
+    "title": "Migration Assistant",
+    "description": "Migrate code patterns across your codebase using Cursor's multi-file editing.",
+    "platform": "cursor",
+    "category": "Migration",
+    "copyContent": "Migrate all instances of the old pattern to the new pattern across the codebase:\n\nOld pattern:\n```typescript\n@Input() myProp: string;\n@Output() myEvent = new EventEmitter<string>();\n```\n\nNew pattern:\n```typescript\nmyProp = input<string>();\nmyEvent = output<string>();\n```\n\nRules:\n- Preserve all existing type annotations\n- Update template bindings if needed\n- Don't change unrelated code\n- Show me each file that changes",
+    "language": "typescript",
+    "usage": "Use in Cursor Composer mode to migrate patterns across multiple files.",
+    "tags": ["migration", "angular", "refactoring"]
+  },
+  {
+    "id": "qodo-coverage",
+    "title": "Test Coverage Analysis",
+    "description": "Use Qodo to identify untested code paths and generate missing tests.",
+    "platform": "qodo",
+    "category": "Testing",
+    "copyContent": "Analyze this code for test coverage gaps:\n\n```typescript\n[paste your code here]\n```\n\nFor each uncovered path:\n1. Describe the scenario not tested\n2. Explain why it matters\n3. Generate a test case\n4. Rate the risk (high/medium/low) of not testing it",
+    "language": "typescript",
+    "usage": "Paste your service or component code to find what tests you're missing.",
+    "tags": ["testing", "coverage", "quality"]
+  },
+  {
+    "id": "qodo-api",
+    "title": "API Contract Validator",
+    "description": "Validate API contracts and generate TypeScript interfaces from responses.",
+    "platform": "qodo",
+    "category": "API",
+    "copyContent": "Given this API response:\n\n```json\n[paste API response]\n```\n\nGenerate:\n1. TypeScript interface with proper types (no `any`)\n2. Zod validation schema\n3. A factory function for test data\n4. Example usage with error handling\n\nMake all fields that could be null optional.\nUse branded types for IDs.",
+    "language": "typescript",
+    "usage": "Paste an API response to get type-safe interfaces and validation.",
+    "tags": ["api", "typescript", "validation"]
+  },
+  {
+    "id": "claude-angular-signal",
+    "title": "Signal State Management",
+    "description": "Convert RxJS-based state to Angular Signals with Claude's help.",
+    "platform": "claude",
+    "category": "State Management",
+    "copyContent": "Convert this RxJS-based state management to Angular Signals:\n\n```typescript\n[paste your service with BehaviorSubjects/Observables]\n```\n\nRules:\n- Replace BehaviorSubject with signal()\n- Replace Observable.pipe() chains with computed()\n- Replace subscribe() with effect()\n- Keep the same public API surface\n- Add readonly signals for public state\n- Show before/after comparison",
+    "language": "typescript",
+    "usage": "Paste your RxJS-heavy service to get a clean signal-based version.",
+    "tags": ["signals", "rxjs", "migration", "state"]
+  },
+  {
+    "id": "copilot-accessibility",
+    "title": "Accessibility Audit",
+    "description": "Generate accessibility improvements for your HTML templates.",
+    "platform": "copilot",
+    "category": "Accessibility",
+    "copyContent": "// Audit this template for WCAG 2.1 AA compliance\n// Check for: missing ARIA labels, keyboard navigation,\n// color contrast issues, focus management, semantic HTML\n// \n// For each issue, add the fix inline as a code suggestion\n//\n// Template:\n// [paste your HTML template here]",
+    "language": "html",
+    "usage": "Paste your template to get inline accessibility fixes.",
+    "tags": ["accessibility", "wcag", "html", "a11y"]
+  },
+  {
+    "id": "cursor-perf",
+    "title": "Performance Optimizer",
+    "description": "Identify and fix performance bottlenecks with Cursor's analysis.",
+    "platform": "cursor",
+    "category": "Performance",
+    "copyContent": "Analyze this component for performance issues:\n\n@[component-file]\n\nCheck for:\n1. Unnecessary re-renders / change detection triggers\n2. Missing OnPush or signal-based optimization\n3. Large bundle imports that could be tree-shaken\n4. Unoptimized loops or computations in templates\n5. Missing trackBy in @for loops\n\nFor each issue, explain the impact and provide a fix.",
+    "language": "typescript",
+    "usage": "Reference your component file in Cursor to get performance analysis.",
+    "tags": ["performance", "optimization", "angular"]
+  },
+  {
+    "id": "qodo-security",
+    "title": "Security Review",
+    "description": "Use Qodo to scan for common security vulnerabilities in your code.",
+    "platform": "qodo",
+    "category": "Security",
+    "copyContent": "Review this code for security vulnerabilities:\n\n```typescript\n[paste your code here]\n```\n\nCheck for OWASP Top 10:\n- XSS (innerHTML, template injection)\n- Injection (SQL, command, template)\n- Insecure data exposure\n- Missing input validation\n- Hardcoded secrets\n\nFor each finding:\n- Severity: Critical/High/Medium/Low\n- CWE ID if applicable\n- Remediation with code fix",
+    "language": "typescript",
+    "usage": "Paste code for a security-focused review.",
+    "tags": ["security", "owasp", "review"]
+  }
+]

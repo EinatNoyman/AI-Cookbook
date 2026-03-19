@@ -1,0 +1,13 @@
+{
+  "name": "feature-cookbook",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/feature-cookbook/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["scope:feature-cookbook"],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

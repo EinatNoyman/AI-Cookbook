@@ -1,0 +1,13 @@
+{
+  "name": "feature-links",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/feature-links/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["scope:feature-links"],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

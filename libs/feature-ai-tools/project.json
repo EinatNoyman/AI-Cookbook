@@ -1,0 +1,13 @@
+{
+  "name": "feature-ai-tools",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/feature-ai-tools/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["scope:feature-ai-tools"],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

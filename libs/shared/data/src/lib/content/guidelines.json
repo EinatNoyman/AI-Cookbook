@@ -1,0 +1,44 @@
+[
+  {
+    "id": "code-review",
+    "title": "Code Review Standards",
+    "topic": "Code Quality",
+    "content": "## Code Review Guidelines\n\n### Before Submitting\n- Self-review your changes first\n- Ensure all tests pass locally\n- Keep PRs under 400 lines when possible\n- Write a clear PR description\n\n### Review Checklist\n- [ ] Logic is correct and handles edge cases\n- [ ] No security vulnerabilities introduced\n- [ ] Code follows team conventions\n- [ ] Tests cover the changes\n- [ ] No unnecessary complexity added\n\n### Giving Feedback\n- Be kind, be specific, be constructive\n- Prefix comments: `nit:`, `question:`, `suggestion:`, `blocker:`\n- Approve when comfortable, don't block on nits",
+    "tags": ["code-review", "pr", "quality"]
+  },
+  {
+    "id": "naming-conventions",
+    "title": "Naming Conventions",
+    "topic": "Code Quality",
+    "content": "## Naming Conventions\n\n### Files\n- Components: `kebab-case.ts` (e.g., `user-profile.ts`)\n- Services: `kebab-case.service.ts`\n- Models: `kebab-case.model.ts`\n- Tests: `kebab-case.spec.ts`\n\n### TypeScript\n- Classes/Interfaces: `PascalCase`\n- Functions/Methods: `camelCase`\n- Constants: `UPPER_SNAKE_CASE`\n- Private members: no underscore prefix\n\n### Angular Signals\n- Signals: `camelCase` (e.g., `userName`)\n- Computed: descriptive name (e.g., `fullName`)\n- Effects: verb-based (e.g., `syncToLocalStorage`)",
+    "tags": ["naming", "conventions", "typescript"]
+  },
+  {
+    "id": "git-workflow",
+    "title": "Git Workflow",
+    "topic": "Workflow",
+    "content": "## Git Workflow\n\n### Branch Naming\n```\nfeature/TICKET-123-short-description\nfix/TICKET-456-bug-description\nchore/update-dependencies\n```\n\n### Commit Messages\nFollow conventional commits:\n```\nfeat: add user authentication\nfix: resolve login redirect loop\nchore: update Angular to v21\ndocs: add API documentation\ntest: add unit tests for auth service\n```\n\n### PR Flow\n1. Create feature branch from `main`\n2. Make small, focused commits\n3. Push and create PR\n4. Get at least 1 approval\n5. Squash merge to `main`",
+    "tags": ["git", "workflow", "branching"]
+  },
+  {
+    "id": "testing-strategy",
+    "title": "Testing Strategy",
+    "topic": "Testing",
+    "content": "## Testing Strategy\n\n### Test Pyramid\n- **Unit Tests (Vitest)**: 70% — Components, services, pipes\n- **Integration Tests**: 20% — Feature modules, service interactions\n- **E2E Tests (Playwright)**: 10% — Critical user journeys\n\n### What to Test\n- Business logic and state management\n- Component inputs/outputs and user interactions\n- Error handling and edge cases\n- Accessibility (keyboard nav, ARIA)\n\n### What NOT to Test\n- Framework internals\n- Third-party library behavior\n- Pure HTML/CSS rendering\n- Private methods directly",
+    "tags": ["testing", "vitest", "playwright"]
+  },
+  {
+    "id": "accessibility",
+    "title": "Accessibility Standards",
+    "topic": "UX & Design",
+    "content": "## Accessibility Standards (WCAG 2.1 AA)\n\n### Required\n- All interactive elements must be keyboard accessible\n- Color contrast ratio: minimum 4.5:1 for text\n- All images must have alt text\n- Focus indicators must be visible\n- Form fields need associated labels\n\n### ARIA Usage\n- Use semantic HTML first (`nav`, `main`, `section`)\n- Add ARIA only when HTML semantics aren't sufficient\n- `aria-label` for icon-only buttons\n- `aria-live` for dynamic content updates\n- `role=\"status\"` for toast notifications\n\n### Testing\n- Use axe-core in CI pipeline\n- Manual keyboard navigation testing\n- Screen reader testing (NVDA/VoiceOver)",
+    "tags": ["accessibility", "wcag", "a11y"]
+  },
+  {
+    "id": "angular-patterns",
+    "title": "Angular 21 Patterns",
+    "topic": "Architecture",
+    "content": "## Angular 21 Modern Patterns\n\n### Signals (Preferred)\n```typescript\n// State\ncount = signal(0);\ndoubled = computed(() => this.count() * 2);\n\n// Updates\nthis.count.set(5);\nthis.count.update(c => c + 1);\n```\n\n### Zoneless Change Detection\n- Use `provideZonelessChangeDetection()` in app config\n- All state changes via signals trigger UI updates automatically\n- No need for `zone.js` or `ChangeDetectorRef`\n\n### Control Flow\n```html\n@if (isLoading()) {\n  <app-skeleton />\n} @else {\n  <app-content [data]=\"data()\" />\n}\n\n@for (item of items(); track item.id) {\n  <app-card [item]=\"item\" />\n} @empty {\n  <app-empty-state />\n}\n```",
+    "tags": ["angular", "signals", "patterns"]
+  }
+]

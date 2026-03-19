@@ -1,0 +1,428 @@
+{
+  "id": "qodo",
+  "name": "Qodo",
+  "icon": "◎",
+  "tagline": "AI-powered code integrity tool specializing in test generation, coverage analysis, and PR review",
+  "overview": {
+    "description": "Qodo (formerly CodiumAI) is an AI tool built around the idea that code integrity — correctness, reliability, and test coverage — matters as much as code generation. Rather than helping you write new features from scratch, Qodo analyzes your existing code and generates comprehensive test suites, identifies untested edge cases, reviews pull requests for behavioral regressions, and helps teams maintain high code quality standards at scale. Qodo operates across three surfaces: Qodo Gen (IDE plugin with agentic workflows), Qodo Merge (automated PR review on GitHub/GitLab/Bitbucket), and Qodo Command (CLI for building and running AI agents in terminals and CI/CD pipelines). Its Context Engine indexes your entire codebase — including multi-repo dependencies — achieving 80% accuracy in understanding codebases, outperforming competitors. Named a Visionary in the 2025 Gartner Magic Quadrant for AI Code Assistants.",
+    "pros": [
+      "Best-in-class test generation — understands code behavior, not just syntax",
+      "Automatically identifies edge cases and error paths you would likely miss",
+      "PR review that checks for behavioral regressions and logic issues",
+      "Works directly in your IDE on the code you are currently editing",
+      "Generates tests for multiple frameworks: Vitest, Jest, Pytest, JUnit",
+      "Qodo Merge provides automated PR analysis on GitHub, GitLab, and Bitbucket",
+      "Improves test quality beyond coverage percentage — tests that actually catch bugs",
+      "15+ built-in agentic workflows invoked via slash commands (/review, /unit-test, /fix, /cleanup, /docs)",
+      "Context Engine indexes multi-repo codebases with cross-repo dependency understanding",
+      "Custom workflows — create, export, and share team-specific automation via TOML files",
+      "MCP support — connect Jira, GitHub, custom APIs, and more via Model Context Protocol",
+      "Qodo Command CLI for terminal-based AI agents, CI/CD automation, and webhook triggers",
+      "Qodo Cover — autonomous test coverage expansion that commits tests as follow-up PRs",
+      "best_practices.md support — Qodo reads and enforces your team's coding standards automatically",
+      "SOC 2 compliant with on-prem, VPC, and air-gapped deployment options",
+      "Agentic Mode for multi-step autonomous problem-solving beyond one-shot responses"
+    ],
+    "cons": [
+      "More specialized than general AI tools — not a replacement for Claude or Copilot",
+      "Requires a subscription for team features and higher usage",
+      "Generated tests may need tweaking to match project-specific mock patterns",
+      "Less useful for greenfield development or architecture exploration",
+      "Free tier limited to 250 LLM credits/month — may be insufficient for active developers",
+      "Steep learning curve to master 15+ workflows and optimal usage patterns",
+      "Enterprise pricing is opaque — custom quotes required"
+    ],
+    "whenToUse": [
+      "Generating comprehensive test suites for existing, untested code",
+      "Finding untested edge cases and error paths in critical business logic",
+      "Automated PR review to catch behavioral regressions before merge",
+      "Security-focused code review to identify OWASP vulnerabilities",
+      "Validating API contracts and generating type-safe interfaces from responses",
+      "Increasing test coverage strategically on high-risk modules",
+      "Code review sessions where test quality is the primary concern",
+      "Onboarding new developers — Qodo acts as a mentor for team coding standards",
+      "Managing technical debt — /improve and /refactor workflows for legacy code",
+      "Automating release notes, changelogs, and documentation updates via Qodo Command",
+      "CI/CD quality gates — blocking merges until coverage and review criteria are met"
+    ],
+    "strengths": {
+      "title": "What Qodo Does Especially Well for Developers",
+      "areas": [
+        {
+          "title": "Agentic Workflows in the IDE",
+          "details": [
+            "15+ built-in workflows invoked via slash commands: /review, /unit-test, /fix, /cleanup, /docs",
+            "Workflows execute a focused job autonomously — research, plan, act, then exit",
+            "Custom workflows can be created, exported, and shared with your team",
+            "Agentic Mode handles multi-step problem-solving: decisions, tool use, and autonomous execution",
+            "Standard Mode available for manual, command-based interactions when you want more control"
+          ]
+        },
+        {
+          "title": "Context Engine — Deep Codebase Understanding",
+          "details": [
+            "Indexes entire codebases including multi-repo dependencies and shared modules",
+            "80% accuracy in understanding codebases — outperforms competitors at 45–74%",
+            "Maps dependencies, relationships, and organizational coding patterns",
+            "Powers all workflows with project-aware, relevant suggestions",
+            "Qodo Aware (eye icon) provides deep code research for complex questions"
+          ]
+        },
+        {
+          "title": "Intelligent Test Generation",
+          "details": [
+            "Understands code behavior — generates tests that verify what code does, not just line execution",
+            "Automatically discovers edge cases: null inputs, boundary values, async errors, concurrent calls",
+            "Qodo Cover autonomously expands test coverage and opens follow-up PRs with new tests",
+            "Supports multiple frameworks: Vitest, Jest, Karma, Pytest, JUnit, and more",
+            "Tests are generated in chat via /test command for seamless IDE integration"
+          ]
+        },
+        {
+          "title": "PR Review and Code Quality at Scale",
+          "details": [
+            "Qodo Merge scans every PR: ranks issues by severity, suggests fixes inline",
+            "Detects bugs, logic gaps, missing tests, security issues, and compliance violations",
+            "Supports GitHub, GitLab, and Bitbucket with slash commands like /implement",
+            "Agent skills auto-fix PR issues and reply to inline comments with resolution details",
+            "/scan_repo_discussions learns your team's review patterns and writes best_practices.md"
+          ]
+        },
+        {
+          "title": "CLI and CI/CD Automation (Qodo Command)",
+          "details": [
+            "Build and run custom AI agents from the terminal or CI/CD pipelines",
+            "Interactive chat mode (qodo chat) — same experience as IDE, but in terminal",
+            "Agents can run as HTTP services via webhook mode for external integrations",
+            "Pre-built agents: code review, test coverage, release notes, PR analysis",
+            "MCP mode turns agents into callable services for orchestrators like LangChain"
+          ]
+        }
+      ]
+    },
+    "lesserKnownCapabilities": {
+      "title": "Capabilities Most People Don't Know About",
+      "items": [
+        {
+          "title": "Custom Workflows (Create & Share)",
+          "details": [
+            "Create new workflows via the / menu → 'Create new workflow'",
+            "Define step-by-step natural language instructions for your agent",
+            "Export and share workflows with your team as TOML configuration files",
+            "Repository-level workflows can be committed to source control for team consistency",
+            "Each workflow can have its own plan mode setting and output schema"
+          ]
+        },
+        {
+          "title": "best_practices.md Enforcement",
+          "details": [
+            "Place a best_practices.md file at your project root",
+            "Qodo reads it and enforces your coding standards in all suggestions",
+            "/generate-best-practices workflow auto-generates the file from your codebase",
+            "/scan_repo_discussions in Qodo Merge learns from past PR threads to write rules",
+            "Ensures junior and senior engineers converge on the same quality bar"
+          ]
+        },
+        {
+          "title": "MCP Integration (Model Context Protocol)",
+          "details": [
+            "Connect Jira, GitHub, and other tools via pre-configured MCP servers",
+            "Add custom MCP tools manually or via Smithery registry",
+            "Terminal Agentic Tool runs local commands directly within the IDE",
+            "Qodo Merge MCP brings PR review directly into the IDE chat",
+            "Extends Qodo's capabilities beyond code to full development workflow automation"
+          ]
+        },
+        {
+          "title": "Qodo Aware — Deep Code Research Agent",
+          "details": [
+            "Click the eye icon to activate Ask or Deep Research agents",
+            "Tag specific repos for better cross-repository context",
+            "Acts as your 'Agentic Principal Engineer' for complex codebase questions",
+            "Uses iterative reasoning and tests to navigate huge, unfamiliar codebases",
+            "Ideal for legacy refactors, security audits, and architecture understanding"
+          ]
+        },
+        {
+          "title": "Qodo Cover — Autonomous Test Coverage",
+          "details": [
+            "Free preview GitHub Action that expands test coverage automatically",
+            "Analyzes PR diffs, identifies uncovered lines, generates targeted tests",
+            "Commits tests to a new branch and opens a follow-up PR",
+            "Reports coverage delta so teams can merge with confidence",
+            "Successfully contributed validated code to Hugging Face's open-source repos"
+          ]
+        },
+        {
+          "title": "Agent Skills for Claude Code and Other Tools",
+          "details": [
+            "Qodo ships agent skills that work as slash commands in Claude Code and other AI agents",
+            "/get-qodo-rules pulls your team's coding rules into any AI coding agent",
+            "/qodo-pr-resolver auto-fixes Qodo review issues and replies to inline comments",
+            "Bridges Qodo's review intelligence with your preferred coding assistant",
+            "Eliminates context switching between review feedback and fix implementation"
+          ]
+        }
+      ]
+    }
+  },
+  "guidelines": {
+    "installation": {
+      "title": "Installation & Setup",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Create a Qodo account",
+          "description": "Go to qodo.ai and sign up with your GitHub account. Free Developer tier includes 250 LLM credits/month and 75 PR reviews. Teams plan ($19–30/user/month) unlocks 2,500 credits and PR automation.",
+          "code": null
+        },
+        {
+          "step": 2,
+          "title": "Install the VS Code extension",
+          "description": "Search for 'Qodo Gen' in the VS Code Extensions marketplace and install it. JetBrains plugins are also available for IntelliJ, WebStorm, and PyCharm.",
+          "code": "# Or install from the terminal:\ncode --install-extension Qodo.qodo-gen"
+        },
+        {
+          "step": 3,
+          "title": "Sign in and configure your workspace",
+          "description": "After installing, sign in with your Qodo account from the extension sidebar. Qodo will detect your test framework automatically from your package.json. Choose between Standard Mode (manual commands) or Agentic Mode (autonomous multi-step).",
+          "code": null
+        },
+        {
+          "step": 4,
+          "title": "Set up Qodo Merge for GitHub/GitLab (optional)",
+          "description": "For automated PR review, install the Qodo Merge GitHub App from the GitHub Marketplace. It will automatically comment on pull requests with test coverage gaps, behavioral analysis, and severity-ranked issues. Also supports GitLab and Bitbucket.",
+          "code": null
+        },
+        {
+          "step": 5,
+          "title": "Install Qodo Command CLI (optional)",
+          "description": "For terminal-based AI agents and CI/CD automation, install the Qodo Command CLI. It turns any IDE into an agentic environment without a plugin.",
+          "code": "npm install -g @qodo-ai/command\nqodo chat"
+        },
+        {
+          "step": 6,
+          "title": "Add a best_practices.md to your project (recommended)",
+          "description": "Create a best_practices.md at your project root, or use the /generate-best-practices workflow to auto-generate one. Qodo reads this file and enforces your team's coding standards in all suggestions and reviews.",
+          "code": null
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Best Configurations",
+      "tips": [
+        {
+          "title": "Specify your test framework in settings",
+          "description": "Qodo auto-detects frameworks, but you can explicitly configure it to ensure it generates tests using the exact patterns your team uses.",
+          "code": "// .qodo/config.json\n{\n  \"testFramework\": \"vitest\",\n  \"testingLibrary\": \"@testing-library/angular\",\n  \"mockFramework\": \"vitest\",\n  \"coverageProvider\": \"v8\"\n}"
+        },
+        {
+          "title": "Choose Agentic vs Standard Mode",
+          "description": "Agentic Mode makes interactions dynamic — Qodo proactively assists, makes decisions, and uses tools autonomously. Standard Mode gives you manual control via explicit commands. Start with Agentic Mode for complex tasks, Standard Mode for targeted operations.",
+          "code": null
+        },
+        {
+          "title": "Focus generation on behaviors, not just lines",
+          "description": "When generating tests, ask Qodo to focus on 'behavior coverage' rather than line coverage. This produces tests that verify what the code does, not just that each line executes."
+        },
+        {
+          "title": "Integrate Qodo Merge with PR branch protection",
+          "description": "Configure your branch protection rules to require Qodo Merge analysis before merging. This creates a quality gate for test coverage and behavioral regression at the PR level.",
+          "code": null
+        },
+        {
+          "title": "Connect MCP tools for extended capabilities",
+          "description": "Activate pre-configured MCP tools (Jira, GitHub) with an API key, or add custom MCP tools manually in Qodo Gen settings or via Smithery. The Terminal Agentic Tool lets Qodo run commands directly in your IDE.",
+          "code": null
+        },
+        {
+          "title": "Set up Qodo Cover for automated test PRs",
+          "description": "Add the Qodo Cover GitHub Action to your workflows. It analyzes PR diffs, generates tests for uncovered lines, commits them to a branch, and opens a follow-up PR with the coverage delta.",
+          "code": null
+        },
+        {
+          "title": "Use the 'generate tests for this function' context menu",
+          "description": "Right-click any function in your editor and select 'Qodo: Generate tests for this function'. This is the fastest way to get targeted test coverage for a specific piece of logic. Alternatively, use /test in the chat."
+        }
+      ]
+    },
+    "bestPractices": {
+      "title": "Tips & Best Practices",
+      "tips": [
+        {
+          "title": "Focus Qodo on your highest-risk code first",
+          "description": "Do not try to generate tests for everything at once. Start with the modules that handle money, authentication, data mutations, or complex business rules. Qodo is most valuable where bugs have the highest impact."
+        },
+        {
+          "title": "Review generated tests for correctness, not just coverage",
+          "description": "Qodo generates tests that reflect the code's current behavior — including bugs. Review each test to ensure it asserts the right behavior, not just that the current (possibly wrong) behavior is preserved."
+        },
+        {
+          "title": "Use Qodo for edge case discovery, not happy path",
+          "description": "You can write happy path tests yourself. Use Qodo specifically to find the edge cases you would miss: null inputs, empty collections, concurrent operations, network timeouts, and boundary values."
+        },
+        {
+          "title": "Use /review-uncommitted before every commit",
+          "description": "Run the /review-uncommitted workflow before committing. It gives you a walkthrough of your changes, flags potential issues by severity, and offers one-click fixes — catching problems before they enter your git history."
+        },
+        {
+          "title": "Generate and commit best_practices.md early",
+          "description": "Run /generate-best-practices as one of your first Qodo actions on a project. This creates a structured file with style rules, patterns, and examples per language that Qodo enforces in all future suggestions."
+        },
+        {
+          "title": "Create custom workflows for your team's patterns",
+          "description": "If your team has repetitive review patterns (e.g., 'check for missing error handling in all API routes'), create a custom workflow via the / menu. Export and share it with your team via source control."
+        },
+        {
+          "title": "Combine Qodo with manual security review",
+          "description": "Qodo's security review identifies common OWASP patterns. Use it as a first pass to catch the obvious issues, then follow up with a manual review for business-logic-specific vulnerabilities."
+        },
+        {
+          "title": "Use Qodo agent skills in Claude Code",
+          "description": "Install Qodo's agent skills to get /get-qodo-rules and /qodo-pr-resolver as slash commands in Claude Code. This bridges Qodo's review intelligence with Claude's coding ability — fix PR issues without context switching."
+        },
+        {
+          "title": "Commit Qodo-generated tests to your repo",
+          "description": "Generated tests are a permanent investment. Add them to your test suite, run them in CI, and maintain them like any other test. They pay ongoing dividends by catching regressions with every future change."
+        }
+      ]
+    },
+    "workflows": {
+      "title": "Built-in Workflows (Slash Commands)",
+      "description": "Qodo includes built-in workflows invoked via slash commands in the IDE chat. Each workflow executes a focused job autonomously and exits. Type / in the chat to see all available workflows.",
+      "builtInWorkflows": [
+        { "command": "/review-uncommitted", "description": "Review uncommitted changes before committing — get a walkthrough, description, and code suggestions with one-click resolution" },
+        { "command": "/review-committed", "description": "Review committed changes before opening a PR — same analysis as uncommitted but on staged changes" },
+        { "command": "/review", "description": "Review Git changes, flag issues by severity, and get fix suggestions" },
+        { "command": "/unit-test", "description": "Generate a set of unit tests for a specific piece of code" },
+        { "command": "/fix", "description": "Review code for issues and suggest fixes to apply" },
+        { "command": "/cleanup", "description": "Remove dead code, debug leftovers, and apply DRY and style fixes with test validation" },
+        { "command": "/docs", "description": "Add or update concise, consistent docstrings and comments based on project style" },
+        { "command": "/generate-best-practices", "description": "Create a structured best_practices.md file with style, patterns, and examples per language" }
+      ],
+      "customWorkflows": {
+        "title": "Creating Custom Workflows",
+        "steps": [
+          "Type / in the chat input, or click the / button, to open the workflow menu",
+          "Select 'Create new workflow' and hit enter",
+          "The workflow creation panel opens — give it a name and description",
+          "Define step-by-step natural language instructions for your agent to follow",
+          "Optionally configure plan mode settings and output schema",
+          "Export and share workflows with your team via TOML files or source control"
+        ],
+        "example": "Steps:\n1. Review my code changes.\n2. Identify potential issues such as anti-patterns, missing error handling, or excessive complexity.\n3. Provide a summary of the findings with recommended improvements."
+      }
+    },
+    "qodoCommand": {
+      "title": "Qodo Command — CLI for AI Agents",
+      "description": "Qodo Command is a CLI for building, managing, and running AI agents from the terminal or CI/CD pipelines. It turns any environment into an agentic workspace without IDE plugins.",
+      "installation": "npm install -g @qodo-ai/command",
+      "modes": [
+        { "mode": "Interactive Chat", "command": "qodo chat", "description": "Talk to an agent in natural language directly in your terminal" },
+        { "mode": "Custom Agent Commands", "command": "qodo <command>", "description": "Configure reusable agent workflows for specific tasks" },
+        { "mode": "Web UI", "command": "qodo --ui", "description": "Run Qodo Command with an interactive web interface" },
+        { "mode": "Webhook Mode", "command": "webhook endpoint", "description": "Expose agents as HTTP endpoints for external system triggers" },
+        { "mode": "MCP Mode", "command": "MCP service", "description": "Agents function as callable services for orchestrators like LangChain" }
+      ],
+      "preBuiltAgents": [
+        "Code review agent — summarizes changes, identifies issues, suggests fixes, checks against team standards",
+        "Test coverage agent — analyzes PR diffs, generates tests for uncovered lines, commits to follow-up PR",
+        "Release notes agent — reviews all changes and generates structured RELEASE_NOTES.md updates",
+        "PR analysis agent — pre-reviews PRs with prioritized issues and ready-to-merge assessments"
+      ]
+    },
+    "mcpIntegration": {
+      "title": "MCP Integration (Model Context Protocol)",
+      "description": "Qodo supports Anthropic's Model Context Protocol for connecting external tools and services. Pre-configured and custom MCP tools extend Qodo's capabilities beyond code to full workflow automation.",
+      "preConfigured": [
+        "Jira — pull tickets, link PRs to stories, update status",
+        "GitHub — access repos, issues, PRs directly from chat",
+        "Terminal Agentic Tool — execute commands in your local terminal from within the IDE",
+        "Qodo Merge MCP — PR review directly in IDE chat"
+      ],
+      "custom": "Add custom MCP tools manually in Qodo Gen settings or via the Smithery registry. API key required for activation."
+    }
+  },
+  "prompts": [
+    {
+      "id": "qodo-coverage",
+      "title": "Test Coverage Gap Analysis",
+      "description": "Identify untested code paths and generate missing tests.",
+      "category": "Testing",
+      "content": "Analyze this code for test coverage gaps:\n\n```typescript\n[paste your service, component, or function here]\n```\n\nFor each untested path:\n1. Describe the scenario not covered\n2. Explain why it matters (what bug could it hide?)\n3. Generate a Vitest test case for it\n4. Rate the risk: high / medium / low\n\nPrioritize by risk level, not alphabetically.",
+      "tags": ["testing", "coverage", "quality"]
+    },
+    {
+      "id": "qodo-security",
+      "title": "Security Vulnerability Review",
+      "description": "Scan code for OWASP Top 10 vulnerabilities with severity ratings and fixes.",
+      "category": "Security",
+      "content": "Review this code for security vulnerabilities:\n\n```typescript\n[paste your code here]\n```\n\nCheck for OWASP Top 10 including:\n- XSS via innerHTML or unsafe template binding\n- Injection vulnerabilities (SQL, command, template)\n- Sensitive data exposure (logging, error messages)\n- Missing input validation at system boundaries\n- Hardcoded secrets or credentials\n- Insecure dependency usage\n\nFor each finding:\n- Severity: Critical / High / Medium / Low\n- CWE ID if applicable\n- Exact location in the code\n- Remediation with a concrete code fix",
+      "tags": ["security", "owasp", "review"]
+    },
+    {
+      "id": "qodo-api",
+      "title": "API Contract Validator",
+      "description": "Generate type-safe interfaces, validation schemas, and test factories from an API response.",
+      "category": "API",
+      "content": "Given this API response:\n\n```json\n[paste your API response here]\n```\n\nGenerate:\n1. TypeScript interface with precise types (no `any`, no `unknown` without narrowing)\n2. Zod validation schema that matches the interface\n3. A test data factory function using the interface\n4. Example usage with error handling and type narrowing\n\nRules:\n- Make nullable fields optional\n- Use string literal unions for enum-like fields\n- Use branded types for IDs (e.g., `string & { readonly __brand: 'UserId' }`)",
+      "tags": ["api", "typescript", "validation", "zod"]
+    },
+    {
+      "id": "qodo-edge-cases",
+      "title": "Edge Case Generator",
+      "description": "Enumerate all edge cases for a function and generate tests for each.",
+      "category": "Testing",
+      "content": "List all edge cases that should be tested for this function:\n\n```typescript\n[paste your function here]\n```\n\nFor each edge case:\n1. The input combination that triggers it\n2. The expected behavior\n3. Why it is likely to be missed\n4. A Vitest test that covers it\n\nCategorize by: boundary values / null/undefined / async errors / concurrent calls / invalid types.",
+      "tags": ["testing", "edge-cases", "quality"]
+    },
+    {
+      "id": "qodo-pr-behavior",
+      "title": "PR Behavior Change Analysis",
+      "description": "Analyze a diff for behavioral changes and suggest tests to verify the intent.",
+      "category": "Code Review",
+      "content": "Analyze this pull request diff for behavioral changes:\n\n```diff\n[paste your git diff here]\n```\n\nIdentify:\n1. Every behavior that has changed (not just lines changed)\n2. Any behaviors that were removed — are these intentional?\n3. New behaviors added — are they covered by tests?\n4. Edge cases introduced by this change that are not yet tested\n\nThen generate test cases that verify the intended new behavior and catch regressions in the old behavior.",
+      "tags": ["code-review", "pr", "testing", "regression"]
+    },
+    {
+      "id": "qodo-mutation-testing",
+      "title": "Mutation Test Analysis",
+      "description": "Identify tests that would not catch common mutations, improving test suite quality.",
+      "category": "Testing",
+      "content": "Analyze this test suite for mutation testing weaknesses:\n\n```typescript\n// Implementation:\n[paste your implementation]\n\n// Tests:\n[paste your existing tests]\n```\n\nFor each weakness found:\n1. Describe the mutation that would survive (e.g., changing > to >=)\n2. Explain why the existing tests would not catch it\n3. Write an additional test that would kill this mutant\n\nFocus on: boundary conditions, boolean logic, null checks, and return value assertions.",
+      "tags": ["testing", "mutation-testing", "quality"]
+    },
+    {
+      "id": "qodo-cleanup",
+      "title": "Code Cleanup with Validation",
+      "description": "Remove dead code, debug leftovers, and apply DRY fixes — validated by tests.",
+      "category": "Refactoring",
+      "content": "[Use /cleanup workflow in Qodo Gen, or paste code here]\n\nClean up this code:\n\n```typescript\n[paste your code here]\n```\n\nPlease:\n1. Identify and remove dead code and unused imports\n2. Remove debug leftovers (console.log, commented-out code, TODO hacks)\n3. Apply DRY — extract repeated patterns into shared functions\n4. Apply style fixes consistent with the project\n5. Validate that cleanup preserves behavior by running or generating tests\n6. Show a summary of everything removed/changed",
+      "tags": ["refactoring", "cleanup", "dead-code", "dry"]
+    },
+    {
+      "id": "qodo-best-practices-gen",
+      "title": "Generate Team Best Practices File",
+      "description": "Auto-generate a best_practices.md from your codebase patterns.",
+      "category": "Standards",
+      "content": "[Use /generate-best-practices workflow in Qodo Gen]\n\nOr manually: Analyze this codebase and generate a best_practices.md file that includes:\n\n1. Code style rules per language (naming, formatting, imports)\n2. Architectural patterns used (state management, dependency injection, error handling)\n3. Testing conventions (framework, file naming, mock patterns)\n4. Security practices (input validation, auth patterns, secret management)\n5. Concrete examples from the actual codebase for each rule\n\nContext: [Angular 21 / .NET 8 / your stack]",
+      "tags": ["standards", "best-practices", "governance", "documentation"]
+    },
+    {
+      "id": "qodo-review-uncommitted",
+      "title": "Pre-Commit Review",
+      "description": "Review uncommitted changes before committing — catch issues before they enter git history.",
+      "category": "Code Review",
+      "content": "[Use /review-uncommitted workflow in Qodo Gen]\n\nThis workflow automatically:\n1. Analyzes all uncommitted changes in your working tree\n2. Generates a description and walkthrough of the changes\n3. Flags potential issues ranked by severity\n4. Offers code suggestions with one-click resolution\n5. Helps you commit clean, reviewed code every time\n\nTip: Make this part of your daily workflow — run it before every commit.",
+      "tags": ["code-review", "pre-commit", "workflow", "quality"]
+    },
+    {
+      "id": "qodo-technical-debt",
+      "title": "Technical Debt Assessment",
+      "description": "Systematically identify and prioritize technical debt in a module.",
+      "category": "Architecture",
+      "content": "Analyze this module for technical debt:\n\n```typescript\n[paste your code here]\n```\n\nIdentify:\n1. Code smells — long functions, god classes, deep nesting\n2. Missing abstractions — repeated patterns that should be extracted\n3. Outdated patterns — deprecated APIs, legacy approaches\n4. Test gaps — critical paths without coverage\n5. Documentation gaps — undocumented public APIs\n\nFor each item:\n- Effort to fix: low / medium / high\n- Risk of leaving unfixed: low / medium / high\n- Suggested fix with code example\n\nPrioritize by risk-to-effort ratio.",
+      "tags": ["technical-debt", "architecture", "refactoring", "quality"]
+    }
+  ]
+}

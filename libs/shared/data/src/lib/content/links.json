@@ -1,0 +1,194 @@
+[
+  {
+    "id": "angular-docs",
+    "title": "Angular Documentation",
+    "url": "https://angular.dev",
+    "description": "Official Angular documentation with guides, tutorials, and API reference.",
+    "category": "Frameworks",
+    "tags": ["angular", "frontend", "docs"]
+  },
+  {
+    "id": "nx-docs",
+    "title": "Nx Documentation",
+    "url": "https://nx.dev",
+    "description": "Monorepo build system documentation. Smart rebuilds, task caching, and more.",
+    "category": "Build Tools",
+    "tags": ["nx", "monorepo", "build"]
+  },
+  {
+    "id": "tailwind-docs",
+    "title": "Tailwind CSS",
+    "url": "https://tailwindcss.com/docs",
+    "description": "Utility-first CSS framework. All the classes you need, none of the bloat.",
+    "category": "Styling",
+    "tags": ["css", "tailwind", "styling"]
+  },
+  {
+    "id": "typescript-handbook",
+    "title": "TypeScript Handbook",
+    "url": "https://www.typescriptlang.org/docs/handbook",
+    "description": "The definitive guide to TypeScript. From basics to advanced types.",
+    "category": "Languages",
+    "tags": ["typescript", "types", "docs"]
+  },
+  {
+    "id": "vitest-docs",
+    "title": "Vitest",
+    "url": "https://vitest.dev",
+    "description": "Blazing fast unit test framework powered by Vite. Jest-compatible API.",
+    "category": "Testing",
+    "tags": ["testing", "vitest", "unit-tests"]
+  },
+  {
+    "id": "playwright-docs",
+    "title": "Playwright",
+    "url": "https://playwright.dev",
+    "description": "End-to-end testing that works across browsers. Auto-wait, web-first assertions.",
+    "category": "Testing",
+    "tags": ["testing", "e2e", "playwright"]
+  },
+  {
+    "id": "rxjs-docs",
+    "title": "RxJS Documentation",
+    "url": "https://rxjs.dev",
+    "description": "Reactive Extensions for JavaScript. Observables, operators, and schedulers.",
+    "category": "Libraries",
+    "tags": ["rxjs", "reactive", "observables"]
+  },
+  {
+    "id": "mdn-web-docs",
+    "title": "MDN Web Docs",
+    "url": "https://developer.mozilla.org",
+    "description": "The encyclopedia of web development. HTML, CSS, JS — all in one place.",
+    "category": "References",
+    "tags": ["mdn", "web", "reference"]
+  },
+  {
+    "id": "github",
+    "title": "GitHub",
+    "url": "https://github.com",
+    "description": "Where the world builds software. Repos, PRs, actions, and more.",
+    "category": "Platforms",
+    "tags": ["git", "vcs", "collaboration"]
+  },
+  {
+    "id": "figma",
+    "title": "Figma",
+    "url": "https://figma.com",
+    "description": "Collaborative design tool. Where your designer friends live.",
+    "category": "Design",
+    "tags": ["design", "ui", "collaboration"]
+  },
+  {
+    "id": "web-dev",
+    "title": "web.dev",
+    "url": "https://web.dev",
+    "description": "Google's hub for web performance, accessibility, and modern best practices.",
+    "category": "Frontend Dev",
+    "tags": ["performance", "a11y", "web-standards"]
+  },
+  {
+    "id": "josh-comeau-blog",
+    "title": "Josh W. Comeau's Blog",
+    "url": "https://www.joshwcomeau.com",
+    "description": "Deep, interactive dives into CSS, React, and JavaScript fundamentals. Genuinely good.",
+    "category": "Frontend Dev",
+    "tags": ["css", "react", "javascript", "blog"]
+  },
+  {
+    "id": "state-of-js",
+    "title": "State of JS",
+    "url": "https://stateofjs.com",
+    "description": "Annual survey mapping the JavaScript ecosystem. Where things are heading.",
+    "category": "Frontend Dev",
+    "tags": ["javascript", "ecosystem", "trends"]
+  },
+  {
+    "id": "css-tricks",
+    "title": "CSS-Tricks",
+    "url": "https://css-tricks.com",
+    "description": "Articles, guides, and the Flexbox/Grid almanac you'll bookmark a hundred times.",
+    "category": "Frontend Dev",
+    "tags": ["css", "flexbox", "grid", "frontend"]
+  },
+  {
+    "id": "claude-courses",
+    "title": "Claude Courses",
+    "url": "https://claude.com/resources/courses",
+    "description": "Official learning paths and courses for working effectively with Claude.",
+    "category": "AI Learning",
+    "tags": ["claude", "anthropic", "courses", "ai"]
+  },
+  {
+    "id": "3blue1brown",
+    "title": "3Blue1Brown",
+    "url": "https://www.3blue1brown.com",
+    "description": "Visual math and science that builds real intuition. The neural networks series is essential.",
+    "category": "AI Learning",
+    "tags": ["math", "neural-networks", "visualization", "fundamentals"]
+  },
+  {
+    "id": "prompting-guide",
+    "title": "Prompt Engineering Guide",
+    "url": "https://www.promptingguide.ai",
+    "description": "Comprehensive reference for prompting techniques — from zero-shot to chain-of-thought.",
+    "category": "AI Learning",
+    "tags": ["prompting", "techniques", "llm", "guide"]
+  },
+  {
+    "id": "anthropic-research",
+    "title": "Anthropic Research",
+    "url": "https://www.anthropic.com/research",
+    "description": "Anthropic's published papers on AI safety, interpretability, and capabilities.",
+    "category": "AI Learning",
+    "tags": ["research", "safety", "papers", "anthropic"]
+  },
+  {
+    "id": "claude-code-docs",
+    "title": "Claude Code Docs",
+    "url": "https://code.claude.com/docs",
+    "description": "Official documentation for Claude Code — the AI coding CLI powering this workflow.",
+    "category": "AI Engineering",
+    "tags": ["claude-code", "cli", "docs", "agentic"]
+  },
+  {
+    "id": "context-engineering",
+    "title": "Context Engineering for Agents",
+    "url": "https://blog.langchain.com/context-engineering-for-agents/",
+    "description": "LangChain's deep dive into managing what goes into an agent's context window — and why it matters.",
+    "category": "AI Engineering",
+    "tags": ["context", "agents", "langchain", "engineering"]
+  },
+  {
+    "id": "agentic-engineer",
+    "title": "Just Talk to It",
+    "url": "https://steipete.me/posts/just-talk-to-it",
+    "description": "Peter Steinberger on the mindset shift — and practical habits — of working with AI agents.",
+    "category": "AI Engineering",
+    "tags": ["agentic", "mindset", "workflow", "blog"]
+  },
+  {
+    "id": "openai-cookbook",
+    "title": "OpenAI Cookbook",
+    "url": "https://cookbook.openai.com",
+    "description": "Practical, runnable examples for building with LLMs. Model-agnostic patterns you can steal.",
+    "category": "AI Engineering",
+    "tags": ["llm", "examples", "patterns", "openai"]
+  },
+  {
+    "id": "bmad-method",
+    "title": "BMAD Method",
+    "url": "https://github.com/bmad-code-org/BMAD-METHOD",
+    "description": "Breakthrough Method for Agile AI-Driven Development — the workflow system behind this hub.",
+    "category": "Methodology",
+    "tags": ["bmad", "methodology", "agentic", "workflow"]
+  },
+  {
+    "id": "spec-driven-dev",
+    "title": "Spec-Driven Development",
+    "url": "https://github.com/github/spec-kit/blob/main/spec-driven.md",
+    "description": "GitHub's spec-kit guide to writing thorough specifications before writing a single line of code.",
+    "category": "Methodology",
+    "tags": ["spec", "ssd", "planning", "process"]
+  }
+]

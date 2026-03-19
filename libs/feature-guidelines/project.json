@@ -1,0 +1,13 @@
+{
+  "name": "feature-guidelines",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/feature-guidelines/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["scope:feature-guidelines"],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

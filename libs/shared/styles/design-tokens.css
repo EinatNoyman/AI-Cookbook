@@ -1,0 +1,83 @@
+/* Design Tokens for Developer Hub / AI Cookbook */
+/* Palette derived from the Frontend Guild logo:
+   - Navy blue  → logo "F" letter    (~oklch 28% 0.12 263)
+   - Golden yellow → logo "F" arch   (~oklch 83% 0.17 88)
+   - Cyan-teal  → logo "E" letter    (~oklch 72% 0.12 197)
+   - Ice blue   → logo circuit nodes (~oklch 88% 0.05 205)
+*/
+
+/* Use class-based dark mode (ThemeService toggles .dark on <html>) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* ── Brand palette from logo ─────────────────────────────── */
+  --color-brand-navy:       oklch(28% 0.12 263);   /* logo "F" dark navy */
+  --color-brand-navy-light: oklch(38% 0.11 263);   /* lighter navy for dark-mode panels */
+  --color-brand-gold:       oklch(83% 0.17 88);    /* logo "F" golden arch */
+  --color-brand-gold-dark:  oklch(68% 0.16 88);    /* darker gold for text on light bg */
+  --color-brand-ice:        oklch(94% 0.04 205);   /* logo circuit ice-blue — subtle bg tint */
+
+  /* ── Teal overridden to match logo "E" cyan exactly ─────── */
+  --color-teal-200: oklch(92% 0.05 197);
+  --color-teal-300: oklch(85% 0.09 197);
+  --color-teal-400: oklch(77% 0.11 197);
+  --color-teal-500: oklch(70% 0.12 197);
+  --color-teal-600: oklch(60% 0.11 197);
+  --color-teal-700: oklch(50% 0.10 197);
+  --color-teal-800: oklch(38% 0.08 197);
+
+  /* ── AI tool accent colors ───────────────────────────────── */
+  /* Claude → warm orange */
+  --color-claude:       oklch(74%  0.213 46);      /* orange-500ish */
+  --color-claude-light: oklch(88%  0.130 46);      /* orange-200ish */
+  --color-claude-dark:  oklch(56%  0.200 46);      /* orange-700ish */
+
+  /* Microsoft Copilot → sky blue */
+  --color-copilot:       oklch(62%  0.214 258);    /* blue-500ish */
+  --color-copilot-light: oklch(82%  0.120 235);    /* blue-200ish */
+  --color-copilot-dark:  oklch(48%  0.185 258);    /* blue-700ish */
+
+  /* Qodo → vivid purple */
+  --color-qodo:       oklch(62%  0.268 302);       /* purple-500ish */
+  --color-qodo-light: oklch(82%  0.130 302);       /* purple-200ish */
+  --color-qodo-dark:  oklch(48%  0.240 302);       /* purple-700ish */
+
+  /* ── Typography ──────────────────────────────────────────── */
+  --font-sans: 'Inter', 'Geist Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ── Animation durations ─────────────────────────────────── */
+  --animate-toast-in:   toast-slide-in 0.3s ease-out;
+  --animate-toast-out:  toast-slide-out 0.3s ease-in;
+  --animate-fade-in:    fade-in 0.2s ease-out;
+  --animate-card-hover: card-lift 0.2s ease-out;
+}
+
+@keyframes toast-slide-in {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+@keyframes toast-slide-out {
+  from { transform: translateX(0);    opacity: 1; }
+  to   { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes card-lift {
+  from { transform: translateY(0);    }
+  to   { transform: translateY(-2px); }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration:        0.01ms !important;
+    animation-iteration-count: 1      !important;
+    transition-duration:       0.01ms !important;
+  }
+}

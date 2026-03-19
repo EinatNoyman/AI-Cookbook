@@ -11,18 +11,19 @@
     "target": "es2015",
     "module": "esnext",
     "lib": ["es2020", "dom"],
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@org/api/products": ["libs/api/products/src/index.ts"],
-      "@org/models": ["libs/shared/models/src/index.ts"],
-      "@org/shop/data": ["libs/shop/data/src/index.ts"],
-      "@org/shop/feature-product-detail": [
-        "libs/shop/feature-product-detail/src/index.ts"
-      ],
-      "@org/shop/feature-products": ["libs/shop/feature-products/src/index.ts"],
-      "@org/shop/shared-ui": ["libs/shop/shared-ui/src/index.ts"]
+      "@bmad-demo/feature-links": ["libs/feature-links/src/index.ts"],
+      "@bmad-demo/feature-guidelines": ["libs/feature-guidelines/src/index.ts"],
+      "@bmad-demo/feature-cookbook": ["libs/feature-cookbook/src/index.ts"],
+      "@bmad-demo/feature-ai-tools": ["libs/feature-ai-tools/src/index.ts"],
+      "@bmad-demo/shared-ui": ["libs/shared/ui/src/index.ts"],
+      "@bmad-demo/shared-data": ["libs/shared/data/src/index.ts"],
+      "@bmad-demo/shared-styles": ["libs/shared/styles/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

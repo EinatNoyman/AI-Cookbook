@@ -25,16 +25,25 @@ export default [
               onlyDependOnLibsWithTags: ['scope:shared'],
             },
             {
-              sourceTag: 'scope:shop',
-              onlyDependOnLibsWithTags: ['scope:shop', 'scope:shared'],
+              sourceTag: 'scope:feature-cookbook',
+              onlyDependOnLibsWithTags: ['scope:shared'],
             },
             {
-              sourceTag: 'scope:api',
-              onlyDependOnLibsWithTags: ['scope:api', 'scope:shared'],
+              sourceTag: 'scope:feature-guidelines',
+              onlyDependOnLibsWithTags: ['scope:shared'],
             },
             {
-              sourceTag: 'type:data',
-              onlyDependOnLibsWithTags: ['type:data'],
+              sourceTag: 'scope:feature-links',
+              onlyDependOnLibsWithTags: ['scope:shared'],
+            },
+            {
+              sourceTag: 'scope:app',
+              onlyDependOnLibsWithTags: [
+                'scope:shared',
+                'scope:feature-cookbook',
+                'scope:feature-guidelines',
+                'scope:feature-links',
+              ],
             },
           ],
         },

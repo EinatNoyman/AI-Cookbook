@@ -1,0 +1,29 @@
+[33m❯[39m Building...
+[32m✔[39m Building...
+[37m[1mInitial chunk files[22m[2m | [22m[1mNames[22m        [2m | [22m [1mRaw size[22m[2m | [22m[1mEstimated transfer size[22m
+[32mchunk-BIBTSDC4.js[37m  [2m | [22m[2m-[22m            [2m | [22m[36m165.49 kB[37m[2m | [22m               [36m49.90 kB[37m
+[32mchunk-5H5ZR7NG.js[37m  [2m | [22m[2m-[22m            [2m | [22m [36m93.44 kB[37m[2m | [22m               [36m23.43 kB[37m
+[32mstyles-JLNT3PDI.css[37m[2m | [22m[2mstyles[22m       [2m | [22m [36m53.70 kB[37m[2m | [22m                [36m7.27 kB[37m
+[32mmain-IHJFLZAC.js[37m   [2m | [22m[2mmain[22m         [2m | [22m  [36m8.42 kB[37m[2m | [22m                [36m2.48 kB[37m
+
+[1m [22m                  [2m | [22m[1mInitial total[22m[2m | [22m[1m321.05 kB[22m[2m | [22m               [1m83.08 kB[22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m        [2m | [22m [1mRaw size[22m[2m | [22m[1mEstimated transfer size[22m
+[32mchunk-3JPGMUOK.js[37m  [2m | [22m[2mindex[22m        [2m | [22m [36m47.81 kB[37m[2m | [22m               [36m10.90 kB[37m
+[32mchunk-I46CTVHJ.js[37m  [2m | [22m[2mindex[22m        [2m | [22m  [36m3.98 kB[37m[2m | [22m                [36m1.52 kB[37m
+[32mchunk-W4HF3AYJ.js[37m  [2m | [22m[2mindex[22m        [2m | [22m  [36m2.94 kB[37m[2m | [22m                [36m1.17 kB[37m
+
+Application bundle generation complete. [33.106 seconds] - 2026-03-15T00:06:24.824Z
+[39m
+[1m[33m[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1m"file" is not a known CSS property[0m [unsupported-css-property]
+
+    apps/developer-hub/src/styles.css:1278:4:
+[37m      1278 │     [32mfile[37m: line;
+           │     [32m~~~~[37m
+           ╵     [32mflex[0m
+
+  Did you mean "flex" instead?
+
+[39m[22m
+[37mOutput location: C:\Users\einat\Desktop\עבודה\bmad-demo\dist\apps\developer-hub
+[39m
