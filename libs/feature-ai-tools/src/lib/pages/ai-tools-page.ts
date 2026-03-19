@@ -111,7 +111,7 @@ const SECTIONS: { id: Section; label: string }[] = [
                 ? 'bg-white/20'
                 : 'bg-slate-200 dark:bg-slate-700'"
             >
-              <img [src]="'/icons/' + tool.id + '.png'" [alt]="tool.name" class="h-4 w-4 object-contain" />
+              <img [src]="'icons/' + tool.id + '.png'" [alt]="tool.name" class="h-4 w-4 object-contain" />
             </span>
             <span>{{ tool.name }}</span>
           </button>
@@ -141,7 +141,7 @@ const SECTIONS: { id: Section; label: string }[] = [
                   class="flex h-10 w-10 items-center justify-center rounded-xl
                          {{ toolPillActive(tool.id) }} {{ toolIconRing(tool.id) }}"
                 >
-                  <img [src]="'/icons/' + tool.id + '.png'" [alt]="tool.name" class="h-7 w-7 object-contain" />
+                  <img [src]="'icons/' + tool.id + '.png'" [alt]="tool.name" class="h-7 w-7 object-contain" />
                 </span>
                 <div>
                   <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100">{{ tool.name }}</h2>

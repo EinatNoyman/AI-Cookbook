@@ -166,236 +166,6 @@
         "implicitDependencies": []
       }
     },
-    "developer-hub-e2e": {
-      "name": "developer-hub-e2e",
-      "type": "e2e",
-      "data": {
-        "root": "apps/developer-hub-e2e",
-        "metadata": {
-          "targetGroups": {
-            "E2E (CI)": [
-              "e2e-ci--src/example.spec.ts",
-              "e2e-ci",
-              "e2e-ci--merge-reports"
-            ]
-          }
-        },
-        "targets": {
-          "e2e": {
-            "options": {
-              "cwd": "apps/developer-hub-e2e",
-              "command": "playwright test"
-            },
-            "metadata": {
-              "technologies": [
-                "playwright"
-              ],
-              "description": "Runs Playwright Tests",
-              "help": {
-                "command": "npx playwright test --help",
-                "example": {
-                  "options": {
-                    "workers": 1
-                  }
-                }
-              }
-            },
-            "dependsOn": [
-              {
-                "projects": [
-                  "developer-hub"
-                ],
-                "target": "serve"
-              }
-            ],
-            "cache": true,
-            "inputs": [
-              "default",
-              "^production",
-              {
-                "externalDependencies": [
-                  "@playwright/test"
-                ]
-              }
-            ],
-            "outputs": [
-              "{workspaceRoot}/dist/.playwright/apps/developer-hub-e2e/test-output",
-              "{workspaceRoot}/dist/.playwright/apps/developer-hub-e2e/playwright-report"
-            ],
-            "executor": "nx:run-commands",
-            "configurations": {},
-            "parallelism": true
-          },
-          "e2e-ci--src/example.spec.ts": {
-            "options": {
-              "cwd": "apps/developer-hub-e2e",
-              "env": {
-                "PLAYWRIGHT_HTML_OUTPUT_DIR": "..\\..\\dist\\.playwright\\apps\\developer-hub-e2e\\playwright-report\\src-example-spec-ts",
-                "PLAYWRIGHT_HTML_REPORT": "..\\..\\dist\\.playwright\\apps\\developer-hub-e2e\\playwright-report\\src-example-spec-ts"
-              },
-              "command": "playwright test src/example.spec.ts --output=..\\..\\dist\\.playwright\\apps\\developer-hub-e2e\\test-output\\src-example-spec-ts"
-            },
-            "metadata": {
-              "technologies": [
-                "playwright"
-              ],
-              "description": "Runs Playwright Tests in src/example.spec.ts in CI",
-              "help": {
-                "command": "npx playwright test --help",
-                "example": {
-                  "options": {
-                    "workers": 1
-                  }
-                }
-              }
-            },
-            "dependsOn": [
-              {
-                "projects": [
-                  "developer-hub"
-                ],
-                "target": "serve"
-              }
-            ],
-            "cache": true,
-            "inputs": [
-              "default",
-              "^production",
-              {
-                "externalDependencies": [
-                  "@playwright/test"
-                ]
-              }
-            ],
-            "outputs": [
-              "{workspaceRoot}/dist/.playwright/apps/developer-hub-e2e/test-output/src-example-spec-ts",
-              "{workspaceRoot}/dist/.playwright/apps/developer-hub-e2e/playwright-report/src-example-spec-ts"
-            ],
-            "executor": "nx:run-commands",
-            "configurations": {},
-            "parallelism": true
-          },
-          "e2e-ci": {
-            "executor": "nx:noop",
-            "cache": true,
-            "inputs": [
-              "default",
-              "^production",
-              {
-                "externalDependencies": [
-                  "@playwright/test"
-                ]
-              }
-            ],
-            "outputs": [
-              "{workspaceRoot}/dist/.playwright/apps/developer-hub-e2e/test-output",
-              "{workspaceRoot}/dist/.playwright/apps/developer-hub-e2e/playwright-report"
-            ],
-            "dependsOn": [
-              {
-                "target": "e2e-ci--src/example.spec.ts",
-                "projects": "self",
-                "params": "forward",
-                "options": "forward"
-              }
-            ],
-            "metadata": {
-              "technologies": [
-                "playwright"
-              ],
-              "description": "Runs Playwright Tests in CI",
-              "nonAtomizedTarget": "e2e",
-              "help": {
-                "command": "npx playwright test --help",
-                "example": {
-                  "options": {
-                    "workers": 1
-                  }
-                }
-              }
-            },
-            "configurations": {},
-            "options": {},
-            "parallelism": true
-          },
-          "e2e-ci--merge-reports": {
-            "executor": "@nx/playwright:merge-reports",
-            "cache": true,
-            "inputs": [
-              "default",
-              "^production",
-              {
-                "externalDependencies": [
-                  "@playwright/test"
-                ]
-              }
-            ],
-            "outputs": [
-              "{workspaceRoot}/dist/.playwright/apps/developer-hub-e2e/playwright-report"
-            ],
-            "options": {
-              "config": "playwright.config.ts",
-              "expectedSuites": 1
-            },
-            "metadata": {
-              "technologies": [
-                "playwright"
-              ],
-              "description": "Merges Playwright blob reports from atomized tasks to produce unified reports for the configured reporters."
-            },
-            "configurations": {},
-            "parallelism": true
-          },
-          "lint": {
-            "cache": true,
-            "options": {
-              "cwd": "apps/developer-hub-e2e",
-              "command": "eslint ."
-            },
-            "inputs": [
-              "default",
-              "^default",
-              "{workspaceRoot}/eslint.config.mjs",
-              "{workspaceRoot}/apps/developer-hub-e2e/eslint.config.mjs",
-              "{workspaceRoot}/tools/eslint-rules/**/*",
-              {
-                "externalDependencies": [
-                  "eslint"
-                ]
-              }
-            ],
-            "outputs": [
-              "{options.outputFile}"
-            ],
-            "metadata": {
-              "technologies": [
-                "eslint"
-              ],
-              "description": "Runs ESLint on project",
-              "help": {
-                "command": "npx eslint --help",
-                "example": {
-                  "options": {
-                    "max-warnings": 0
-                  }
-                }
-              }
-            },
-            "executor": "nx:run-commands",
-            "configurations": {},
-            "parallelism": true
-          }
-        },
-        "name": "developer-hub-e2e",
-        "$schema": "../../node_modules/nx/schemas/project-schema.json",
-        "projectType": "application",
-        "sourceRoot": "apps/developer-hub-e2e/src",
-        "implicitDependencies": [
-          "ai-cookbook"
-        ],
-        "tags": []
-      }
-    },
     "feature-ai-tools": {
       "name": "feature-ai-tools",
       "type": "lib",
@@ -593,217 +363,234 @@
         "implicitDependencies": []
       }
     },
-    "ai-cookbook": {
-      "name": "ai-cookbook",
-      "type": "app",
+    "AI-Cookbook-e2e": {
+      "name": "AI-Cookbook-e2e",
+      "type": "e2e",
       "data": {
-        "root": "apps/developer-hub",
+        "root": "apps/AI-Cookbook-e2e",
+        "metadata": {
+          "targetGroups": {
+            "E2E (CI)": [
+              "e2e-ci--src/example.spec.ts",
+              "e2e-ci",
+              "e2e-ci--merge-reports"
+            ]
+          }
+        },
         "targets": {
-          "lint": {
-            "executor": "@nx/eslint:lint",
-            "options": {},
-            "configurations": {},
-            "parallelism": true,
-            "cache": true,
-            "inputs": [
-              "default",
-              "{workspaceRoot}/.eslintrc.json",
-              "{workspaceRoot}/.eslintignore",
-              "{workspaceRoot}/eslint.config.mjs"
-            ]
-          },
-          "test": {
-            "executor": "@nx/vite:test",
+          "e2e": {
             "options": {
-              "configFile": "apps/developer-hub/vite.config.mts"
-            },
-            "configurations": {},
-            "parallelism": true
-          },
-          "typecheck": {
-            "cache": true,
-            "inputs": [
-              "production",
-              "^production",
-              {
-                "externalDependencies": [
-                  "typescript"
-                ]
-              }
-            ],
-            "options": {
-              "cwd": "apps/developer-hub",
-              "command": "tsc --noEmit -p tsconfig.app.json"
+              "cwd": "apps/AI-Cookbook-e2e",
+              "command": "playwright test"
             },
             "metadata": {
-              "description": "Runs type-checking for the project.",
               "technologies": [
-                "typescript"
+                "playwright"
               ],
+              "description": "Runs Playwright Tests",
               "help": {
-                "command": "npx tsc -p tsconfig.app.json --help",
+                "command": "npx playwright test --help",
                 "example": {
                   "options": {
-                    "noEmit": true
+                    "workers": 1
                   }
                 }
               }
             },
-            "executor": "nx:run-commands",
-            "configurations": {},
-            "parallelism": true
-          },
-          "build-deps": {
             "dependsOn": [
-              "^build"
-            ],
-            "configurations": {},
-            "options": {},
-            "parallelism": true,
-            "executor": "nx:noop"
-          },
-          "watch-deps": {
-            "continuous": true,
-            "dependsOn": [
-              "build-deps"
-            ],
-            "executor": "nx:run-commands",
-            "options": {
-              "command": "npx nx watch --projects ai-cookbook --includeDependentProjects -- npx nx build-deps ai-cookbook"
-            },
-            "configurations": {},
-            "parallelism": true
-          },
-          "vite:test": {
-            "options": {
-              "cwd": "apps/developer-hub",
-              "command": "vitest"
-            },
-            "cache": true,
-            "inputs": [
-              "default",
-              "^production",
               {
-                "externalDependencies": [
-                  "vitest"
-                ]
-              },
-              {
-                "env": "CI"
-              }
-            ],
-            "outputs": [
-              "{workspaceRoot}\\coverage\\apps\\developer-hub"
-            ],
-            "metadata": {
-              "technologies": [
-                "vitest"
-              ],
-              "description": "Run Vitest tests",
-              "help": {
-                "command": "npx vitest --help",
-                "example": {
-                  "options": {
-                    "bail": 1,
-                    "coverage": true
-                  }
-                }
-              }
-            },
-            "executor": "nx:run-commands",
-            "configurations": {},
-            "parallelism": true
-          },
-          "build": {
-            "executor": "@angular/build:application",
-            "outputs": [
-              "{options.outputPath}"
-            ],
-            "options": {
-              "outputPath": "dist/apps/developer-hub",
-              "browser": "apps/developer-hub/src/main.ts",
-              "tsConfig": "apps/developer-hub/tsconfig.app.json",
-              "assets": [
-                {
-                  "glob": "**/*",
-                  "input": "apps/developer-hub/public"
-                }
-              ],
-              "styles": [
-                "apps/developer-hub/src/styles.css"
-              ]
-            },
-            "configurations": {
-              "production": {
-                "budgets": [
-                  {
-                    "type": "initial",
-                    "maximumWarning": "500kb",
-                    "maximumError": "1mb"
-                  },
-                  {
-                    "type": "anyComponentStyle",
-                    "maximumWarning": "4kb",
-                    "maximumError": "8kb"
-                  }
+                "projects": [
+                  "ai-cookbook"
                 ],
-                "outputHashing": "all"
-              },
-              "development": {
-                "optimization": false,
-                "extractLicenses": false,
-                "sourceMap": true
+                "target": "serve"
               }
-            },
-            "defaultConfiguration": "production",
-            "parallelism": true,
-            "cache": true,
-            "dependsOn": [
-              "^build"
             ],
+            "cache": true,
             "inputs": [
-              "production",
-              "^production"
-            ]
+              "default",
+              "^production",
+              {
+                "externalDependencies": [
+                  "@playwright/test"
+                ]
+              }
+            ],
+            "outputs": [
+              "{workspaceRoot}/dist/.playwright/apps/AI-Cookbook-e2e/test-output",
+              "{workspaceRoot}/dist/.playwright/apps/AI-Cookbook-e2e/playwright-report"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {},
+            "parallelism": true
           },
-          "serve": {
-            "continuous": true,
-            "executor": "@angular/build:dev-server",
-            "configurations": {
-              "production": {
-                "buildTarget": "ai-cookbook:build:production"
+          "e2e-ci--src/example.spec.ts": {
+            "options": {
+              "cwd": "apps/AI-Cookbook-e2e",
+              "env": {
+                "PLAYWRIGHT_HTML_OUTPUT_DIR": "..\\..\\dist\\.playwright\\apps\\AI-Cookbook-e2e\\playwright-report\\src-example-spec-ts",
+                "PLAYWRIGHT_HTML_REPORT": "..\\..\\dist\\.playwright\\apps\\AI-Cookbook-e2e\\playwright-report\\src-example-spec-ts"
               },
-              "development": {
-                "buildTarget": "ai-cookbook:build:development"
+              "command": "playwright test src/example.spec.ts --output=..\\..\\dist\\.playwright\\apps\\AI-Cookbook-e2e\\test-output\\src-example-spec-ts"
+            },
+            "metadata": {
+              "technologies": [
+                "playwright"
+              ],
+              "description": "Runs Playwright Tests in src/example.spec.ts in CI",
+              "help": {
+                "command": "npx playwright test --help",
+                "example": {
+                  "options": {
+                    "workers": 1
+                  }
+                }
               }
             },
-            "defaultConfiguration": "development",
+            "dependsOn": [
+              {
+                "projects": [
+                  "ai-cookbook"
+                ],
+                "target": "serve"
+              }
+            ],
+            "cache": true,
+            "inputs": [
+              "default",
+              "^production",
+              {
+                "externalDependencies": [
+                  "@playwright/test"
+                ]
+              }
+            ],
+            "outputs": [
+              "{workspaceRoot}/dist/.playwright/apps/AI-Cookbook-e2e/test-output/src-example-spec-ts",
+              "{workspaceRoot}/dist/.playwright/apps/AI-Cookbook-e2e/playwright-report/src-example-spec-ts"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {},
+            "parallelism": true
+          },
+          "e2e-ci": {
+            "executor": "nx:noop",
+            "cache": true,
+            "inputs": [
+              "default",
+              "^production",
+              {
+                "externalDependencies": [
+                  "@playwright/test"
+                ]
+              }
+            ],
+            "outputs": [
+              "{workspaceRoot}/dist/.playwright/apps/AI-Cookbook-e2e/test-output",
+              "{workspaceRoot}/dist/.playwright/apps/AI-Cookbook-e2e/playwright-report"
+            ],
+            "dependsOn": [
+              {
+                "target": "e2e-ci--src/example.spec.ts",
+                "projects": "self",
+                "params": "forward",
+                "options": "forward"
+              }
+            ],
+            "metadata": {
+              "technologies": [
+                "playwright"
+              ],
+              "description": "Runs Playwright Tests in CI",
+              "nonAtomizedTarget": "e2e",
+              "help": {
+                "command": "npx playwright test --help",
+                "example": {
+                  "options": {
+                    "workers": 1
+                  }
+                }
+              }
+            },
+            "configurations": {},
             "options": {},
             "parallelism": true
           },
-          "serve-static": {
-            "continuous": true,
-            "executor": "@nx/web:file-server",
+          "e2e-ci--merge-reports": {
+            "executor": "@nx/playwright:merge-reports",
+            "cache": true,
+            "inputs": [
+              "default",
+              "^production",
+              {
+                "externalDependencies": [
+                  "@playwright/test"
+                ]
+              }
+            ],
+            "outputs": [
+              "{workspaceRoot}/dist/.playwright/apps/AI-Cookbook-e2e/playwright-report"
+            ],
             "options": {
-              "buildTarget": "ai-cookbook:build",
-              "port": 4200,
-              "staticFilePath": "dist/apps/developer-hub/browser",
-              "spa": true
+              "config": "playwright.config.ts",
+              "expectedSuites": 1
             },
+            "metadata": {
+              "technologies": [
+                "playwright"
+              ],
+              "description": "Merges Playwright blob reports from atomized tasks to produce unified reports for the configured reporters."
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "lint": {
+            "cache": true,
+            "options": {
+              "cwd": "apps/AI-Cookbook-e2e",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/eslint.config.mjs",
+              "{workspaceRoot}/apps/AI-Cookbook-e2e/eslint.config.mjs",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "metadata": {
+              "technologies": [
+                "eslint"
+              ],
+              "description": "Runs ESLint on project",
+              "help": {
+                "command": "npx eslint --help",
+                "example": {
+                  "options": {
+                    "max-warnings": 0
+                  }
+                }
+              }
+            },
+            "executor": "nx:run-commands",
             "configurations": {},
             "parallelism": true
           }
         },
-        "metadata": {},
-        "projectType": "application",
-        "name": "ai-cookbook",
+        "name": "AI-Cookbook-e2e",
         "$schema": "../../node_modules/nx/schemas/project-schema.json",
-        "prefix": "app",
-        "sourceRoot": "apps/developer-hub/src",
-        "tags": [
-          "scope:app"
+        "projectType": "application",
+        "sourceRoot": "apps/AI-Cookbook-e2e/src",
+        "implicitDependencies": [
+          "ai-cookbook"
         ],
-        "implicitDependencies": []
+        "tags": []
       }
     },
     "feature-links": {
@@ -1134,6 +921,219 @@
         "prefix": "lib",
         "tags": [
           "scope:shared"
+        ],
+        "implicitDependencies": []
+      }
+    },
+    "ai-cookbook": {
+      "name": "ai-cookbook",
+      "type": "app",
+      "data": {
+        "root": "apps/AI-Cookbook",
+        "targets": {
+          "lint": {
+            "executor": "@nx/eslint:lint",
+            "options": {},
+            "configurations": {},
+            "parallelism": true,
+            "cache": true,
+            "inputs": [
+              "default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{workspaceRoot}/.eslintignore",
+              "{workspaceRoot}/eslint.config.mjs"
+            ]
+          },
+          "test": {
+            "executor": "@nx/vite:test",
+            "options": {
+              "configFile": "apps/AI-Cookbook/vite.config.mts"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "typecheck": {
+            "cache": true,
+            "inputs": [
+              "production",
+              "^production",
+              {
+                "externalDependencies": [
+                  "typescript"
+                ]
+              }
+            ],
+            "options": {
+              "cwd": "apps/AI-Cookbook",
+              "command": "tsc --noEmit -p tsconfig.app.json"
+            },
+            "metadata": {
+              "description": "Runs type-checking for the project.",
+              "technologies": [
+                "typescript"
+              ],
+              "help": {
+                "command": "npx tsc -p tsconfig.app.json --help",
+                "example": {
+                  "options": {
+                    "noEmit": true
+                  }
+                }
+              }
+            },
+            "executor": "nx:run-commands",
+            "configurations": {},
+            "parallelism": true
+          },
+          "build-deps": {
+            "dependsOn": [
+              "^build"
+            ],
+            "configurations": {},
+            "options": {},
+            "parallelism": true,
+            "executor": "nx:noop"
+          },
+          "watch-deps": {
+            "continuous": true,
+            "dependsOn": [
+              "build-deps"
+            ],
+            "executor": "nx:run-commands",
+            "options": {
+              "command": "npx nx watch --projects ai-cookbook --includeDependentProjects -- npx nx build-deps ai-cookbook"
+            },
+            "configurations": {},
+            "parallelism": true
+          },
+          "vite:test": {
+            "options": {
+              "cwd": "apps/AI-Cookbook",
+              "command": "vitest"
+            },
+            "cache": true,
+            "inputs": [
+              "default",
+              "^production",
+              {
+                "externalDependencies": [
+                  "vitest"
+                ]
+              },
+              {
+                "env": "CI"
+              }
+            ],
+            "outputs": [
+              "{workspaceRoot}\\coverage\\apps\\AI-Cookbook"
+            ],
+            "metadata": {
+              "technologies": [
+                "vitest"
+              ],
+              "description": "Run Vitest tests",
+              "help": {
+                "command": "npx vitest --help",
+                "example": {
+                  "options": {
+                    "bail": 1,
+                    "coverage": true
+                  }
+                }
+              }
+            },
+            "executor": "nx:run-commands",
+            "configurations": {},
+            "parallelism": true
+          },
+          "build": {
+            "executor": "@angular/build:application",
+            "outputs": [
+              "{options.outputPath}"
+            ],
+            "options": {
+              "outputPath": "dist/apps/AI-Cookbook",
+              "browser": "apps/AI-Cookbook/src/main.ts",
+              "tsConfig": "apps/AI-Cookbook/tsconfig.app.json",
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "apps/AI-Cookbook/public"
+                }
+              ],
+              "styles": [
+                "apps/AI-Cookbook/src/styles.css"
+              ]
+            },
+            "configurations": {
+              "production": {
+                "budgets": [
+                  {
+                    "type": "initial",
+                    "maximumWarning": "500kb",
+                    "maximumError": "1mb"
+                  },
+                  {
+                    "type": "anyComponentStyle",
+                    "maximumWarning": "4kb",
+                    "maximumError": "8kb"
+                  }
+                ],
+                "outputHashing": "all"
+              },
+              "development": {
+                "optimization": false,
+                "extractLicenses": false,
+                "sourceMap": true
+              }
+            },
+            "defaultConfiguration": "production",
+            "parallelism": true,
+            "cache": true,
+            "dependsOn": [
+              "^build"
+            ],
+            "inputs": [
+              "production",
+              "^production"
+            ]
+          },
+          "serve": {
+            "continuous": true,
+            "executor": "@angular/build:dev-server",
+            "configurations": {
+              "production": {
+                "buildTarget": "ai-cookbook:build:production"
+              },
+              "development": {
+                "buildTarget": "ai-cookbook:build:development"
+              }
+            },
+            "defaultConfiguration": "development",
+            "options": {},
+            "parallelism": true
+          },
+          "serve-static": {
+            "continuous": true,
+            "executor": "@nx/web:file-server",
+            "options": {
+              "buildTarget": "ai-cookbook:build",
+              "port": 4200,
+              "staticFilePath": "dist/apps/AI-Cookbook/browser",
+              "spa": true
+            },
+            "configurations": {},
+            "parallelism": true
+          }
+        },
+        "metadata": {},
+        "projectType": "application",
+        "name": "ai-cookbook",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "prefix": "app",
+        "sourceRoot": "apps/AI-Cookbook/src",
+        "tags": [
+          "scope:app"
         ],
         "implicitDependencies": []
       }
@@ -15440,33 +15440,6 @@
         "type": "static"
       }
     ],
-    "developer-hub-e2e": [
-      {
-        "source": "developer-hub-e2e",
-        "target": "ai-cookbook",
-        "type": "implicit"
-      },
-      {
-        "source": "developer-hub-e2e",
-        "target": "npm:eslint-plugin-playwright",
-        "type": "static"
-      },
-      {
-        "source": "developer-hub-e2e",
-        "target": "npm:@playwright/test",
-        "type": "static"
-      },
-      {
-        "source": "developer-hub-e2e",
-        "target": "npm:@nx/playwright",
-        "type": "static"
-      },
-      {
-        "source": "developer-hub-e2e",
-        "target": "npm:@nx/devkit",
-        "type": "static"
-      }
-    ],
     "feature-ai-tools": [
       {
         "source": "feature-ai-tools",
@@ -15556,90 +15529,30 @@
         "type": "static"
       }
     ],
-    "ai-cookbook": [
+    "AI-Cookbook-e2e": [
       {
-        "source": "ai-cookbook",
-        "target": "npm:@nx/eslint-plugin",
+        "source": "AI-Cookbook-e2e",
+        "target": "ai-cookbook",
+        "type": "implicit"
+      },
+      {
+        "source": "AI-Cookbook-e2e",
+        "target": "npm:eslint-plugin-playwright",
         "type": "static"
       },
       {
-        "source": "ai-cookbook",
-        "target": "npm:@angular/core",
+        "source": "AI-Cookbook-e2e",
+        "target": "npm:@playwright/test",
         "type": "static"
       },
       {
-        "source": "ai-cookbook",
-        "target": "npm:@angular/platform-browser",
+        "source": "AI-Cookbook-e2e",
+        "target": "npm:@nx/playwright",
         "type": "static"
       },
       {
-        "source": "ai-cookbook",
-        "target": "npm:@angular/router",
-        "type": "static"
-      },
-      {
-        "source": "ai-cookbook",
-        "target": "feature-links",
-        "type": "dynamic"
-      },
-      {
-        "source": "ai-cookbook",
-        "target": "feature-guidelines",
-        "type": "dynamic"
-      },
-      {
-        "source": "ai-cookbook",
-        "target": "feature-ai-tools",
-        "type": "dynamic"
-      },
-      {
-        "source": "ai-cookbook",
-        "target": "shared-data",
-        "type": "static"
-      },
-      {
-        "source": "ai-cookbook",
-        "target": "npm:rxjs",
-        "type": "static"
-      },
-      {
-        "source": "ai-cookbook",
-        "target": "shared-ui",
-        "type": "static"
-      },
-      {
-        "source": "ai-cookbook",
-        "target": "npm:@angular/animations",
-        "type": "static"
-      },
-      {
-        "source": "ai-cookbook",
-        "target": "npm:@angular/compiler",
-        "type": "static"
-      },
-      {
-        "source": "ai-cookbook",
-        "target": "npm:@analogjs/vitest-angular",
-        "type": "static"
-      },
-      {
-        "source": "ai-cookbook",
-        "target": "npm:vite",
-        "type": "static"
-      },
-      {
-        "source": "ai-cookbook",
-        "target": "npm:@analogjs/vite-plugin-angular",
-        "type": "static"
-      },
-      {
-        "source": "ai-cookbook",
-        "target": "npm:@tailwindcss/vite",
-        "type": "static"
-      },
-      {
-        "source": "ai-cookbook",
-        "target": "npm:@nx/vite",
+        "source": "AI-Cookbook-e2e",
+        "target": "npm:@nx/devkit",
         "type": "static"
       }
     ],
@@ -15723,6 +15636,93 @@
       },
       {
         "source": "shared-styles",
+        "target": "npm:@nx/vite",
+        "type": "static"
+      }
+    ],
+    "ai-cookbook": [
+      {
+        "source": "ai-cookbook",
+        "target": "npm:@nx/eslint-plugin",
+        "type": "static"
+      },
+      {
+        "source": "ai-cookbook",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "ai-cookbook",
+        "target": "npm:@angular/platform-browser",
+        "type": "static"
+      },
+      {
+        "source": "ai-cookbook",
+        "target": "npm:@angular/router",
+        "type": "static"
+      },
+      {
+        "source": "ai-cookbook",
+        "target": "feature-links",
+        "type": "dynamic"
+      },
+      {
+        "source": "ai-cookbook",
+        "target": "feature-guidelines",
+        "type": "dynamic"
+      },
+      {
+        "source": "ai-cookbook",
+        "target": "feature-ai-tools",
+        "type": "dynamic"
+      },
+      {
+        "source": "ai-cookbook",
+        "target": "shared-data",
+        "type": "static"
+      },
+      {
+        "source": "ai-cookbook",
+        "target": "npm:rxjs",
+        "type": "static"
+      },
+      {
+        "source": "ai-cookbook",
+        "target": "shared-ui",
+        "type": "static"
+      },
+      {
+        "source": "ai-cookbook",
+        "target": "npm:@angular/animations",
+        "type": "static"
+      },
+      {
+        "source": "ai-cookbook",
+        "target": "npm:@angular/compiler",
+        "type": "static"
+      },
+      {
+        "source": "ai-cookbook",
+        "target": "npm:@analogjs/vitest-angular",
+        "type": "static"
+      },
+      {
+        "source": "ai-cookbook",
+        "target": "npm:vite",
+        "type": "static"
+      },
+      {
+        "source": "ai-cookbook",
+        "target": "npm:@analogjs/vite-plugin-angular",
+        "type": "static"
+      },
+      {
+        "source": "ai-cookbook",
+        "target": "npm:@tailwindcss/vite",
+        "type": "static"
+      },
+      {
+        "source": "ai-cookbook",
         "target": "npm:@nx/vite",
         "type": "static"
       }
@@ -34208,5 +34208,5 @@
   },
   "version": "6.0",
   "errors": [],
-  "computedAt": 1773957547556
+  "computedAt": 1773958686085
 }

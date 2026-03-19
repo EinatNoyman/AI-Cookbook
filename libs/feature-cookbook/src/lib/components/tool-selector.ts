@@ -32,7 +32,7 @@ const TOOL_ACTIVE: Record<string, string> = {
                  {{ cookbookService.selectedTool() === tool ? activeColor(tool) : color(tool) }}"
         >
           @if (tool !== 'all' && tool !== 'cursor') {
-            <img [src]="'/icons/' + tool + '.png'" alt="" class="h-4 w-4 object-contain" aria-hidden="true" />
+            <img [src]="'icons/' + tool + '.png'" alt="" class="h-4 w-4 object-contain" aria-hidden="true" />
           }
           {{ tool === 'all' ? 'All' : capitalize(tool) }}
         </button>

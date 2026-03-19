@@ -59,276 +59,356 @@
   "fileMap": {
     "nonProjectFiles": [
       {
+        "file": "_bmad-output/planning-artifacts/prd.md",
+        "hash": "5897856874538236133"
+      },
+      {
         "file": ".claude/commands/bmad-agent-bmad-master.md",
         "hash": "11460719135351188368"
-      },
-      {
-        "file": ".claude/commands/bmad-agent-bmb-agent-builder.md",
-        "hash": "5407220579806895695"
-      },
-      {
-        "file": ".claude/commands/bmad-agent-bmb-module-builder.md",
-        "hash": "10922741242098634585"
-      },
-      {
-        "file": ".claude/commands/bmad-agent-bmb-workflow-builder.md",
-        "hash": "9662266740930246213"
-      },
-      {
-        "file": ".claude/commands/bmad-agent-bmm-analyst.md",
-        "hash": "8142235521647755525"
-      },
-      {
-        "file": ".claude/commands/bmad-agent-bmm-architect.md",
-        "hash": "6910815165941794769"
-      },
-      {
-        "file": ".claude/commands/bmad-agent-bmm-dev.md",
-        "hash": "2016574335287347981"
-      },
-      {
-        "file": ".claude/commands/bmad-agent-bmm-pm.md",
-        "hash": "4926167823569158684"
-      },
-      {
-        "file": ".claude/commands/bmad-agent-bmm-qa.md",
-        "hash": "3403386522540851942"
-      },
-      {
-        "file": ".claude/commands/bmad-agent-bmm-quick-flow-solo-dev.md",
-        "hash": "10521476244780023900"
-      },
-      {
-        "file": ".claude/commands/bmad-agent-bmm-sm.md",
-        "hash": "9864583155827383660"
-      },
-      {
-        "file": ".claude/commands/bmad-agent-bmm-tech-writer.md",
-        "hash": "11393695544835314828"
-      },
-      {
-        "file": ".claude/commands/bmad-agent-bmm-ux-designer.md",
-        "hash": "11700278099470017783"
-      },
-      {
-        "file": ".claude/commands/bmad-agent-cis-brainstorming-coach.md",
-        "hash": "16641889512811876575"
-      },
-      {
-        "file": ".claude/commands/bmad-agent-cis-creative-problem-solver.md",
-        "hash": "3655944053654223854"
-      },
-      {
-        "file": ".claude/commands/bmad-agent-cis-design-thinking-coach.md",
-        "hash": "2156655765193131986"
-      },
-      {
-        "file": ".claude/commands/bmad-agent-cis-innovation-strategist.md",
-        "hash": "8378847194781576980"
-      },
-      {
-        "file": ".claude/commands/bmad-agent-cis-presentation-master.md",
-        "hash": "10656832558156690881"
-      },
-      {
-        "file": ".claude/commands/bmad-agent-cis-storyteller.md",
-        "hash": "8788433477230539872"
-      },
-      {
-        "file": ".claude/commands/bmad-agent-tea-tea.md",
-        "hash": "14065595036544578143"
-      },
-      {
-        "file": ".claude/commands/bmad-bmb-create-agent.md",
-        "hash": "17354901512542087996"
-      },
-      {
-        "file": ".claude/commands/bmad-bmb-create-module-brief.md",
-        "hash": "520392528754072697"
-      },
-      {
-        "file": ".claude/commands/bmad-bmb-create-module.md",
-        "hash": "10845761291045401881"
-      },
-      {
-        "file": ".claude/commands/bmad-bmb-create-workflow.md",
-        "hash": "15579091270796995595"
-      },
-      {
-        "file": ".claude/commands/bmad-bmb-edit-agent.md",
-        "hash": "15933474924466424556"
-      },
-      {
-        "file": ".claude/commands/bmad-bmb-edit-module.md",
-        "hash": "1069270926810728405"
-      },
-      {
-        "file": ".claude/commands/bmad-bmb-edit-workflow.md",
-        "hash": "15268895150092311393"
-      },
-      {
-        "file": ".claude/commands/bmad-bmb-rework-workflow.md",
-        "hash": "5858429239686205034"
-      },
-      {
-        "file": ".claude/commands/bmad-bmb-validate-agent.md",
-        "hash": "15426312905240017504"
-      },
-      {
-        "file": ".claude/commands/bmad-bmb-validate-max-parallel-workflow.md",
-        "hash": "8065178089341334223"
-      },
-      {
-        "file": ".claude/commands/bmad-bmb-validate-module.md",
-        "hash": "11094400673148235668"
-      },
-      {
-        "file": ".claude/commands/bmad-bmb-validate-workflow.md",
-        "hash": "4028919887142596395"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-check-implementation-readiness.md",
-        "hash": "10764980176410367618"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-code-review.md",
-        "hash": "13787224834494015174"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-correct-course.md",
-        "hash": "9746797966003021209"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-create-architecture.md",
-        "hash": "5549645724841467032"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-create-epics-and-stories.md",
-        "hash": "18318615693122479474"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-create-prd.md",
-        "hash": "10412510927078802739"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-create-product-brief.md",
-        "hash": "9458595570867834258"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-create-story.md",
-        "hash": "8475946736335092428"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-create-ux-design.md",
-        "hash": "3014134265677720307"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-dev-story.md",
-        "hash": "15028743472541894873"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-document-project.md",
-        "hash": "14845689031669049133"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-domain-research.md",
-        "hash": "10356668059170349410"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-edit-prd.md",
-        "hash": "4889068125338550293"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-generate-project-context.md",
-        "hash": "4763918830374234476"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-market-research.md",
-        "hash": "3458141247003306866"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-qa-automate.md",
-        "hash": "4877091532039593974"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-quick-dev.md",
-        "hash": "4858489769543989692"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-quick-spec.md",
-        "hash": "18427552152489283875"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-retrospective.md",
-        "hash": "12476090354873415352"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-sprint-planning.md",
-        "hash": "11378446536133689036"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-sprint-status.md",
-        "hash": "13592454593083849001"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-technical-research.md",
-        "hash": "13236007331634119099"
-      },
-      {
-        "file": ".claude/commands/bmad-bmm-validate-prd.md",
-        "hash": "8173882609415050472"
-      },
-      {
-        "file": ".claude/commands/bmad-brainstorming.md",
-        "hash": "12631891420851064240"
-      },
-      {
-        "file": ".claude/commands/bmad-cis-design-thinking.md",
-        "hash": "9124228870925539638"
-      },
-      {
-        "file": ".claude/commands/bmad-cis-innovation-strategy.md",
-        "hash": "17640405708043136787"
-      },
-      {
-        "file": ".claude/commands/bmad-cis-problem-solving.md",
-        "hash": "4246506983069063687"
       },
       {
         "file": ".claude/commands/bmad-cis-storytelling.md",
         "hash": "2163214234009281873"
       },
       {
-        "file": ".claude/commands/bmad-editorial-review-prose.md",
-        "hash": "16139146343090850457"
+        "file": ".claude/commands/bmad-agent-bmm-qa.md",
+        "hash": "3403386522540851942"
+      },
+      {
+        "file": ".claude/commands/bmad-bmb-validate-module.md",
+        "hash": "11094400673148235668"
+      },
+      {
+        "file": ".claude/commands/bmad-bmm-qa-automate.md",
+        "hash": "4877091532039593974"
+      },
+      {
+        "file": ".claude/commands/bmad-bmm-create-prd.md",
+        "hash": "10412510927078802739"
+      },
+      {
+        "file": "eslint.config.mjs",
+        "hash": "9509247832800544142"
+      },
+      {
+        "file": ".claude/commands/bmad-bmm-sprint-planning.md",
+        "hash": "11378446536133689036"
+      },
+      {
+        "file": "_bmad-output/implementation-artifacts/2-1-links-data-model-and-service.md",
+        "hash": "2134821494782786700"
+      },
+      {
+        "file": ".claude/commands/bmad-tea-testarch-test-design.md",
+        "hash": "1041725041589971392"
+      },
+      {
+        "file": ".claude/commands/bmad-bmb-create-module.md",
+        "hash": "10845761291045401881"
+      },
+      {
+        "file": ".claude/commands/bmad-bmm-check-implementation-readiness.md",
+        "hash": "10764980176410367618"
+      },
+      {
+        "file": ".claude/commands/bmad-tea-testarch-framework.md",
+        "hash": "3645445307677027296"
+      },
+      {
+        "file": "_bmad-output/planning-artifacts/epics.md",
+        "hash": "18243755511800455614"
+      },
+      {
+        "file": ".claude/commands/bmad-agent-bmm-analyst.md",
+        "hash": "8142235521647755525"
+      },
+      {
+        "file": "_bmad-output/implementation-artifacts/1-4-witty-microcopy-and-personality-foundation.md",
+        "hash": "8421099698548454219"
+      },
+      {
+        "file": ".claude/commands/bmad-bmm-code-review.md",
+        "hash": "13787224834494015174"
+      },
+      {
+        "file": ".claude/commands/bmad-bmm-create-ux-design.md",
+        "hash": "3014134265677720307"
+      },
+      {
+        "file": ".claude/commands/bmad-bmm-edit-prd.md",
+        "hash": "4889068125338550293"
+      },
+      {
+        "file": ".claude/commands/bmad-bmm-create-architecture.md",
+        "hash": "5549645724841467032"
+      },
+      {
+        "file": "README.md",
+        "hash": "6151707463284987706"
       },
       {
         "file": ".claude/commands/bmad-editorial-review-structure.md",
         "hash": "14245207922053752559"
       },
       {
-        "file": ".claude/commands/bmad-help.md",
-        "hash": "18395896462048334610"
+        "file": "package.json",
+        "hash": "1585755364503587176"
+      },
+      {
+        "file": ".claude/commands/bmad-tea-teach-me-testing.md",
+        "hash": "1998762364414206301"
+      },
+      {
+        "file": ".claude/commands/bmad-tea-testarch-nfr.md",
+        "hash": "15823146364098181794"
       },
       {
         "file": ".claude/commands/bmad-index-docs.md",
         "hash": "13283013111062849460"
       },
       {
+        "file": ".claude/commands/bmad-bmm-create-epics-and-stories.md",
+        "hash": "18318615693122479474"
+      },
+      {
+        "file": ".claude/commands/bmad-agent-cis-design-thinking-coach.md",
+        "hash": "2156655765193131986"
+      },
+      {
+        "file": ".claude/commands/bmad-bmb-rework-workflow.md",
+        "hash": "5858429239686205034"
+      },
+      {
+        "file": ".claude/commands/bmad-tea-testarch-trace.md",
+        "hash": "13401165030479503279"
+      },
+      {
+        "file": ".claude/commands/bmad-bmm-document-project.md",
+        "hash": "14845689031669049133"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "13377419431693519786"
+      },
+      {
+        "file": ".claude/commands/bmad-bmb-edit-agent.md",
+        "hash": "15933474924466424556"
+      },
+      {
+        "file": ".claude/commands/bmad-cis-problem-solving.md",
+        "hash": "4246506983069063687"
+      },
+      {
+        "file": ".claude/commands/bmad-bmm-dev-story.md",
+        "hash": "15028743472541894873"
+      },
+      {
+        "file": "_bmad-output/implementation-artifacts/1-1-nx-workspace-initialization.md",
+        "hash": "8120692145758459522"
+      },
+      {
+        "file": ".claude/commands/bmad-agent-bmm-architect.md",
+        "hash": "6910815165941794769"
+      },
+      {
+        "file": ".claude/commands/bmad-bmb-edit-workflow.md",
+        "hash": "15268895150092311393"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": ".claude/commands/bmad-agent-cis-innovation-strategist.md",
+        "hash": "8378847194781576980"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "5407418692668764289"
+      },
+      {
+        "file": ".claude/commands/bmad-agent-bmm-tech-writer.md",
+        "hash": "11393695544835314828"
+      },
+      {
         "file": ".claude/commands/bmad-party-mode.md",
         "hash": "7390446783518309414"
+      },
+      {
+        "file": ".claude/commands/bmad-agent-bmb-module-builder.md",
+        "hash": "10922741242098634585"
+      },
+      {
+        "file": ".claude/commands/bmad-bmm-generate-project-context.md",
+        "hash": "4763918830374234476"
+      },
+      {
+        "file": ".claude/commands/bmad-editorial-review-prose.md",
+        "hash": "16139146343090850457"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "2817547748250534547"
+      },
+      {
+        "file": ".claude/commands/bmad-agent-tea-tea.md",
+        "hash": "14065595036544578143"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "10548134944753685236"
+      },
+      {
+        "file": "_bmad-output/implementation-artifacts/sprint-status.yaml",
+        "hash": "3256905183352476482"
+      },
+      {
+        "file": ".claude/commands/bmad-bmm-quick-dev.md",
+        "hash": "4858489769543989692"
+      },
+      {
+        "file": ".claude/commands/bmad-bmm-domain-research.md",
+        "hash": "10356668059170349410"
+      },
+      {
+        "file": ".claude/commands/bmad-agent-bmm-dev.md",
+        "hash": "2016574335287347981"
+      },
+      {
+        "file": ".claude/commands/bmad-bmb-validate-workflow.md",
+        "hash": "4028919887142596395"
+      },
+      {
+        "file": ".claude/commands/bmad-bmb-validate-agent.md",
+        "hash": "15426312905240017504"
+      },
+      {
+        "file": ".claude/commands/bmad-agent-bmb-agent-builder.md",
+        "hash": "5407220579806895695"
+      },
+      {
+        "file": ".claude/commands/bmad-bmb-create-workflow.md",
+        "hash": "15579091270796995595"
+      },
+      {
+        "file": ".claude/commands/bmad-bmm-technical-research.md",
+        "hash": "13236007331634119099"
+      },
+      {
+        "file": ".claude/commands/bmad-agent-bmb-workflow-builder.md",
+        "hash": "9662266740930246213"
+      },
+      {
+        "file": "_bmad-output/implementation-artifacts/1-3-theme-toggle-and-design-tokens.md",
+        "hash": "7754506143010659211"
+      },
+      {
+        "file": ".claude/commands/bmad-agent-bmm-ux-designer.md",
+        "hash": "11700278099470017783"
+      },
+      {
+        "file": "_bmad-output/planning-artifacts/product-brief-bmad-demo-2026-02-21.md",
+        "hash": "17108750320931254801"
+      },
+      {
+        "file": "_bmad-output/implementation-artifacts/1-2-app-shell-and-navigation.md",
+        "hash": "8513091777987803768"
+      },
+      {
+        "file": ".claude/commands/bmad-bmb-validate-max-parallel-workflow.md",
+        "hash": "8065178089341334223"
+      },
+      {
+        "file": ".claude/commands/bmad-bmm-retrospective.md",
+        "hash": "12476090354873415352"
+      },
+      {
+        "file": ".claude/commands/bmad-bmm-validate-prd.md",
+        "hash": "8173882609415050472"
+      },
+      {
+        "file": ".claude/commands/bmad-agent-cis-creative-problem-solver.md",
+        "hash": "3655944053654223854"
+      },
+      {
+        "file": ".claude/commands/bmad-brainstorming.md",
+        "hash": "12631891420851064240"
+      },
+      {
+        "file": ".claude/settings.local.json",
+        "hash": "5539123179388123511"
+      },
+      {
+        "file": ".claude/commands/bmad-bmb-create-module-brief.md",
+        "hash": "520392528754072697"
+      },
+      {
+        "file": "_bmad-output/brainstorming/brainstorming-session-2026-02-21.md",
+        "hash": "6685666516877045198"
+      },
+      {
+        "file": "vitest.workspace.ts",
+        "hash": "382902831997169314"
+      },
+      {
+        "file": ".claude/commands/bmad-bmm-create-product-brief.md",
+        "hash": "9458595570867834258"
       },
       {
         "file": ".claude/commands/bmad-review-adversarial-general.md",
         "hash": "9765633079786697610"
       },
       {
+        "file": ".claude/commands/bmad-tea-testarch-test-review.md",
+        "hash": "11370972681842606381"
+      },
+      {
+        "file": "nx.json",
+        "hash": "10313408531058789941"
+      },
+      {
+        "file": ".claude/commands/bmad-agent-bmm-sm.md",
+        "hash": "9864583155827383660"
+      },
+      {
+        "file": ".claude/commands/bmad-cis-innovation-strategy.md",
+        "hash": "17640405708043136787"
+      },
+      {
+        "file": ".claude/commands/bmad-agent-bmm-pm.md",
+        "hash": "4926167823569158684"
+      },
+      {
+        "file": ".claude/commands/bmad-agent-cis-presentation-master.md",
+        "hash": "10656832558156690881"
+      },
+      {
+        "file": ".claude/commands/bmad-cis-design-thinking.md",
+        "hash": "9124228870925539638"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "6454310840698375430"
+      },
+      {
         "file": ".claude/commands/bmad-shard-doc.md",
         "hash": "3955022474850473287"
       },
       {
-        "file": ".claude/commands/bmad-tea-teach-me-testing.md",
-        "hash": "1998762364414206301"
+        "file": ".claude/commands/bmad-help.md",
+        "hash": "18395896462048334610"
+      },
+      {
+        "file": ".claude/commands/bmad-bmb-create-agent.md",
+        "hash": "17354901512542087996"
+      },
+      {
+        "file": ".postcssrc.json",
+        "hash": "1757434806578486340"
+      },
+      {
+        "file": ".claude/commands/bmad-bmm-market-research.md",
+        "hash": "3458141247003306866"
       },
       {
         "file": ".claude/commands/bmad-tea-testarch-atdd.md",
@@ -339,142 +419,120 @@
         "hash": "12348217697735942623"
       },
       {
-        "file": ".claude/commands/bmad-tea-testarch-ci.md",
-        "hash": "8029039672002451918"
-      },
-      {
-        "file": ".claude/commands/bmad-tea-testarch-framework.md",
-        "hash": "3645445307677027296"
-      },
-      {
-        "file": ".claude/commands/bmad-tea-testarch-nfr.md",
-        "hash": "15823146364098181794"
-      },
-      {
-        "file": ".claude/commands/bmad-tea-testarch-test-design.md",
-        "hash": "1041725041589971392"
-      },
-      {
-        "file": ".claude/commands/bmad-tea-testarch-test-review.md",
-        "hash": "11370972681842606381"
-      },
-      {
-        "file": ".claude/commands/bmad-tea-testarch-trace.md",
-        "hash": "13401165030479503279"
-      },
-      {
-        "file": ".claude/settings.local.json",
-        "hash": "5539123179388123511"
-      },
-      {
-        "file": ".gitignore",
-        "hash": "10548134944753685236"
-      },
-      {
-        "file": ".postcssrc.json",
-        "hash": "1757434806578486340"
-      },
-      {
-        "file": ".prettierignore",
-        "hash": "5407418692668764289"
-      },
-      {
-        "file": ".prettierrc",
-        "hash": "16267754514737964994"
-      },
-      {
-        "file": ".vscode/extensions.json",
-        "hash": "13377419431693519786"
-      },
-      {
-        "file": "README.md",
-        "hash": "6151707463284987706"
-      },
-      {
-        "file": "_bmad-output/brainstorming/brainstorming-session-2026-02-21.md",
-        "hash": "6685666516877045198"
-      },
-      {
-        "file": "_bmad-output/implementation-artifacts/1-1-nx-workspace-initialization.md",
-        "hash": "8120692145758459522"
-      },
-      {
-        "file": "_bmad-output/implementation-artifacts/1-2-app-shell-and-navigation.md",
-        "hash": "8513091777987803768"
-      },
-      {
-        "file": "_bmad-output/implementation-artifacts/1-3-theme-toggle-and-design-tokens.md",
-        "hash": "7754506143010659211"
-      },
-      {
-        "file": "_bmad-output/implementation-artifacts/1-4-witty-microcopy-and-personality-foundation.md",
-        "hash": "8421099698548454219"
-      },
-      {
-        "file": "_bmad-output/implementation-artifacts/2-1-links-data-model-and-service.md",
-        "hash": "2134821494782786700"
-      },
-      {
-        "file": "_bmad-output/implementation-artifacts/sprint-status.yaml",
-        "hash": "3256905183352476482"
-      },
-      {
         "file": "_bmad-output/planning-artifacts/architecture.md",
         "hash": "8893648208454557492"
       },
       {
-        "file": "_bmad-output/planning-artifacts/epics.md",
-        "hash": "18243755511800455614"
-      },
-      {
-        "file": "_bmad-output/planning-artifacts/prd.md",
-        "hash": "5897856874538236133"
-      },
-      {
-        "file": "_bmad-output/planning-artifacts/product-brief-bmad-demo-2026-02-21.md",
-        "hash": "17108750320931254801"
+        "file": ".claude/commands/bmad-bmm-correct-course.md",
+        "hash": "9746797966003021209"
       },
       {
         "file": "_bmad-output/planning-artifacts/ux-design-specification.md",
         "hash": "14908197888534671275"
       },
       {
-        "file": "eslint.config.mjs",
-        "hash": "9509247832800544142"
+        "file": ".claude/commands/bmad-bmb-edit-module.md",
+        "hash": "1069270926810728405"
       },
       {
-        "file": "nx.json",
-        "hash": "10313408531058789941"
+        "file": ".claude/commands/bmad-bmm-quick-spec.md",
+        "hash": "18427552152489283875"
       },
       {
-        "file": "package-lock.json",
-        "hash": "6454310840698375430"
+        "file": ".claude/commands/bmad-bmm-sprint-status.md",
+        "hash": "13592454593083849001"
       },
       {
-        "file": "package.json",
-        "hash": "1585755364503587176"
+        "file": ".claude/commands/bmad-agent-bmm-quick-flow-solo-dev.md",
+        "hash": "10521476244780023900"
       },
       {
-        "file": "tsconfig.base.json",
-        "hash": "2817547748250534547"
+        "file": ".claude/commands/bmad-bmm-create-story.md",
+        "hash": "8475946736335092428"
       },
       {
-        "file": "vitest.workspace.ts",
-        "hash": "382902831997169314"
+        "file": ".claude/commands/bmad-agent-cis-brainstorming-coach.md",
+        "hash": "16641889512811876575"
+      },
+      {
+        "file": ".github/workflows/deploy.yml",
+        "hash": "17329628221756568376"
+      },
+      {
+        "file": ".claude/commands/bmad-tea-testarch-ci.md",
+        "hash": "8029039672002451918"
+      },
+      {
+        "file": ".claude/commands/bmad-agent-cis-storyteller.md",
+        "hash": "8788433477230539872"
       }
     ],
     "projectFileMap": {
-      "developer-hub-e2e": [
+      "shared-styles": [
         {
-          "file": "apps/developer-hub-e2e/eslint.config.mjs",
+          "file": "libs/shared/styles/README.md",
+          "hash": "9274053301981562016"
+        },
+        {
+          "file": "libs/shared/styles/design-tokens.css",
+          "hash": "7991797857584155567"
+        },
+        {
+          "file": "libs/shared/styles/eslint.config.mjs",
+          "hash": "6219511726200060807",
+          "deps": [
+            "npm:@nx/eslint-plugin"
+          ]
+        },
+        {
+          "file": "libs/shared/styles/project.json",
+          "hash": "12316062568264873032"
+        },
+        {
+          "file": "libs/shared/styles/src/index.ts",
+          "hash": "6938068304190205451"
+        },
+        {
+          "file": "libs/shared/styles/src/test-setup.ts",
+          "hash": "5201386931146563638",
+          "deps": [
+            "npm:@angular/compiler",
+            "npm:@analogjs/vitest-angular"
+          ]
+        },
+        {
+          "file": "libs/shared/styles/tsconfig.json",
+          "hash": "1973382141025117759"
+        },
+        {
+          "file": "libs/shared/styles/tsconfig.lib.json",
+          "hash": "1317626009648939439"
+        },
+        {
+          "file": "libs/shared/styles/tsconfig.spec.json",
+          "hash": "5958551803246193814"
+        },
+        {
+          "file": "libs/shared/styles/vite.config.mts",
+          "hash": "5628403633453462625",
+          "deps": [
+            "npm:vite",
+            "npm:@analogjs/vite-plugin-angular",
+            "npm:@nx/vite"
+          ]
+        }
+      ],
+      "AI-Cookbook-e2e": [
+        {
+          "file": "apps/AI-Cookbook-e2e/eslint.config.mjs",
           "hash": "1172734138943286526",
           "deps": [
             "npm:eslint-plugin-playwright"
           ]
         },
         {
-          "file": "apps/developer-hub-e2e/playwright.config.ts",
-          "hash": "1540466732917060510",
+          "file": "apps/AI-Cookbook-e2e/playwright.config.ts",
+          "hash": "18294243378887536260",
           "deps": [
             "npm:@playwright/test",
             "npm:@nx/playwright",
@@ -482,55 +540,59 @@
           ]
         },
         {
-          "file": "apps/developer-hub-e2e/project.json",
-          "hash": "17813128689692620951"
+          "file": "apps/AI-Cookbook-e2e/project.json",
+          "hash": "13458461387290246499"
         },
         {
-          "file": "apps/developer-hub-e2e/src/example.spec.ts",
+          "file": "apps/AI-Cookbook-e2e/src/example.spec.ts",
           "hash": "16019101014373124625",
           "deps": [
             "npm:@playwright/test"
           ]
         },
         {
-          "file": "apps/developer-hub-e2e/tsconfig.json",
+          "file": "apps/AI-Cookbook-e2e/tsconfig.json",
           "hash": "15726545290547512047"
         }
       ],
       "ai-cookbook": [
         {
-          "file": "apps/developer-hub/eslint.config.mjs",
+          "file": "apps/AI-Cookbook/eslint.config.mjs",
           "hash": "16756400681144203361",
           "deps": [
             "npm:@nx/eslint-plugin"
           ]
         },
         {
-          "file": "apps/developer-hub/project.json",
-          "hash": "12692099192651289117"
+          "file": "apps/AI-Cookbook/project.json",
+          "hash": "6132875934017626133"
         },
         {
-          "file": "apps/developer-hub/public/favicon.ico",
+          "file": "apps/AI-Cookbook/public/404.html",
+          "hash": "13320217193608515701"
+        },
+        {
+          "file": "apps/AI-Cookbook/public/favicon.ico",
           "hash": "9303420814833116677"
         },
         {
-          "file": "apps/developer-hub/public/frontend-guild-logo.jpeg",
+          "file": "apps/AI-Cookbook/public/frontend-guild-logo.jpeg",
           "hash": "3405925543944253311"
         },
         {
-          "file": "apps/developer-hub/public/icons/claude.png",
+          "file": "apps/AI-Cookbook/public/icons/claude.png",
           "hash": "3688612436104876804"
         },
         {
-          "file": "apps/developer-hub/public/icons/copilot.png",
+          "file": "apps/AI-Cookbook/public/icons/copilot.png",
           "hash": "12623569621221234312"
         },
         {
-          "file": "apps/developer-hub/public/icons/qodo.png",
+          "file": "apps/AI-Cookbook/public/icons/qodo.png",
           "hash": "17552245679499460520"
         },
         {
-          "file": "apps/developer-hub/src/app/app.config.ts",
+          "file": "apps/AI-Cookbook/src/app/app.config.ts",
           "hash": "15719532172776667500",
           "deps": [
             "npm:@angular/core",
@@ -539,15 +601,15 @@
           ]
         },
         {
-          "file": "apps/developer-hub/src/app/app.css",
+          "file": "apps/AI-Cookbook/src/app/app.css",
           "hash": "3244421341483603138"
         },
         {
-          "file": "apps/developer-hub/src/app/app.html",
-          "hash": "17520856957964961215"
+          "file": "apps/AI-Cookbook/src/app/app.html",
+          "hash": "4406828118436624810"
         },
         {
-          "file": "apps/developer-hub/src/app/app.routes.ts",
+          "file": "apps/AI-Cookbook/src/app/app.routes.ts",
           "hash": "8430852574776574917",
           "deps": [
             "npm:@angular/router",
@@ -566,7 +628,7 @@
           ]
         },
         {
-          "file": "apps/developer-hub/src/app/app.spec.ts",
+          "file": "apps/AI-Cookbook/src/app/app.spec.ts",
           "hash": "3280084555090673218",
           "deps": [
             "npm:@angular/core",
@@ -576,7 +638,7 @@
           ]
         },
         {
-          "file": "apps/developer-hub/src/app/app.ts",
+          "file": "apps/AI-Cookbook/src/app/app.ts",
           "hash": "6157747523951072125",
           "deps": [
             "npm:@angular/core",
@@ -587,29 +649,29 @@
           ]
         },
         {
-          "file": "apps/developer-hub/src/app/route-animations.ts",
+          "file": "apps/AI-Cookbook/src/app/route-animations.ts",
           "hash": "357944423474871569",
           "deps": [
             "npm:@angular/animations"
           ]
         },
         {
-          "file": "apps/developer-hub/src/index.html",
-          "hash": "2507606659439152577"
+          "file": "apps/AI-Cookbook/src/index.html",
+          "hash": "2243115521056788829"
         },
         {
-          "file": "apps/developer-hub/src/main.ts",
+          "file": "apps/AI-Cookbook/src/main.ts",
           "hash": "3314327030169821486",
           "deps": [
             "npm:@angular/platform-browser"
           ]
         },
         {
-          "file": "apps/developer-hub/src/styles.css",
+          "file": "apps/AI-Cookbook/src/styles.css",
           "hash": "4137806833048822752"
         },
         {
-          "file": "apps/developer-hub/src/test-setup.ts",
+          "file": "apps/AI-Cookbook/src/test-setup.ts",
           "hash": "5201386931146563638",
           "deps": [
             "npm:@angular/compiler",
@@ -617,26 +679,85 @@
           ]
         },
         {
-          "file": "apps/developer-hub/tsconfig.app.json",
+          "file": "apps/AI-Cookbook/tsconfig.app.json",
           "hash": "6308072538887705207"
         },
         {
-          "file": "apps/developer-hub/tsconfig.json",
+          "file": "apps/AI-Cookbook/tsconfig.json",
           "hash": "16004134237605501702"
         },
         {
-          "file": "apps/developer-hub/tsconfig.spec.json",
+          "file": "apps/AI-Cookbook/tsconfig.spec.json",
           "hash": "11913194322828672243"
         },
         {
-          "file": "apps/developer-hub/vite.config.mts",
-          "hash": "16507281982312867714",
+          "file": "apps/AI-Cookbook/vite.config.mts",
+          "hash": "14454550216362881194",
           "deps": [
             "npm:vite",
             "npm:@analogjs/vite-plugin-angular",
             "npm:@tailwindcss/vite",
             "npm:@nx/vite"
           ]
+        }
+      ],
+      "feature-ai-tools": [
+        {
+          "file": "libs/feature-ai-tools/project.json",
+          "hash": "9845705646988131194"
+        },
+        {
+          "file": "libs/feature-ai-tools/src/index.ts",
+          "hash": "14380718209246132000"
+        },
+        {
+          "file": "libs/feature-ai-tools/src/lib/ai-tools.routes.ts",
+          "hash": "9331761274303355678",
+          "deps": [
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "libs/feature-ai-tools/src/lib/components/tool-guidelines.ts",
+          "hash": "13249814025155042686",
+          "deps": [
+            "npm:@angular/core",
+            "shared-data"
+          ]
+        },
+        {
+          "file": "libs/feature-ai-tools/src/lib/components/tool-overview.ts",
+          "hash": "9334543595355668759",
+          "deps": [
+            "npm:@angular/core",
+            "shared-data"
+          ]
+        },
+        {
+          "file": "libs/feature-ai-tools/src/lib/components/tool-prompts.ts",
+          "hash": "14233904977280628799",
+          "deps": [
+            "npm:@angular/core",
+            "shared-data",
+            "shared-ui"
+          ]
+        },
+        {
+          "file": "libs/feature-ai-tools/src/lib/pages/ai-tools-page.ts",
+          "hash": "12352590000831384219",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/animations",
+            "shared-data"
+          ]
+        },
+        {
+          "file": "libs/feature-ai-tools/tsconfig.json",
+          "hash": "13936675588124881367"
+        },
+        {
+          "file": "libs/feature-ai-tools/tsconfig.lib.json",
+          "hash": "12545692166775319443"
         }
       ],
       "feature-cookbook": [
@@ -712,7 +833,7 @@
         },
         {
           "file": "libs/feature-cookbook/src/lib/components/tool-selector.ts",
-          "hash": "10832931876046871193",
+          "hash": "2439738714366398495",
           "deps": [
             "npm:@angular/core",
             "shared-data"
@@ -790,241 +911,6 @@
         {
           "file": "libs/feature-cookbook/vite.config.mts",
           "hash": "12828870624592016395",
-          "deps": [
-            "npm:vite",
-            "npm:@analogjs/vite-plugin-angular",
-            "npm:@nx/vite"
-          ]
-        }
-      ],
-      "feature-ai-tools": [
-        {
-          "file": "libs/feature-ai-tools/project.json",
-          "hash": "9845705646988131194"
-        },
-        {
-          "file": "libs/feature-ai-tools/src/index.ts",
-          "hash": "14380718209246132000"
-        },
-        {
-          "file": "libs/feature-ai-tools/src/lib/ai-tools.routes.ts",
-          "hash": "9331761274303355678",
-          "deps": [
-            "npm:@angular/router"
-          ]
-        },
-        {
-          "file": "libs/feature-ai-tools/src/lib/components/tool-guidelines.ts",
-          "hash": "13249814025155042686",
-          "deps": [
-            "npm:@angular/core",
-            "shared-data"
-          ]
-        },
-        {
-          "file": "libs/feature-ai-tools/src/lib/components/tool-overview.ts",
-          "hash": "9334543595355668759",
-          "deps": [
-            "npm:@angular/core",
-            "shared-data"
-          ]
-        },
-        {
-          "file": "libs/feature-ai-tools/src/lib/components/tool-prompts.ts",
-          "hash": "14233904977280628799",
-          "deps": [
-            "npm:@angular/core",
-            "shared-data",
-            "shared-ui"
-          ]
-        },
-        {
-          "file": "libs/feature-ai-tools/src/lib/pages/ai-tools-page.ts",
-          "hash": "13702338680639401082",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/animations",
-            "shared-data"
-          ]
-        },
-        {
-          "file": "libs/feature-ai-tools/tsconfig.json",
-          "hash": "13936675588124881367"
-        },
-        {
-          "file": "libs/feature-ai-tools/tsconfig.lib.json",
-          "hash": "12545692166775319443"
-        }
-      ],
-      "feature-guidelines": [
-        {
-          "file": "libs/feature-guidelines/README.md",
-          "hash": "18021308373526955186"
-        },
-        {
-          "file": "libs/feature-guidelines/eslint.config.mjs",
-          "hash": "9628975637710176443",
-          "deps": [
-            "npm:@nx/eslint-plugin"
-          ]
-        },
-        {
-          "file": "libs/feature-guidelines/project.json",
-          "hash": "3539702413462767250"
-        },
-        {
-          "file": "libs/feature-guidelines/src/index.ts",
-          "hash": "16882313528224538660"
-        },
-        {
-          "file": "libs/feature-guidelines/src/lib/feature-guidelines/feature-guidelines.css",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "libs/feature-guidelines/src/lib/feature-guidelines/feature-guidelines.html",
-          "hash": "17706347437590269570"
-        },
-        {
-          "file": "libs/feature-guidelines/src/lib/feature-guidelines/feature-guidelines.spec.ts",
-          "hash": "8528883481327694907",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/feature-guidelines/src/lib/feature-guidelines/feature-guidelines.ts",
-          "hash": "11705718224066948210",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/feature-guidelines/src/lib/guidelines.routes.ts",
-          "hash": "13491416265000534171",
-          "deps": [
-            "npm:@angular/router"
-          ]
-        },
-        {
-          "file": "libs/feature-guidelines/src/lib/pages/guidelines-page.ts",
-          "hash": "17728449964755297663",
-          "deps": [
-            "npm:@angular/core",
-            "shared-data",
-            "shared-ui"
-          ]
-        },
-        {
-          "file": "libs/feature-guidelines/src/test-setup.ts",
-          "hash": "5201386931146563638",
-          "deps": [
-            "npm:@angular/compiler",
-            "npm:@analogjs/vitest-angular"
-          ]
-        },
-        {
-          "file": "libs/feature-guidelines/tsconfig.json",
-          "hash": "9608369235850420230"
-        },
-        {
-          "file": "libs/feature-guidelines/tsconfig.lib.json",
-          "hash": "4155067039551569377"
-        },
-        {
-          "file": "libs/feature-guidelines/tsconfig.spec.json",
-          "hash": "11359119564988205903"
-        },
-        {
-          "file": "libs/feature-guidelines/vite.config.mts",
-          "hash": "10133011241668628806",
-          "deps": [
-            "npm:vite",
-            "npm:@analogjs/vite-plugin-angular",
-            "npm:@nx/vite"
-          ]
-        }
-      ],
-      "feature-links": [
-        {
-          "file": "libs/feature-links/README.md",
-          "hash": "5641747202370054197"
-        },
-        {
-          "file": "libs/feature-links/eslint.config.mjs",
-          "hash": "9628975637710176443",
-          "deps": [
-            "npm:@nx/eslint-plugin"
-          ]
-        },
-        {
-          "file": "libs/feature-links/project.json",
-          "hash": "4142266506296059849"
-        },
-        {
-          "file": "libs/feature-links/src/index.ts",
-          "hash": "16985894345156012042"
-        },
-        {
-          "file": "libs/feature-links/src/lib/feature-links/feature-links.css",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "libs/feature-links/src/lib/feature-links/feature-links.html",
-          "hash": "11685428936881094996"
-        },
-        {
-          "file": "libs/feature-links/src/lib/feature-links/feature-links.spec.ts",
-          "hash": "2863707677845898360",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/feature-links/src/lib/feature-links/feature-links.ts",
-          "hash": "8332221013153202584",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/feature-links/src/lib/links.routes.ts",
-          "hash": "8029963791453509075",
-          "deps": [
-            "npm:@angular/router"
-          ]
-        },
-        {
-          "file": "libs/feature-links/src/lib/pages/links-page.ts",
-          "hash": "2892010419910300371",
-          "deps": [
-            "npm:@angular/core",
-            "shared-data",
-            "shared-ui"
-          ]
-        },
-        {
-          "file": "libs/feature-links/src/test-setup.ts",
-          "hash": "5201386931146563638",
-          "deps": [
-            "npm:@angular/compiler",
-            "npm:@analogjs/vitest-angular"
-          ]
-        },
-        {
-          "file": "libs/feature-links/tsconfig.json",
-          "hash": "9608369235850420230"
-        },
-        {
-          "file": "libs/feature-links/tsconfig.lib.json",
-          "hash": "4155067039551569377"
-        },
-        {
-          "file": "libs/feature-links/tsconfig.spec.json",
-          "hash": "11359119564988205903"
-        },
-        {
-          "file": "libs/feature-links/vite.config.mts",
-          "hash": "14684804740425239457",
           "deps": [
             "npm:vite",
             "npm:@analogjs/vite-plugin-angular",
@@ -1325,32 +1211,66 @@
           ]
         }
       ],
-      "shared-styles": [
+      "feature-links": [
         {
-          "file": "libs/shared/styles/README.md",
-          "hash": "9274053301981562016"
+          "file": "libs/feature-links/README.md",
+          "hash": "5641747202370054197"
         },
         {
-          "file": "libs/shared/styles/design-tokens.css",
-          "hash": "7991797857584155567"
-        },
-        {
-          "file": "libs/shared/styles/eslint.config.mjs",
-          "hash": "6219511726200060807",
+          "file": "libs/feature-links/eslint.config.mjs",
+          "hash": "9628975637710176443",
           "deps": [
             "npm:@nx/eslint-plugin"
           ]
         },
         {
-          "file": "libs/shared/styles/project.json",
-          "hash": "12316062568264873032"
+          "file": "libs/feature-links/project.json",
+          "hash": "4142266506296059849"
         },
         {
-          "file": "libs/shared/styles/src/index.ts",
-          "hash": "6938068304190205451"
+          "file": "libs/feature-links/src/index.ts",
+          "hash": "16985894345156012042"
         },
         {
-          "file": "libs/shared/styles/src/test-setup.ts",
+          "file": "libs/feature-links/src/lib/feature-links/feature-links.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "libs/feature-links/src/lib/feature-links/feature-links.html",
+          "hash": "11685428936881094996"
+        },
+        {
+          "file": "libs/feature-links/src/lib/feature-links/feature-links.spec.ts",
+          "hash": "2863707677845898360",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/feature-links/src/lib/feature-links/feature-links.ts",
+          "hash": "8332221013153202584",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/feature-links/src/lib/links.routes.ts",
+          "hash": "8029963791453509075",
+          "deps": [
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "libs/feature-links/src/lib/pages/links-page.ts",
+          "hash": "2892010419910300371",
+          "deps": [
+            "npm:@angular/core",
+            "shared-data",
+            "shared-ui"
+          ]
+        },
+        {
+          "file": "libs/feature-links/src/test-setup.ts",
           "hash": "5201386931146563638",
           "deps": [
             "npm:@angular/compiler",
@@ -1358,20 +1278,108 @@
           ]
         },
         {
-          "file": "libs/shared/styles/tsconfig.json",
-          "hash": "1973382141025117759"
+          "file": "libs/feature-links/tsconfig.json",
+          "hash": "9608369235850420230"
         },
         {
-          "file": "libs/shared/styles/tsconfig.lib.json",
-          "hash": "1317626009648939439"
+          "file": "libs/feature-links/tsconfig.lib.json",
+          "hash": "4155067039551569377"
         },
         {
-          "file": "libs/shared/styles/tsconfig.spec.json",
-          "hash": "5958551803246193814"
+          "file": "libs/feature-links/tsconfig.spec.json",
+          "hash": "11359119564988205903"
         },
         {
-          "file": "libs/shared/styles/vite.config.mts",
-          "hash": "5628403633453462625",
+          "file": "libs/feature-links/vite.config.mts",
+          "hash": "14684804740425239457",
+          "deps": [
+            "npm:vite",
+            "npm:@analogjs/vite-plugin-angular",
+            "npm:@nx/vite"
+          ]
+        }
+      ],
+      "feature-guidelines": [
+        {
+          "file": "libs/feature-guidelines/README.md",
+          "hash": "18021308373526955186"
+        },
+        {
+          "file": "libs/feature-guidelines/eslint.config.mjs",
+          "hash": "9628975637710176443",
+          "deps": [
+            "npm:@nx/eslint-plugin"
+          ]
+        },
+        {
+          "file": "libs/feature-guidelines/project.json",
+          "hash": "3539702413462767250"
+        },
+        {
+          "file": "libs/feature-guidelines/src/index.ts",
+          "hash": "16882313528224538660"
+        },
+        {
+          "file": "libs/feature-guidelines/src/lib/feature-guidelines/feature-guidelines.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "libs/feature-guidelines/src/lib/feature-guidelines/feature-guidelines.html",
+          "hash": "17706347437590269570"
+        },
+        {
+          "file": "libs/feature-guidelines/src/lib/feature-guidelines/feature-guidelines.spec.ts",
+          "hash": "8528883481327694907",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/feature-guidelines/src/lib/feature-guidelines/feature-guidelines.ts",
+          "hash": "11705718224066948210",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/feature-guidelines/src/lib/guidelines.routes.ts",
+          "hash": "13491416265000534171",
+          "deps": [
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "libs/feature-guidelines/src/lib/pages/guidelines-page.ts",
+          "hash": "17728449964755297663",
+          "deps": [
+            "npm:@angular/core",
+            "shared-data",
+            "shared-ui"
+          ]
+        },
+        {
+          "file": "libs/feature-guidelines/src/test-setup.ts",
+          "hash": "5201386931146563638",
+          "deps": [
+            "npm:@angular/compiler",
+            "npm:@analogjs/vitest-angular"
+          ]
+        },
+        {
+          "file": "libs/feature-guidelines/tsconfig.json",
+          "hash": "9608369235850420230"
+        },
+        {
+          "file": "libs/feature-guidelines/tsconfig.lib.json",
+          "hash": "4155067039551569377"
+        },
+        {
+          "file": "libs/feature-guidelines/tsconfig.spec.json",
+          "hash": "11359119564988205903"
+        },
+        {
+          "file": "libs/feature-guidelines/vite.config.mts",
+          "hash": "10133011241668628806",
           "deps": [
             "npm:vite",
             "npm:@analogjs/vite-plugin-angular",
