@@ -1,23 +1,16 @@
 import { Component, inject, computed } from '@angular/core';
-import { GuidelinesService } from '@bmad-demo/shared-data';
+import { GuidelinesService, LanguageService } from '@bmad-demo/shared-data';
 import { SkeletonComponent, EmptyStateComponent } from '@bmad-demo/shared-ui';
-
-const GUIDELINES_SUBTITLES = [
-  'The rules we all agreed on. Yes, even you.',
-  'Standards that even linters would approve of.',
-  'Read these. Your PR reviewers will thank you.',
-  'Consistency is the secret ingredient.',
-];
 
 @Component({
   selector: 'app-guidelines-page',
   standalone: true,
   imports: [SkeletonComponent, EmptyStateComponent],
   template: `
-    <section>
+    <section dir="ltr">
       <div class="mb-8">
-        <h1 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Guidelines & Standards</h1>
-        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">{{ guidelinesSubtitle }}</p>
+        <h1 class="text-2xl font-bold text-slate-900 dark:text-slate-100">{{ langService.t().guidelinesTitle }}</h1>
+        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">{{ guidelinesSubtitle() }}</p>
       </div>
 
       @if (guidelinesService.isLoading()) {
@@ -66,7 +59,7 @@ const GUIDELINES_SUBTITLES = [
             </div>
           </div>
         } @empty {
-          <ui-empty-state emoji="📐" subtitle="No guidelines here. Anarchy reigns." />
+          <ui-empty-state emoji="📐" [subtitle]="langService.t().noGuidelines" />
         }
       }
     </section>
@@ -74,7 +67,12 @@ const GUIDELINES_SUBTITLES = [
 })
 export class GuidelinesPage {
   protected readonly guidelinesService = inject(GuidelinesService);
-  protected readonly guidelinesSubtitle = GUIDELINES_SUBTITLES[Math.floor(Math.random() * GUIDELINES_SUBTITLES.length)];
+  protected readonly langService = inject(LanguageService);
+  private readonly subtitleIndex = Math.floor(Math.random() * 4);
+
+  protected readonly guidelinesSubtitle = computed(() =>
+    this.langService.t().guidelinesSubtitles[this.subtitleIndex]
+  );
 
   protected readonly groupedGuidelines = computed(() => {
     const map = this.guidelinesService.guidelinesByTopic();

@@ -1,0 +1,424 @@
+{
+  "id": "copilot",
+  "name": "Microsoft Copilot",
+  "icon": "🪟",
+  "tagline": "עוזר ה-AI של Microsoft ל-chat, קוד, מסמכים ופרודוקטיביות לאורך Windows וה-web",
+  "overview": {
+    "description": "Microsoft Copilot הוא עוזר ה-AI המוביל של מיקרוסופט, המבוסס על GPT-4 של OpenAI ומוטמע בתוך Windows 11, דפדפן Edge, חבילת Microsoft 365 ובאתר copilot.microsoft.com. עבור מפתחים, Copilot מציע ממשק chat ורסטילי לפתרון בעיות קוד, ג'נרציה של דוקומנטציה וחקירת APIs – כאשר התשובות מעוגנות במידע עדכני מהרשת באמצעות Bing search. הוא מגשר על הפער בין AI ייעודי לקוד לבין AI כללי לפרודוקטיביות.",
+    "pros": [
+      "זמין בחינם ב-web, ב-Edge וב-sidebar של Windows 11 – ללא צורך בהתקנה",
+      "מעוגן ב-Bing search – תשובות מסתמכות על דוקומנטציה עדכנית ו-Stack Overflow",
+      "מטפל בקוד, כתיבה, דיאגרמות ויצירת תמונות (DALL-E) בממשק אחד",
+      "אינטגרציה עמוקה עם Microsoft 365 – טיוטות ב-Word, ניתוח ב-Excel וסיכום ב-Teams",
+      "Copilot בתוך VS Code (דרך Copilot Chat) נותן סיוע inline עם awareness ל-workspace",
+      "Copilot Studio מאפשר לצוותים לבנות סוכני Copilot מותאמים אישית ל-workflows פנימיים",
+      "Multimodal – מבין screenshots, דיאגרמות ותמונות של שגיאות (errors)"
+    ],
+    "cons": [
+      "פחות מתמחה ב-pure code generation בהשוואה ל-GitHub Copilot או Claude",
+      "ה-context window בממשק ה-web קטן יותר מזה של Claude להדבקת קבצים ארוכים",
+      "האיכות עבור niche frameworks או ספריות משתנה – תמיד יש לוודא את התשובות",
+      "פיצ'רים של Microsoft 365 Copilot דורשים רישיון Business/Enterprise בתשלום",
+      "לא יכול לקרוא או לערוך קבצים לוקאליים ישירות ללא אינטגרציות נוספות",
+      "לא מכיר את הקוד הפרטי שלך אלא אם הוא גלוי בחלון ה-editor",
+      "לא תמיד מבין את ה-context המלא – יש לספק אותו בצורה מפורשת",
+      "עלול להזות (hallucinate) פרטים אם השאלה כללית או עמומה מדי",
+      "לא מחליף חשיבה הנדסית – הוא מאיץ אותה, לא מחליף אותה"
+    ],
+    "whenToUse": [
+      "שאלות קוד מהירות בלי לפתוח IDE session מלא",
+      "מחקר על ספרייה או API עם דוקומנטציה עדכנית מבוססת Bing",
+      "כתיבת דוקומנטציה טכנית, PRs או ADRs עם אינטגרציית Word/Teams",
+      "Debugging על ידי הדבקת screenshot של השגיאה – Copilot יודע לקרוא תמונות",
+      "יצירת boilerplate מהיר או שאילתות SQL בדפדפן",
+      "סיכום threads ארוכים ב-GitHub, דפי Confluence או Jira tickets",
+      "בניית עוזרי AI פנימיים באמצעות Copilot Studio"
+    ],
+    "strengths": {
+      "title": "מה Copilot עושה טוב במיוחד עבור מפתחים",
+      "areas": [
+        {
+          "title": "הבנה מהירה של קוד קיים",
+          "details": [
+            "מסביר classes, components, services, pipelines ו-patterns",
+            "מסכם קבצים גדולים או פרויקטים שלמים",
+            "מספק תובנות על ארכיטקטורה, dependencies ו-anti-patterns"
+          ]
+        },
+        {
+          "title": "ג'נרציה מהירה ואיכותית של קוד",
+          "details": [
+            "יוצר Angular components מלאים (HTML + TS + SCSS + Tests)",
+            "יוצר Controllers, DTOs, Services ו-EF Models ב-.NET 8",
+            "Smart completions שמבינים את ה-context של הפרויקט"
+          ]
+        },
+        {
+          "title": "Refactoring ברמה גבוהה",
+          "details": [
+            "משפר naming, מבנה וארגון קבצים",
+            "ממיר קוד אימפרטיבי ל-RxJS או async/await",
+            "משפר ביצועים, קריאות ועמידה בעקרונות SOLID"
+          ]
+        },
+        {
+          "title": "כתיבת Tests",
+          "details": [
+            "יוצר unit tests עבור Angular (Jest/Karma)",
+            "יוצר integration tests עבור .NET",
+            "מציע mocks, stubs ו-test cases שלא חשבת עליהם"
+          ]
+        },
+        {
+          "title": "דוקומנטציה",
+          "details": [
+            "כותב קבצי README",
+            "יוצר דיאגרמות (Mermaid)",
+            "כותב code comments באיכות גבוהה"
+          ]
+        }
+      ]
+    },
+    "lesserKnownCapabilities": {
+      "title": "יכולות שרוב האנשים לא מכירים",
+      "items": [
+        {
+          "title": "ניתוח PR / Merge Request",
+          "details": [
+            "סיכום של Pull Request",
+            "הצעות לשיפור",
+            "זיהוי באגים",
+            "הצעות ל-tests חסרים"
+          ]
+        },
+        {
+          "title": "יצירת דיאגרמות",
+          "details": [
+            "Mermaid sequence diagrams",
+            "Class diagrams",
+            "Flowcharts"
+          ]
+        },
+        {
+          "title": "המרת קוד בין טכנולוגיות",
+          "details": [
+            "AngularJS → Angular 21",
+            "jQuery → modern TypeScript",
+            ".NET Framework → .NET 8"
+          ]
+        },
+        {
+          "title": "כתיבת DevOps Scripts",
+          "details": [
+            "GitHub Actions workflows",
+            "Dockerfiles",
+            "Kubernetes manifests"
+          ]
+        },
+        {
+          "title": "הסבר שגיאות (Errors)",
+          "details": [
+            "Stack traces",
+            "Exceptions",
+            "Build errors",
+            "Dependency conflicts"
+          ]
+        }
+      ]
+    }
+  },
+  "guidelines": {
+    "installation": {
+      "title": "התקנה ו-Setup",
+      "steps": [
+        {
+          "step": 1,
+          "title": "שימוש ב-Copilot ב-Web",
+          "description": "היכנסו ל-copilot.microsoft.com בכל דפדפן. התחברו עם חשבון Microsoft לגישה חינמית. מנוי Copilot Pro פותח גישה בעדיפות, GPT-4 Turbo ו-sessions ארוכים יותר.",
+          "code": null
+        },
+        {
+          "step": 2,
+          "title": "הפעלת Copilot ב-Windows 11",
+          "description": "Copilot מובנה בתוך Windows 11 גרסה 22H2+. לחצו Win+C כדי לפתוח את ה-sidebar, או הקליקו על כפתור ה-Copilot ב-taskbar. הוא קורא את ה-context של המסך ויכול לבצע פעולות בהגדרות Windows.",
+          "code": null
+        },
+        {
+          "step": 3,
+          "title": "אקטיבציה של Copilot ב-Microsoft Edge",
+          "description": "הקליקו על אייקון ה-Copilot (✦) ב-toolbar של Edge או לחצו Ctrl+Shift+. כדי לפתוח את ה-sidebar. ב-Edge הוא יכול לסכם את הדף הנוכחי, להסביר טקסט מסומן ולנסח תגובות (compose).",
+          "code": null
+        },
+        {
+          "step": 4,
+          "title": "התקנת Copilot Chat ב-VS Code",
+          "description": "פתחו את ה-Extensions (Ctrl+Shift+X), חפשו 'GitHub Copilot', התקינו אותו, התחברו עם ה-GitHub שלכם וודאו שה-extension פעיל תחת Settings.",
+          "code": "code --install-extension GitHub.copilot-chat"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Configurations מומלצים",
+      "tips": [
+        {
+          "title": "הגדרת Custom Instructions (צעד קריטי)",
+          "description": "זה לבדו משפר את איכות התגובות ב-30–40%. לכו ל-Ctrl+Shift+P ← Copilot: Open User Settings ← Copilot Chat ← Custom Instructions, והדביקו את הפרופיל שלכם.",
+          "code": null,
+          "exampleInstruction": "I am a developer on a team working with Angular 21 and .NET 8. Give me clean, modern code with emphasis on SOLID, Clean Architecture, and RxJS Best Practices. In Angular use Signals, Standalone Components, inject(), and new Control Flow. In .NET 8 use Minimal APIs, modern DI, and EF Core 8. When I ask for code — give complete examples. When I ask for an explanation — keep it short and clear. When there are multiple options — suggest 2–3 and explain the differences."
+        },
+        {
+          "title": "קביעת ה-Tone",
+          "description": "הוסיפו הנחיית טון ל-custom instructions: 'Respond in a professional, direct manner — no filler or fluff.'",
+          "code": null
+        },
+        {
+          "title": "הפעלת מצב 'Precise' למשימות קוד",
+          "description": "ב-Copilot ב-web או ב-Edge, בחרו בסגנון שיחה 'More Precise' לפני שאלות קוד. זה מפחית יצירתיות מיותרת ומייצר output קוד עובדתי ודטרמיניסטי יותר.",
+          "code": null
+        },
+        {
+          "title": "שימוש ב-Edge Copilot למחקר דוקומנטציה",
+          "description": "גשו לדוקומנטציה של Angular, MDN או ה-README ב-GitHub, ואז פתחו את ה-sidebar של Edge Copilot ובקשו ממנו לסכם או להסביר את הדף. הוא קורא את הדף הנוכחי כ-context אוטומטי.",
+          "code": null
+        },
+        {
+          "title": "שימוש ב-plugins ו-Copilot Studio לאינטגרציות",
+          "description": "בממשק ה-web, הפעילו plugins (כמו GitHub, Jira, Confluence) כדי לאפשר ל-Copilot למשוך live data מהכלים שלכם. ל-workflows צוותיים, Copilot Studio מאפשר לבנות סוכנים עם המידע הפרטי שלכם.",
+          "code": null
+        },
+        {
+          "title": "העלאת screenshots ל-visual debugging",
+          "description": "Copilot הוא multimodal. הדביקו או גררו screenshot של הודעת שגיאה, באג ב-UI או network trace. שאלו 'what is causing this?' והוא ינתח את התמונה כ-context.",
+          "code": null
+        }
+      ]
+    },
+    "bestPractices": {
+      "title": "טיפים ו-Best Practices",
+      "tips": [
+        {
+          "title": "ספקו context ברור",
+          "description": "ציינו מטרה, אילוצים ו-tech stack. הדביקו code snippet במקום שאלה עמומה. בקשו אלטרנטיבות והסברים קצרים. בקשו שיפורים, לא רק 'write this for me'."
+        },
+        {
+          "title": "כתבו קוד נקי לקבלת completions טובים יותר",
+          "description": "קוד מובנה היטב מוביל להצעות inline טובות יותר. ככל שיש יותר context בקובץ, כך Copilot מדויק יותר. כתבו בצעדים קטנים — אל תדביקו 300 שורות בבת אחת."
+        },
+        {
+          "title": "הדביקו שגיאות כתמונות, לא רק טקסט",
+          "description": "בזמן debugging, קחו screenshot של השגיאה המלאה ב-terminal/browser (כולל ה-context מסביב) והדביקו ישירות ל-Copilot. context ויזואלי מוביל לדיאגנוזה מהירה יותר."
+        },
+        {
+          "title": "השתמשו בו ככלי מחקר ראשוני",
+          "description": "לפני צלילה עמוקה לדוקומנטציה, בקשו מ-Copilot לסכם איך ספרייה או קונספט עובדים. ה-Bing grounding שומר על תשובות עדכניות. לאחר מכן ודאו פרטי מימוש קריטיים מול הדוקומנטציה הרשמית."
+        },
+        {
+          "title": "שילוב עם Microsoft 365 לדוקומנטציה",
+          "description": "השתמשו ב-Copilot ב-Word לניסוח specs מההערות שלכם, ב-Excel לניתוח נתונים או הסבר נוסחאות, וב-Teams לסיכום פגישות עבור ה-dev log שלכם."
+        },
+        {
+          "title": "היו ספציפיים לגבי ה-tech stack",
+          "description": "הידע של Copilot רחב מאוד. תמיד ציינו את שלכם: 'Using Angular 21, standalone components, signals, Tailwind CSS 4'. ללא ה-context הזה, הוא עלול להציע patterns ישנים."
+        },
+        {
+          "title": "שימוש למשימות cross-cutting",
+          "description": "Copilot מצטיין במשימות שחוצות כמה כלים — כמו 'סכם את ה-Jira ticket הזה, ג'נרט שם ל-branch ונסח תיאור ל-PR'. חברו את הנקודות לאורך כל ה-workflow שלכם."
+        }
+      ]
+    },
+    "keyboardShortcuts": {
+      "title": "קיצורי מקלדת ב-VS Code",
+      "shortcuts": [
+        { "key": "Tab", "action": "אישור ההצעה (Accept)" },
+        { "key": "Esc", "action": "ביטול ההצעה" },
+        { "key": "Alt + ]", "action": "ההצעה הבאה" },
+        { "key": "Alt + [", "action": "ההצעה הקודמת" }
+      ]
+    },
+    "chatContextTags": {
+      "title": "תגיות context ב-Copilot Chat",
+      "tags": [
+        { "tag": "@workspace", "description": "מתייחס לפרויקט השלם" },
+        { "tag": "@file", "description": "מתייחס לקובץ הנוכחי" },
+        { "tag": "@terminal", "description": "פקודות CLI" },
+        { "tag": "@tests", "description": "ג'נרציה של tests" }
+      ]
+    },
+    "gitlabWorkflow": {
+      "title": "עבודה עם Copilot בסביבת GitLab (Merge Requests)",
+      "description": "למרות ש-Copilot לא מובנה ב-GitLab, ניתן להשתמש בו לניתוח MRs על ידי העתקת ה-diff או הקבצים שהשתנו לתוך Copilot Chat.",
+      "capabilities": [
+        "סיכום Merge Request",
+        "זיהוי באגים",
+        "הצעות refactoring",
+        "הצעות ל-tests חסרים"
+      ],
+      "examplePrompts": [
+        "@workspace Analyze the following diff and suggest improvements.",
+        "Summarize this MR and highlight areas for improvement."
+      ]
+    }
+  },
+  "prompts": [
+    {
+      "id": "copilot-debug-screenshot",
+      "title": "Debug מתוך Screenshot",
+      "description": "הדביקו screenshot של שגיאה וקבלו דיאגנוזה עם סיבה ותיקון.",
+      "category": "Debugging",
+      "content": "[Paste or drag your error screenshot here]\n\nThis error appears in my [Angular / Node / browser] application.\n\nPlease:\n1. Identify the root cause based on what you see\n2. Explain why this error occurs\n3. Provide a concrete fix\n4. Suggest how to prevent this class of error going forward\n\nContext: I am using [Angular 21, TypeScript 5.x, Node 20]",
+      "tags": ["debugging", "screenshot", "multimodal"]
+    },
+    {
+      "id": "copilot-doc-summary",
+      "title": "סיכום ספרייה או API",
+      "description": "קבלו סיכום ממוקד למפתחים של ספרייה, דף API או README ב-GitHub.",
+      "category": "Research",
+      "content": "[Open the library docs or GitHub README in Edge, then open Copilot sidebar]\n\nSummarize this library for a senior frontend developer:\n1. What problem does it solve?\n2. Core concepts and API surface (key classes / functions / directives)\n3. When should I use this over alternatives?\n4. Minimal working example for the most common use case\n5. Known gotchas or limitations I should know about",
+      "tags": ["research", "documentation", "library"]
+    },
+    {
+      "id": "copilot-pr-draft",
+      "title": "ניסוח תיאור ל-PR",
+      "description": "ג'נרציה של תיאור PR מובנה וברור מתוך סיכום השינויים שלכם.",
+      "category": "Documentation",
+      "content": "Write a pull request description for the following change:\n\nWhat changed:\n[describe the change in plain language]\n\nWhy:\n[describe the motivation or linked ticket]\n\nFormat it as:\n## Summary\n[2–3 bullet points]\n\n## Changes\n[bulleted list of what changed]\n\n## Test Plan\n[checklist of how to verify the change works]\n\n## Notes\n[any rollback plan, migration steps, or reviewer notes]",
+      "tags": ["documentation", "pr", "workflow"]
+    },
+    {
+      "id": "copilot-sql-query",
+      "title": "כתיבת שאילתת SQL",
+      "description": "ג'נרציה או הסבר של שאילתת SQL עם דרישות בשפה טבעית.",
+      "category": "Data",
+      "content": "Write a SQL query for the following requirement:\n\n[Describe what data you need in plain English]\n\nSchema:\n```sql\n[paste your table definitions here]\n```\n\nRequirements:\n- Return only the columns I need (no SELECT *)\n- Handle NULLs safely\n- Use CTEs if the query is complex\n- Add a brief comment explaining each step\n- Target database: [PostgreSQL / MySQL / SQL Server]",
+      "tags": ["sql", "data", "database"]
+    },
+    {
+      "id": "copilot-meeting-action",
+      "title": "חילוץ Action Items מסיכום פגישה",
+      "description": "הפיכת הערות פגישה מבולגנות לרשימת משימות מסודרת לצוות.",
+      "category": "Productivity",
+      "content": "Extract all action items from the following meeting notes and format them as a table:\n\n[paste your raw meeting notes here]\n\nTable format:\n| Action Item | Owner | Due Date | Priority |\n\nAfter the table, list any open questions or decisions that still need to be made.",
+      "tags": ["productivity", "meetings", "microsoft-365"]
+    },
+    {
+      "id": "copilot-code-explain",
+      "title": "הסבר את הקוד הזה",
+      "description": "קבלו הסבר בשפה פשוטה לקטע קוד מורכב.",
+      "category": "Learning",
+      "content": "Explain the following code to a developer who is familiar with the language but new to this pattern:\n\n```\n[paste your code here]\n```\n\nYour explanation should:\n1. Describe what this code does in plain English (no jargon)\n2. Explain each non-obvious step\n3. Identify the design pattern being used (if any)\n4. Point out anything that could be improved or might cause issues\n5. Suggest 1–2 resources for learning more about the core concepts",
+      "tags": ["learning", "explanation", "onboarding"]
+    },
+    {
+      "id": "copilot-file-explain",
+      "title": "הסבר ושיפור קובץ",
+      "description": "בקשו מ-Copilot להסביר את מטרת הקובץ ולהציע שיפורים.",
+      "category": "Code Review",
+      "content": "@file Explain what this file does and what could be improved.",
+      "tags": ["code-review", "explanation", "refactoring"]
+    },
+    {
+      "id": "copilot-angular-best-practices",
+      "title": "שיפור קוד Angular ל-Best Practices",
+      "description": "Refactor לקובץ הנוכחי כדי שיעקוב אחרי Best Practices של Angular 21.",
+      "category": "Refactoring",
+      "content": "@file Improve this code according to Angular 21 best practices.",
+      "tags": ["angular", "refactoring", "best-practices"]
+    },
+    {
+      "id": "copilot-angular-standalone",
+      "title": "יצירת Angular Standalone Component",
+      "description": "ג'נרציה של קומפוננטה עם Signals, inject() ו-Control Flow חדש.",
+      "category": "Angular",
+      "content": "Create a Standalone Angular component with Signals, inject(), and new Control Flow syntax.",
+      "tags": ["angular", "signals", "standalone", "component"]
+    },
+    {
+      "id": "copilot-rxjs-convert",
+      "title": "המרה ל-Clean RxJS",
+      "description": "Refactor לקוד אימפרטיבי לתוך patterns ריאקטיביים ונקיים של RxJS.",
+      "category": "Angular",
+      "content": "Convert the following code to clean RxJS:\n\n```\n[paste your code here]\n```",
+      "tags": ["angular", "rxjs", "refactoring"]
+    },
+    {
+      "id": "copilot-angular-service",
+      "title": "יצירת Angular Service עם HttpClient",
+      "description": "ג'נרציה של service עם HttpClient ו-error-handling interceptor.",
+      "category": "Angular",
+      "content": "Create an Angular service using HttpClient with an interceptor for error handling.",
+      "tags": ["angular", "service", "http", "interceptor"]
+    },
+    {
+      "id": "copilot-dotnet-minimal-api",
+      "title": "יצירת .NET 8 Minimal API",
+      "description": "ג'נרציה של endpoint עם EF Core 8, DTOs ו-validation.",
+      "category": ".NET",
+      "content": "Create a Minimal API in .NET 8 with EF Core 8 including DTOs and Validation.",
+      "tags": ["dotnet", "minimal-api", "ef-core", "validation"]
+    },
+    {
+      "id": "copilot-dotnet-solid",
+      "title": "שיפור .NET Class לפי SOLID",
+      "description": "Refactor ל-class ב-.NET כדי שיעמוד בעקרונות SOLID.",
+      "category": ".NET",
+      "content": "Improve the following class according to SOLID principles:\n\n```csharp\n[paste your class here]\n```",
+      "tags": ["dotnet", "solid", "refactoring"]
+    },
+    {
+      "id": "copilot-dotnet-integration-tests",
+      "title": "יצירת .NET Integration Tests",
+      "description": "ג'נרציה של בדיקות אינטגרציה עבור API ב-.NET.",
+      "category": ".NET",
+      "content": "Create integration tests for the following API:\n\n```csharp\n[paste your API code here]\n```",
+      "tags": ["dotnet", "testing", "integration"]
+    },
+    {
+      "id": "copilot-unit-tests",
+      "title": "כתיבת Unit Tests לקובץ הנוכחי",
+      "description": "ג'נרציה של unit tests באמצעות ה-@tests context של Copilot.",
+      "category": "Testing",
+      "content": "@tests Write unit tests for this file.",
+      "tags": ["testing", "unit-tests", "jest", "karma"]
+    },
+    {
+      "id": "copilot-github-action",
+      "title": "יצירת GitHub Action ל-Build + Tests",
+      "description": "ג'נרציה של workflow להרצת build ובדיקות ל-Angular ו-.NET.",
+      "category": "DevOps",
+      "content": "Write a GitHub Action that runs build + tests for an Angular frontend and a .NET 8 backend.",
+      "tags": ["devops", "github-actions", "ci-cd"]
+    },
+    {
+      "id": "copilot-dockerfile",
+      "title": "יצירת Dockerfile",
+      "description": "ג'נרציה של Dockerfile מותאם לפרויקט.",
+      "category": "DevOps",
+      "content": "Create a Dockerfile for this project.\n\nContext: [Angular frontend / .NET 8 backend / full-stack monorepo]",
+      "tags": ["devops", "docker", "containerization"]
+    },
+    {
+      "id": "copilot-k8s-manifest",
+      "title": "יצירת Kubernetes Manifest",
+      "description": "ג'נרציה של deployment manifest עבור service.",
+      "category": "DevOps",
+      "content": "Write a Kubernetes manifest for this service.\n\nContext: [describe the service, ports, replicas, environment variables]",
+      "tags": ["devops", "kubernetes", "deployment"]
+    },
+    {
+      "id": "copilot-mr-analysis",
+      "title": "ניתוח Merge Request / Diff",
+      "description": "הדבקת diff ל-Copilot Chat לקבלת סיכום, זיהוי באגים והצעות לשיפור.",
+      "category": "Code Review",
+      "content": "@workspace Analyze the following diff and suggest improvements:\n\n```diff\n[paste your diff here]\n```\n\nPlease:\n1. Summarize the changes\n2. Identify potential bugs or issues\n3. Suggest refactoring opportunities\n4. Recommend any missing tests",
+      "tags": ["code-review", "merge-request", "gitlab", "diff"]
+    },
+    {
+      "id": "copilot-mermaid-diagram",
+      "title": "יצירת Mermaid Diagram",
+      "description": "יצירת דיאגרמת Mermaid (sequence, class, flowchart) מתוך תיאור.",
+      "category": "Documentation",
+      "content": "Create a [sequence / class / flowchart] Mermaid diagram for the following:\n\n[describe the flow, classes, or process]",
+      "tags": ["documentation", "mermaid", "diagrams"]
+    }
+  ]
+}

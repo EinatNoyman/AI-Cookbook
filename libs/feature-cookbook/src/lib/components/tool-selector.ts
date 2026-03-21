@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { CookbookService, Platform, StorageService } from '@bmad-demo/shared-data';
+import { CookbookService, LanguageService, Platform, StorageService } from '@bmad-demo/shared-data';
 
 const TOOL_COLORS: Record<string, string> = {
   all: 'border-slate-500 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800',
@@ -21,7 +21,7 @@ const TOOL_ACTIVE: Record<string, string> = {
   selector: 'app-tool-selector',
   standalone: true,
   template: `
-    <div class="flex flex-wrap gap-2" role="tablist" aria-label="Filter by AI platform">
+    <div class="flex flex-wrap gap-2" role="tablist" [attr.aria-label]="langService.t().filterByPlatform">
       @for (tool of tools; track tool) {
         <button
           role="tab"
@@ -34,7 +34,7 @@ const TOOL_ACTIVE: Record<string, string> = {
           @if (tool !== 'all' && tool !== 'cursor') {
             <img [src]="'icons/' + tool + '.png'" alt="" class="h-4 w-4 object-contain" aria-hidden="true" />
           }
-          {{ tool === 'all' ? 'All' : capitalize(tool) }}
+          {{ tool === 'all' ? langService.t().allTools : capitalize(tool) }}
         </button>
       }
     </div>
@@ -42,6 +42,7 @@ const TOOL_ACTIVE: Record<string, string> = {
 })
 export class ToolSelectorComponent {
   protected readonly cookbookService = inject(CookbookService);
+  protected readonly langService = inject(LanguageService);
   private readonly storage = inject(StorageService);
 
   protected readonly tools: Array<Platform | 'all'> = ['all', 'claude', 'copilot', 'cursor', 'qodo'];

@@ -5,7 +5,7 @@ import {
   style,
   animate,
 } from '@angular/animations';
-import { AiTool, AiToolId, AiToolsService } from '@bmad-demo/shared-data';
+import { AiTool, AiToolId, AiToolsService, LanguageService } from '@bmad-demo/shared-data';
 import { ToolOverviewComponent } from '../components/tool-overview';
 import { ToolGuidelinesComponent } from '../components/tool-guidelines';
 import { ToolPromptsComponent } from '../components/tool-prompts';
@@ -66,12 +66,6 @@ const TOOL_ICON_RING: Record<AiToolId, string> = {
   qodo:    'ring-2 ring-purple-300 dark:ring-purple-700',
 };
 
-const SECTIONS: { id: Section; label: string }[] = [
-  { id: 'prompts', label: 'Prompts'    },
-  { id: 'about',   label: 'About'      },
-  { id: 'setup',   label: 'Setup & Tips' },
-];
-
 
 @Component({
   selector: 'app-ai-tools-page',
@@ -82,9 +76,9 @@ const SECTIONS: { id: Section; label: string }[] = [
     <section>
       <!-- Page header -->
       <div class="mb-5">
-        <h1 class="text-2xl font-bold text-slate-900 dark:text-slate-100">AI Cookbook</h1>
+        <h1 class="text-2xl font-bold text-slate-900 dark:text-slate-100">{{ langService.t().cookbookTitle }}</h1>
         <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
-          Proven prompts, setup guides, and tool overviews — pick your AI and start cooking.
+          {{ langService.t().aiToolsSubtitle }}
         </p>
       </div>
 
@@ -151,7 +145,7 @@ const SECTIONS: { id: Section; label: string }[] = [
               <!-- Prompt count badge -->
               <span class="hidden sm:inline rounded-full border border-slate-200 dark:border-slate-700
                            bg-slate-50 dark:bg-slate-800 px-3 py-0.5 text-xs text-slate-500 dark:text-slate-400">
-                {{ tool.prompts.length }} prompts
+                {{ tool.prompts.length }} {{ langService.t().promptCount }}
               </span>
             </div>
 
@@ -162,21 +156,33 @@ const SECTIONS: { id: Section; label: string }[] = [
               role="tablist"
               [attr.aria-label]="tool.name + ' sections'"
             >
-              @for (section of sections; track section.id) {
-                <button
-                  role="tab"
-                  [attr.aria-selected]="activeSection() === section.id"
-                  (click)="activeSection.set(section.id)"
-                  class="rounded-full px-3 py-1 text-xs font-medium
-                         transition-all duration-200 ease-out
-                         focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500"
-                  [class]="activeSection() === section.id
-                    ? sectionPillActive(tool.id)
-                    : sectionPillInactive"
-                >
-                  {{ section.label }}
-                </button>
-              }
+              <button
+                role="tab"
+                [attr.aria-selected]="activeSection() === 'prompts'"
+                (click)="activeSection.set('prompts')"
+                class="rounded-full px-3 py-1 text-xs font-medium
+                       transition-all duration-200 ease-out
+                       focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500"
+                [class]="activeSection() === 'prompts' ? sectionPillActive(tool.id) : sectionPillInactive"
+              >{{ langService.t().tabPrompts }}</button>
+              <button
+                role="tab"
+                [attr.aria-selected]="activeSection() === 'about'"
+                (click)="activeSection.set('about')"
+                class="rounded-full px-3 py-1 text-xs font-medium
+                       transition-all duration-200 ease-out
+                       focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500"
+                [class]="activeSection() === 'about' ? sectionPillActive(tool.id) : sectionPillInactive"
+              >{{ langService.t().tabAbout }}</button>
+              <button
+                role="tab"
+                [attr.aria-selected]="activeSection() === 'setup'"
+                (click)="activeSection.set('setup')"
+                class="rounded-full px-3 py-1 text-xs font-medium
+                       transition-all duration-200 ease-out
+                       focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500"
+                [class]="activeSection() === 'setup' ? sectionPillActive(tool.id) : sectionPillInactive"
+              >{{ langService.t().tabSetup }}</button>
             </div>
 
             <!-- Section content -->
@@ -205,9 +211,9 @@ const SECTIONS: { id: Section; label: string }[] = [
 })
 export class AiToolsPage {
   protected readonly aiToolsService = inject(AiToolsService);
+  protected readonly langService = inject(LanguageService);
   protected readonly activeTool = signal<AiToolId>('claude');
   protected readonly activeSection = signal<Section>('prompts');
-  protected readonly sections = SECTIONS;
   protected readonly toolPillInactive = TOOL_PILL_INACTIVE;
   protected readonly sectionPillInactive = SECTION_PILL_INACTIVE;
 

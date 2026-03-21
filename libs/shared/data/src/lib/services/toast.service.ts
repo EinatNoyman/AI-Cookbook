@@ -1,4 +1,5 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
+import { LanguageService } from './language.service';
 
 export interface Toast {
   id: string;
@@ -6,23 +7,14 @@ export interface Toast {
   type: 'success' | 'error';
 }
 
-const WITTY_COPY_MESSAGES = [
-  'Copied! Your clipboard is now smarter.',
-  'Snagged it! Go paste something brilliant.',
-  'Ctrl+V is ready for action.',
-  'Copied — your AI tool is going to love this.',
-  'Got it! That prompt is locked and loaded.',
-  'Clipboard updated. You\'re welcome.',
-  'Yoinked! Time to paste and prosper.',
-  'Copy that! (pun absolutely intended)',
-];
-
 @Injectable({ providedIn: 'root' })
 export class ToastService {
+  private readonly langService = inject(LanguageService);
   readonly toasts = signal<Toast[]>([]);
 
   showCopySuccess(): void {
-    const message = WITTY_COPY_MESSAGES[Math.floor(Math.random() * WITTY_COPY_MESSAGES.length)];
+    const messages = this.langService.t().copySuccessMessages;
+    const message = messages[Math.floor(Math.random() * messages.length)];
     this.show(message, 'success');
   }
 

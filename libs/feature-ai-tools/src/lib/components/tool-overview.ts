@@ -1,5 +1,5 @@
-import { Component, input } from '@angular/core';
-import { AiTool } from '@bmad-demo/shared-data';
+import { Component, inject, input } from '@angular/core';
+import { AiTool, LanguageService } from '@bmad-demo/shared-data';
 
 @Component({
   selector: 'app-tool-overview',
@@ -9,7 +9,7 @@ import { AiTool } from '@bmad-demo/shared-data';
 
       <!-- Description -->
       <div class="rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6">
-        <h3 class="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">About {{ tool().name }}</h3>
+        <h3 class="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">{{ langService.t().tabAbout }} {{ tool().name }}</h3>
         <p class="text-slate-600 dark:text-slate-400 leading-relaxed">{{ tool().overview.description }}</p>
       </div>
 
@@ -18,7 +18,7 @@ import { AiTool } from '@bmad-demo/shared-data';
         <div class="rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6">
           <h3 class="mb-4 flex items-center gap-2 text-base font-semibold text-slate-900 dark:text-slate-100">
             <span class="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 text-sm">✓</span>
-            Strengths
+            {{ langService.t().strengths }}
           </h3>
           <ul class="space-y-2">
             @for (pro of tool().overview.pros; track pro) {
@@ -33,7 +33,7 @@ import { AiTool } from '@bmad-demo/shared-data';
         <div class="rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6">
           <h3 class="mb-4 flex items-center gap-2 text-base font-semibold text-slate-900 dark:text-slate-100">
             <span class="flex h-6 w-6 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400 text-sm">!</span>
-            Limitations
+            {{ langService.t().limitations }}
           </h3>
           <ul class="space-y-2">
             @for (con of tool().overview.cons; track con) {
@@ -48,7 +48,7 @@ import { AiTool } from '@bmad-demo/shared-data';
 
       <!-- When to Use -->
       <div class="rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6">
-        <h3 class="mb-4 text-base font-semibold text-slate-900 dark:text-slate-100">When to Use {{ tool().name }}</h3>
+        <h3 class="mb-4 text-base font-semibold text-slate-900 dark:text-slate-100">{{ langService.t().whenToUse }} {{ tool().name }}</h3>
         <ul class="grid gap-2 sm:grid-cols-2">
           @for (use of tool().overview.whenToUse; track use) {
             <li class="flex items-start gap-2 rounded-md bg-slate-50 dark:bg-slate-800/50 px-3 py-2 text-sm text-slate-700 dark:text-slate-300">
@@ -89,7 +89,7 @@ import { AiTool } from '@bmad-demo/shared-data';
           <h3 class="mb-1 text-base font-semibold text-slate-900 dark:text-slate-100">
             {{ tool().overview.lesserKnownCapabilities!.title }}
           </h3>
-          <p class="mb-5 text-xs text-slate-500 dark:text-slate-500">Features that are easy to miss but make a big difference.</p>
+          <p class="mb-5 text-xs text-slate-500 dark:text-slate-500">{{ langService.t().hiddenFeatures }}</p>
           <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             @for (item of tool().overview.lesserKnownCapabilities!.items; track item.title) {
               <div class="rounded-lg border border-violet-100 dark:border-violet-900/30 bg-violet-50/50 dark:bg-violet-950/20 p-4">
@@ -113,4 +113,5 @@ import { AiTool } from '@bmad-demo/shared-data';
 })
 export class ToolOverviewComponent {
   readonly tool = input.required<AiTool>();
+  protected readonly langService = inject(LanguageService);
 }

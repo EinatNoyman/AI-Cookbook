@@ -1,5 +1,5 @@
 import { Component, inject, viewChild, ElementRef } from '@angular/core';
-import { CookbookService } from '@bmad-demo/shared-data';
+import { CookbookService, LanguageService } from '@bmad-demo/shared-data';
 
 @Component({
   selector: 'app-search-bar',
@@ -15,7 +15,7 @@ import { CookbookService } from '@bmad-demo/shared-data';
       <input
         #searchInput
         type="search"
-        placeholder="Search prompts... (press / to focus)"
+        [placeholder]="langService.t().searchPlaceholder"
         [value]="cookbookService.searchQuery()"
         (input)="onInput($event)"
         (keydown.escape)="clear()"
@@ -23,14 +23,14 @@ import { CookbookService } from '@bmad-demo/shared-data';
                text-sm text-slate-800 dark:text-slate-200 placeholder-slate-500
                focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500
                transition-colors"
-        aria-label="Search cookbook entries"
+        [attr.aria-label]="langService.t().searchAriaLabel"
       />
       @if (cookbookService.searchQuery()) {
         <button
           (click)="clear()"
           class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-700 dark:hover:text-slate-300
                  focus:outline-none focus:text-slate-700 dark:focus:text-slate-300"
-          aria-label="Clear search"
+          [attr.aria-label]="langService.t().clearSearch"
         >
           <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
@@ -42,6 +42,7 @@ import { CookbookService } from '@bmad-demo/shared-data';
 })
 export class SearchBarComponent {
   protected readonly cookbookService = inject(CookbookService);
+  protected readonly langService = inject(LanguageService);
   private readonly searchInput = viewChild<ElementRef<HTMLInputElement>>('searchInput');
   private debounceTimer: ReturnType<typeof setTimeout> | null = null;
 

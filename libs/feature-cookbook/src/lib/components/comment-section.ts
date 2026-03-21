@@ -1,12 +1,6 @@
-import { Component, input, inject, signal, OnInit } from '@angular/core';
+import { Component, input, inject, signal, computed, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { StorageService, Comment } from '@bmad-demo/shared-data';
-
-const EMPTY_COMMENT_MESSAGES = [
-  'No comments yet. Be the first!',
-  'Crickets... Someone break the silence!',
-  'This space is begging for your hot take.',
-];
+import { StorageService, Comment, LanguageService } from '@bmad-demo/shared-data';
 
 @Component({
   selector: 'app-comment-section',
@@ -14,7 +8,7 @@ const EMPTY_COMMENT_MESSAGES = [
   imports: [FormsModule],
   template: `
     <div class="space-y-4">
-      <h4 class="text-sm font-semibold text-slate-700 dark:text-slate-300">Comments</h4>
+      <h4 class="text-sm font-semibold text-slate-700 dark:text-slate-300">{{ langService.t().commentsHeading }}</h4>
 
       <!-- Comment Input -->
       <form (ngSubmit)="submitComment()" class="flex gap-2">
@@ -22,11 +16,11 @@ const EMPTY_COMMENT_MESSAGES = [
           [(ngModel)]="newComment"
           name="comment"
           type="text"
-          placeholder="Share a tip or thought..."
+          [placeholder]="langService.t().commentPlaceholder"
           class="flex-1 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 px-3 py-2
                  text-sm text-slate-800 dark:text-slate-200 placeholder-slate-500
                  focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
-          aria-label="Add a comment"
+          [attr.aria-label]="langService.t().addComment"
         />
         <button
           type="submit"
@@ -35,7 +29,7 @@ const EMPTY_COMMENT_MESSAGES = [
                  hover:bg-teal-500 disabled:opacity-40 disabled:cursor-not-allowed
                  transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500"
         >
-          Post
+          {{ langService.t().commentPost }}
         </button>
       </form>
 
@@ -46,7 +40,7 @@ const EMPTY_COMMENT_MESSAGES = [
           <time class="mt-1 block text-xs text-slate-500 dark:text-slate-600">{{ formatTime(comment.timestamp) }}</time>
         </div>
       } @empty {
-        <p class="text-sm text-slate-600 italic">{{ emptyMessage }}</p>
+        <p class="text-sm text-slate-600 italic">{{ emptyMessage() }}</p>
       }
     </div>
   `,
@@ -54,9 +48,14 @@ const EMPTY_COMMENT_MESSAGES = [
 export class CommentSectionComponent implements OnInit {
   readonly entryId = input.required<string>();
   private readonly storage = inject(StorageService);
+  protected readonly langService = inject(LanguageService);
   protected readonly comments = signal<Comment[]>([]);
   protected newComment = '';
-  protected readonly emptyMessage = EMPTY_COMMENT_MESSAGES[Math.floor(Math.random() * EMPTY_COMMENT_MESSAGES.length)];
+  private readonly emptyIndex = Math.floor(Math.random() * 3);
+
+  protected readonly emptyMessage = computed(() =>
+    this.langService.t().emptyComments[this.emptyIndex]
+  );
 
   ngOnInit(): void {
     this.comments.set(this.storage.getComments(this.entryId()));

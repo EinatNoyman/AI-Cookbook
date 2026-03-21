@@ -1,12 +1,5 @@
-import { Component, input, output } from '@angular/core';
-
-const EMPTY_MESSAGES = [
-  { title: 'Nothing here yet...', subtitle: 'But the void has potential.' },
-  { title: 'Tumbleweeds...', subtitle: 'Even the crickets took the day off.' },
-  { title: 'It\'s quiet. Too quiet.', subtitle: 'Maybe try a different filter?' },
-  { title: 'Zero results found', subtitle: 'The search gremlins came up empty.' },
-  { title: 'Nada. Zilch. Zero.', subtitle: 'But hey, at least the UI looks nice.' },
-];
+import { Component, computed, inject, input, output } from '@angular/core';
+import { LanguageService } from '@bmad-demo/shared-data';
 
 @Component({
   selector: 'ui-empty-state',
@@ -14,8 +7,8 @@ const EMPTY_MESSAGES = [
   template: `
     <div class="flex flex-col items-center justify-center py-16 px-4 text-center">
       <div class="text-4xl mb-4">{{ emoji() }}</div>
-      <h3 class="text-lg font-semibold text-slate-700 dark:text-slate-300 mb-1">{{ randomMessage.title }}</h3>
-      <p class="text-sm text-slate-500">{{ subtitle() || randomMessage.subtitle }}</p>
+      <h3 class="text-lg font-semibold text-slate-700 dark:text-slate-300 mb-1">{{ randomMessage().title }}</h3>
+      <p class="text-sm text-slate-500">{{ subtitle() || randomMessage().subtitle }}</p>
       @if (actionLabel()) {
         <button
           (click)="action.emit()"
@@ -35,5 +28,10 @@ export class EmptyStateComponent {
   readonly subtitle = input('');
   readonly action = output<void>();
 
-  protected readonly randomMessage = EMPTY_MESSAGES[Math.floor(Math.random() * EMPTY_MESSAGES.length)];
+  private readonly langService = inject(LanguageService);
+  private readonly messageIndex = Math.floor(Math.random() * 5);
+
+  protected readonly randomMessage = computed(() =>
+    this.langService.t().emptyMessages[this.messageIndex]
+  );
 }

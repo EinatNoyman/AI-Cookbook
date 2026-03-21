@@ -1,0 +1,194 @@
+[
+  {
+    "id": "angular-docs",
+    "title": "Angular Documentation",
+    "url": "https://angular.dev",
+    "description": "תיעוד Angular הרשמי עם מדריכים, הדרכות וייחוס API.",
+    "category": "פריימוורקים",
+    "tags": ["angular", "frontend", "docs"]
+  },
+  {
+    "id": "nx-docs",
+    "title": "Nx Documentation",
+    "url": "https://nx.dev",
+    "description": "תיעוד מערכת בנייה למונוריפו. בנייה חכמה, קאשינג של משימות ועוד.",
+    "category": "כלי בנייה",
+    "tags": ["nx", "monorepo", "build"]
+  },
+  {
+    "id": "tailwind-docs",
+    "title": "Tailwind CSS",
+    "url": "https://tailwindcss.com/docs",
+    "description": "פריימוורק CSS מבוסס utility. כל הקלאסים שצריך, בלי נפיחות.",
+    "category": "עיצוב",
+    "tags": ["css", "tailwind", "styling"]
+  },
+  {
+    "id": "typescript-handbook",
+    "title": "TypeScript Handbook",
+    "url": "https://www.typescriptlang.org/docs/handbook",
+    "description": "המדריך המוחלט ל-TypeScript. מהבסיס ועד טיפוסים מתקדמים.",
+    "category": "שפות",
+    "tags": ["typescript", "types", "docs"]
+  },
+  {
+    "id": "vitest-docs",
+    "title": "Vitest",
+    "url": "https://vitest.dev",
+    "description": "פריימוורק בדיקות יחידה מהיר במיוחד מבוסס Vite. API תואם Jest.",
+    "category": "בדיקות",
+    "tags": ["testing", "vitest", "unit-tests"]
+  },
+  {
+    "id": "playwright-docs",
+    "title": "Playwright",
+    "url": "https://playwright.dev",
+    "description": "בדיקות קצה-לקצה שעובדות בכל הדפדפנים. המתנה אוטומטית, assertions ראשוניים לווב.",
+    "category": "בדיקות",
+    "tags": ["testing", "e2e", "playwright"]
+  },
+  {
+    "id": "rxjs-docs",
+    "title": "RxJS Documentation",
+    "url": "https://rxjs.dev",
+    "description": "הרחבות ריאקטיביות ל-JavaScript. אובזרבייבלים, אופרטורים וסקדיולרים.",
+    "category": "ספריות",
+    "tags": ["rxjs", "reactive", "observables"]
+  },
+  {
+    "id": "mdn-web-docs",
+    "title": "MDN Web Docs",
+    "url": "https://developer.mozilla.org",
+    "description": "האנציקלופדיה של פיתוח ווב. HTML, CSS, JS — הכל במקום אחד.",
+    "category": "מקורות מידע",
+    "tags": ["mdn", "web", "reference"]
+  },
+  {
+    "id": "github",
+    "title": "GitHub",
+    "url": "https://github.com",
+    "description": "איפה שהעולם בונה תוכנה. ריפוזיטוריז, PR-ים, Actions ועוד.",
+    "category": "פלטפורמות",
+    "tags": ["git", "vcs", "collaboration"]
+  },
+  {
+    "id": "figma",
+    "title": "Figma",
+    "url": "https://figma.com",
+    "description": "כלי עיצוב שיתופי. איפה שחברי המעצבים שלך גרים.",
+    "category": "עיצוב גרפי",
+    "tags": ["design", "ui", "collaboration"]
+  },
+  {
+    "id": "web-dev",
+    "title": "web.dev",
+    "url": "https://web.dev",
+    "description": "המרכז של גוגל לביצועי ווב, נגישות ושיטות עבודה מודרניות.",
+    "category": "פיתוח Frontend",
+    "tags": ["performance", "a11y", "web-standards"]
+  },
+  {
+    "id": "josh-comeau-blog",
+    "title": "Josh W. Comeau's Blog",
+    "url": "https://www.joshwcomeau.com",
+    "description": "צלילות עמוקות ואינטראקטיביות ל-CSS, React ויסודות JavaScript. באמת טוב.",
+    "category": "פיתוח Frontend",
+    "tags": ["css", "react", "javascript", "blog"]
+  },
+  {
+    "id": "state-of-js",
+    "title": "State of JS",
+    "url": "https://stateofjs.com",
+    "description": "סקר שנתי שממפה את אקוסיסטם ה-JavaScript. לאן דברים מתקדמים.",
+    "category": "פיתוח Frontend",
+    "tags": ["javascript", "ecosystem", "trends"]
+  },
+  {
+    "id": "css-tricks",
+    "title": "CSS-Tricks",
+    "url": "https://css-tricks.com",
+    "description": "מאמרים, מדריכים, ואלמנק Flexbox/Grid שתסמן במועדפים מאה פעם.",
+    "category": "פיתוח Frontend",
+    "tags": ["css", "flexbox", "grid", "frontend"]
+  },
+  {
+    "id": "claude-courses",
+    "title": "Claude Courses",
+    "url": "https://claude.com/resources/courses",
+    "description": "מסלולי למידה וקורסים רשמיים לעבודה יעילה עם Claude.",
+    "category": "למידת AI",
+    "tags": ["claude", "anthropic", "courses", "ai"]
+  },
+  {
+    "id": "3blue1brown",
+    "title": "3Blue1Brown",
+    "url": "https://www.3blue1brown.com",
+    "description": "מתמטיקה ומדע ויזואליים שבונים אינטואיציה אמיתית. סדרת הרשתות הנוירונליות חיונית.",
+    "category": "למידת AI",
+    "tags": ["math", "neural-networks", "visualization", "fundamentals"]
+  },
+  {
+    "id": "prompting-guide",
+    "title": "Prompt Engineering Guide",
+    "url": "https://www.promptingguide.ai",
+    "description": "מדריך מקיף לטכניקות פרומפטינג — מ-zero-shot עד chain-of-thought.",
+    "category": "למידת AI",
+    "tags": ["prompting", "techniques", "llm", "guide"]
+  },
+  {
+    "id": "anthropic-research",
+    "title": "Anthropic Research",
+    "url": "https://www.anthropic.com/research",
+    "description": "מאמרים שפורסמו של Anthropic על בטיחות AI, פרשנות ויכולות.",
+    "category": "למידת AI",
+    "tags": ["research", "safety", "papers", "anthropic"]
+  },
+  {
+    "id": "claude-code-docs",
+    "title": "Claude Code Docs",
+    "url": "https://code.claude.com/docs",
+    "description": "תיעוד רשמי ל-Claude Code — כלי ה-AI CLI שמניע את תהליך העבודה הזה.",
+    "category": "הנדסת AI",
+    "tags": ["claude-code", "cli", "docs", "agentic"]
+  },
+  {
+    "id": "context-engineering",
+    "title": "Context Engineering for Agents",
+    "url": "https://blog.langchain.com/context-engineering-for-agents/",
+    "description": "צלילה עמוקה של LangChain לניהול מה נכנס לחלון ההקשר של סוכן — ולמה זה חשוב.",
+    "category": "הנדסת AI",
+    "tags": ["context", "agents", "langchain", "engineering"]
+  },
+  {
+    "id": "agentic-engineer",
+    "title": "Just Talk to It",
+    "url": "https://steipete.me/posts/just-talk-to-it",
+    "description": "פיטר שטיינברגר על שינוי התפיסה — והרגלים מעשיים — של עבודה עם סוכני AI.",
+    "category": "הנדסת AI",
+    "tags": ["agentic", "mindset", "workflow", "blog"]
+  },
+  {
+    "id": "openai-cookbook",
+    "title": "OpenAI Cookbook",
+    "url": "https://cookbook.openai.com",
+    "description": "דוגמאות מעשיות וניתנות להרצה לבנייה עם LLM-ים. דפוסים אגנוסטיים למודל שאפשר לגנוב.",
+    "category": "הנדסת AI",
+    "tags": ["llm", "examples", "patterns", "openai"]
+  },
+  {
+    "id": "bmad-method",
+    "title": "BMAD Method",
+    "url": "https://github.com/bmad-code-org/BMAD-METHOD",
+    "description": "שיטת BMAD לפיתוח אג׳ילי מונע AI — מערכת תהליכי העבודה מאחורי המרכז הזה.",
+    "category": "מתודולוגיה",
+    "tags": ["bmad", "methodology", "agentic", "workflow"]
+  },
+  {
+    "id": "spec-driven-dev",
+    "title": "Spec-Driven Development",
+    "url": "https://github.com/github/spec-kit/blob/main/spec-driven.md",
+    "description": "מדריך spec-kit של GitHub לכתיבת מפרטים יסודיים לפני כתיבת שורת קוד אחת.",
+    "category": "מתודולוגיה",
+    "tags": ["spec", "ssd", "planning", "process"]
+  }
+]

@@ -2,7 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { ChildrenOutletContexts, Router, RouterOutlet, RouterLink, RouterLinkActive, NavigationEnd } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { filter } from 'rxjs';
-import { ThemeService } from '@bmad-demo/shared-data';
+import { ThemeService, LanguageService } from '@bmad-demo/shared-data';
 import { ToastComponent } from '@bmad-demo/shared-ui';
 import { routeAnimation } from './route-animations';
 
@@ -15,14 +15,9 @@ import { routeAnimation } from './route-animations';
 })
 export class App {
   protected readonly themeService = inject(ThemeService);
+  protected readonly langService = inject(LanguageService);
   protected readonly mobileMenuOpen = signal(false);
   private readonly contexts = inject(ChildrenOutletContexts);
-
-  protected readonly navItems = [
-    { path: '/cookbook',    label: 'AI Cookbook', icon: '📖' },
-    { path: '/guidelines',  label: 'Guidelines',  icon: '📐' },
-    { path: '/links',       label: 'Links',       icon: '🔗' },
-  ];
 
   protected readonly toolPlatforms = [
     { name: 'Claude',             id: 'claude',  color: 'var(--color-claude)'  },

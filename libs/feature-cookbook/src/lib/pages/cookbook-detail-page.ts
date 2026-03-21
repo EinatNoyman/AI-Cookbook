@@ -2,7 +2,7 @@ import { Component, inject, computed } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
-import { CookbookService } from '@bmad-demo/shared-data';
+import { CookbookService, LanguageService } from '@bmad-demo/shared-data';
 import { CopyButtonComponent, EmptyStateComponent } from '@bmad-demo/shared-ui';
 import { ReactionBarComponent } from '../components/reaction-bar';
 import { CommentSectionComponent } from '../components/comment-section';
@@ -28,7 +28,7 @@ const PLATFORM_ACCENT: Record<string, string> = {
           <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
           </svg>
-          Back to Cookbook
+          {{ langService.t().backToCookbook }}
         </a>
 
         <!-- Header -->
@@ -44,7 +44,7 @@ const PLATFORM_ACCENT: Record<string, string> = {
         <!-- Copy Content -->
         <div class="mb-6">
           <div class="flex items-center justify-between mb-2">
-            <h2 class="text-sm font-semibold text-slate-700 dark:text-slate-300">Prompt</h2>
+            <h2 class="text-sm font-semibold text-slate-700 dark:text-slate-300">{{ langService.t().promptSection }}</h2>
             <ui-copy-button [content]="entry.copyContent" />
           </div>
           <pre class="overflow-x-auto rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 p-4
@@ -53,7 +53,7 @@ const PLATFORM_ACCENT: Record<string, string> = {
 
         <!-- Usage -->
         <div class="mb-6 rounded-lg border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 p-4">
-          <h2 class="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1">How to use</h2>
+          <h2 class="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1">{{ langService.t().howToUse }}</h2>
           <p class="text-sm text-slate-500 dark:text-slate-400">{{ entry.usage }}</p>
         </div>
 
@@ -80,6 +80,7 @@ const PLATFORM_ACCENT: Record<string, string> = {
 export class CookbookDetailPage {
   private readonly route = inject(ActivatedRoute);
   private readonly cookbookService = inject(CookbookService);
+  protected readonly langService = inject(LanguageService);
 
   private readonly entryId = toSignal(
     this.route.paramMap.pipe(map(p => p.get('id') ?? ''))

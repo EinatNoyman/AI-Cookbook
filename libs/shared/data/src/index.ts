@@ -6,3 +6,4 @@ export * from './lib/services/ai-tools.service';
 export * from './lib/services/storage.service';
 export * from './lib/services/toast.service';
 export * from './lib/services/theme.service';
+export * from './lib/services/language.service';

@@ -1,0 +1,325 @@
+{
+  "id": "qodo",
+  "name": "Qodo",
+  "icon": "◎",
+  "tagline": "כלי AI ל-code integrity המתמחה בג'נרציה של tests, ניתוח coverage ו-PR review",
+  "overview": {
+    "description": "Qodo (לשעבר CodiumAI) הוא כלי AI שנבנה סביב התפיסה ש-code integrity — כלומר נכונות, אמינות וכיסוי בדיקות — חשובים לא פחות מג'נרציה של קוד. במקום רק לעזור לכתוב פיצ'רים מאפס, Qodo מנתח את הקוד הקיים ומייצר suites של בדיקות מקיפות, מזהה edge cases שקל לפספס, סורק pull requests לאיתור behavioral regressions, ועוזר לצוותים לשמור על סטנדרטים גבוהים של איכות קוד ב-scale. המערכת פועלת בשלושה מישורים: Qodo Gen (תוסף IDE עם workflows אג'נטיים), Qodo Merge (סקירת PR אוטומטית ב-GitHub/GitLab/Bitbucket), ו-Qodo Command (CLI לבנייה והרצה של AI agents ב-terminal וב-CI/CD). ה-Context Engine שלו מאנדקס את כל ה-codebase — כולל תלויות בין repos שונים — ומגיע ל-80% דיוק בהבנת הקוד. Qodo הוכרז כ-Visionary ב-Gartner Magic Quadrant לשנת 2025 בתחום ה-AI Code Assistants.",
+    "pros": [
+      "הטוב בקטגוריה ב-test generation — מבין את התנהגות הקוד ולא רק את הסינטקס",
+      "מזהה אוטומטית edge cases ומסלולי שגיאה (error paths) שסביר להניח שתפספסו",
+      "PR review שבודק behavioral regressions ובעיות לוגיות",
+      "עובד ישירות בתוך ה-IDE על הקוד שאתם עורכים באותו רגע",
+      "מייצר tests למגוון frameworks: Vitest, Jest, Pytest, JUnit",
+      "Qodo Merge מספק ניתוח PR אוטומטי ב-GitHub, GitLab ו-Bitbucket",
+      "משפר את איכות הבדיקות מעבר לאחוז ה-coverage — בדיקות שבאמת תופסות באגים",
+      "מעל 15 agentic workflows מובנים המופעלים דרך slash commands (כמו /review, /unit-test, /fix)",
+      "Context Engine המאנדקס multi-repo codebases עם הבנה של dependencies בין רפוזיטורים",
+      "Custom workflows — אפשרות ליצור, לייצא ולשתף אוטומציות צוותיות דרך קבצי TOML",
+      "תמיכה ב-MCP — חיבור ל-Jira, GitHub ו-APIs מותאמים אישית דרך Model Context Protocol",
+      "Qodo Command CLI לסוכני AI מבוססי terminal, אוטומציית CI/CD ו-webhook triggers",
+      "Qodo Cover — הרחבה אוטונומית של test coverage המגישה tests כ-follow-up PRs",
+      "תמיכה ב-best_practices.md — Qodo קורא ואוכף את סטנדרטי הכתיבה של הצוות אוטומטית",
+      "תאימות ל-SOC 2 עם אפשרויות deployment ב-VPC, on-prem או air-gapped",
+      "Agentic Mode לפתרון בעיות multi-step אוטונומי מעבר לתשובות single-shot"
+    ],
+    "cons": [
+      "יותר ממוקד (specialized) מכלי AI כלליים — לא מהווה תחליף מלא ל-Claude או Copilot",
+      "דורש subscription עבור פיצ'רים צוותיים ושימוש גבוה",
+      "בדיקות מג'ונרטות עשויות לדרוש tweaking כדי להתאים ל-mock patterns ספציפיים",
+      "פחות יעיל לפיתוח greenfield מאפס או מחקר ארכיטקטוני ראשוני",
+      "ה-Free tier מוגבל ל-250 LLM credits בחודש — עלול לא להספיק למפתחים פעילים",
+      "עקומת למידה מסוימת כדי לשלוט ב-15+ workflows ודפוסי שימוש אופטימליים",
+      "התמחור ל-Enterprise אינו שקוף — דורש קבלת הצעת מחיר מותאמת"
+    ],
+    "whenToUse": [
+      "יצירת test suites מקיפים לקוד קיים ללא בדיקות",
+      "מציאת edge cases ו-error paths בלוגיקה עסקית קריטית",
+      "סקירת PR אוטומטית לתפיסת behavioral regressions לפני ה-merge",
+      "Code review ממוקד security לזיהוי vulnerability של OWASP",
+      "ולידציה של API contracts וג'נרציה של type-safe interfaces מתגובות JSON",
+      "העלאת test coverage אסטרטגית במודולים בעלי סיכון גבוה",
+      "סשנים של code review שבהם איכות הבדיקות היא העיקר",
+      "Onboarding למפתחים חדשים — Qodo משמש כמנטור לסטנדרטים הצוותיים",
+      "ניהול חוב טכני (technical debt) — שימוש ב-workflows של /improve ו-/refactor",
+      "אוטומציה של release notes ודוקומנטציה דרך Qodo Command",
+      "CI/CD quality gates — חסימת merges עד לעמידה בקריטריונים של coverage וסריקה"
+    ],
+    "strengths": {
+      "title": "מה Qodo עושה טוב במיוחד עבור מפתחים",
+      "areas": [
+        {
+          "title": "Agentic Workflows בתוך ה-IDE",
+          "details": [
+            "מעל 15 workflows מובנים שמופעלים ב-chat: /review, /unit-test, /fix, /cleanup, /docs",
+            "Workflows מבצעים עבודה ממוקדת באופן אוטונומי — מחקר, תכנון, ביצוע וסיום",
+            "ניתן ליצור custom workflows, לייצא אותם ולשתף עם שאר הצוות",
+            "Agentic Mode מטפל בפתרון בעיות רב-שלבי: קבלת החלטות, שימוש בכלים וביצוע אוטונומי",
+            "Standard Mode זמין לאינטראקציה ידנית כשרוצים שליטה מלאה על כל פקודה"
+          ]
+        },
+        {
+          "title": "Context Engine — הבנה עמוקה של ה-Codebase",
+          "details": [
+            "מאנדקס פרויקטים שלמים כולל cross-repo dependencies ומודולים משותפים",
+            "80% דיוק בהבנת הקוד — ביצועים עדיפים על המתחרים (שנעים בין 45-74%)",
+            "ממפה קשרים, תלויות ו-patterns ארגוניים של כתיבת קוד",
+            "מזין את כל ה-workflows בהצעות רלוונטיות שמכירות את הפרויקט לעומק",
+            "Qodo Aware (אייקון העין) מאפשר מחקר קוד עמוק לשאלות מורכבות"
+          ]
+        },
+        {
+          "title": "ג'נרציה חכמה של בדיקות",
+          "details": [
+            "מבין את התנהגות הקוד — מוודא מה הקוד *עושה*, לא רק שכל שורה רצה",
+            "מגלה אוטומטית edge cases: null inputs, ערכי קצה, שגיאות async ושיחות concurrent",
+            "Qodo Cover מרחיב coverage אוטונומית ופותח PRs חדשים עם הבדיקות שנוצרו",
+            "תומך במגוון frameworks: Vitest, Jest, Karma, Pytest, JUnit ועוד",
+            "יצירת tests ישירות בתוך ה-chat דרך פקודת /test לאינטגרציה חלקה ב-IDE"
+          ]
+        },
+        {
+          "title": "PR Review ואיכות קוד ב-Scale",
+          "details": [
+            "Qodo Merge סורק כל PR: מדרג בעיות לפי חומרה ומציע תיקונים inline",
+            "מזהה באגים, פערי לוגיקה, tests חסרים ובעיות security או compliance",
+            "תמיכה ב-GitHub, GitLab ו-Bitbucket עם פקודות כמו /implement",
+            "Agent skills מתקנים אוטומטית בעיות ב-PR ועונים לתגובות inline עם פרטי הפתרון",
+            "פקודת /scan_repo_discussions לומדת את דפוסי הסקירה של הצוות ובונה best_practices.md"
+          ]
+        },
+        {
+          "title": "CLI ואוטומציית CI/CD (Qodo Command)",
+          "details": [
+            "בנייה והרצה של custom AI agents מה-terminal או מה-CI/CD pipelines",
+            "Interactive chat mode (qodo chat) — אותה חוויה מה-IDE, רק ב-terminal",
+            "סוכנים יכולים לרוץ כ-HTTP services (webhook mode) לאינטגרציות חיצוניות",
+            "סוכנים מובנים ל-code review, סיכום release notes וניתוח PRs",
+            "MCP mode הופך סוכנים לשירותים שניתן לקרוא להם מאורקסטרטורים כמו LangChain"
+          ]
+        }
+      ]
+    },
+    "lesserKnownCapabilities": {
+      "title": "יכולות שרוב האנשים לא מכירים",
+      "items": [
+        {
+          "title": "Custom Workflows (יצירה ושיתוף)",
+          "details": [
+            "יצירת workflows חדשים דרך תפריט ה-/ ← 'Create new workflow'",
+            "הגדרת הוראות בשפה טבעית צעד-אחר-צעד עבור הסוכן (agent)",
+            "ייצוא ושיתוף ה-workflows עם הצוות כקבצי קונפיגורציה מסוג TOML",
+            "ניתן לשמור workflows ברמת ה-repo בתוך ה-source control לעקביות צוותית",
+            "לכל workflow ניתן להגדיר plan mode ו-output schema משלו"
+          ]
+        },
+        {
+          "title": "אכיפת best_practices.md",
+          "details": [
+            "הצבת קובץ best_practices.md ב-root של הפרויקט",
+            "Qodo קורא אותו ואוכף את הסטנדרטים שלכם בכל הצעה וסקירה",
+            "Workflow של /generate-best-practices מייצר את הקובץ אוטומטית מהקוד הקיים",
+            "Qodo Merge לומד מדיונים ב-PRs קודמים כדי לנסח חוקים חדשים",
+            "מבטיח שגם ג'וניורים וגם סניורים עומדים באותו רף איכות"
+          ]
+        },
+        {
+          "title": "אינטגרציית MCP (Model Context Protocol)",
+          "details": [
+            "חיבור ל-Jira, GitHub וכלים אחרים דרך MCP servers מוגדרים מראש",
+            "הוספת כלי MCP מותאמים אישית ידנית או דרך Smithery registry",
+            "Terminal Agentic Tool מריץ פקודות לוקאליות ישירות מתוך ה-IDE",
+            "Qodo Merge MCP מביא את ה-PR review ישירות ל-chat של ה-IDE",
+            "מרחיב את היכולות מעבר לקוד לאוטומציה מלאה של ה-development workflow"
+          ]
+        },
+        {
+          "title": "Qodo Aware — סוכן מחקר קוד עמוק",
+          "details": [
+            "לחיצה על אייקון העין מפעילה סוכני Ask או Deep Research",
+            "תיוג repos ספציפיים ל-context טוב יותר בין פרויקטים",
+            "מתפקד כ-'Agentic Principal Engineer' לשאלות מורכבות על ה-codebase",
+            "משתמש ב-iterative reasoning ובבדיקות כדי לנווט ב-codebases ענקיים ולא מוכרים",
+            "אידיאלי ל-legacy refactors, security audits והבנת ארכיטקטורה"
+          ]
+        },
+        {
+          "title": "Qodo Cover — אוטונומיית Coverage",
+          "details": [
+            "GitHub Action (בגרסת preview) שמרחיב test coverage אוטומטית",
+            "מנתח PR diffs, מזהה שורות לא מכוסות ומייצר tests ממוקדים",
+            "מבצע commit לבדיקות ב-branch חדש ופותח follow-up PR",
+            "מדווח על ה-coverage delta כדי שהצוות יוכל לעשות merge בביטחון"
+          ]
+        },
+        {
+          "title": "Agent Skills ל-Claude Code וכלים נוספים",
+          "details": [
+            "Qodo מספק agent skills שפועלים כ-slash commands ב-Claude Code ובסוכנים אחרים",
+            "פקודת /get-qodo-rules מושכת את חוקי הקוד של הצוות לכל AI coding agent",
+            "פקודת /qodo-pr-resolver מתקנת אוטומטית הערות סקירה של Qodo",
+            "מגשר בין אינטליגנציית הסקירה של Qodo לבין עוזר הקוד המועדף עליכם",
+            "מונע context switching בין פידבק מהסקירה לבין מימוש התיקון"
+          ]
+        }
+      ]
+    }
+  },
+  "guidelines": {
+    "installation": {
+      "title": "התקנה ו-Setup",
+      "steps": [
+        {
+          "step": 1,
+          "title": "יצירת חשבון Qodo",
+          "description": "הירשמו ב-qodo.ai עם חשבון ה-GitHub שלכם. ה-free tier כולל 250 credits בחודש. תוכנית Teams פותחת אוטומציית PR ו-2,500 credits.",
+          "code": null
+        },
+        {
+          "step": 2,
+          "title": "התקנת תוסף VS Code",
+          "description": "חפשו 'Qodo Gen' ב-Extensions marketplace והתקינו. זמין גם ל-JetBrains (IntelliJ, WebStorm וכו').",
+          "code": "# או התקנה מה-terminal:\ncode --install-extension Qodo.qodo-gen"
+        },
+        {
+          "step": 3,
+          "title": "התחברות וקונפיגורציה",
+          "description": "התחברו לחשבון מה-sidebar של התוסף. Qodo יזהה אוטומטית את ה-test framework שלכם מה-package.json. בחרו בין Standard Mode ל-Agentic Mode.",
+          "code": null
+        },
+        {
+          "step": 4,
+          "title": "הגדרת Qodo Merge (אופציונלי)",
+          "description": "לסקירת PR אוטומטית, התקינו את אפליקציית Qodo Merge ב-GitHub. היא תגיב אוטומטית על PRs עם ניתוח התנהגותי ודירוג בעיות לפי חומרה.",
+          "code": null
+        },
+        {
+          "step": 5,
+          "title": "התקנת Qodo Command CLI (אופציונלי)",
+          "description": "לאוטומציית CI/CD וסוכני terminal, התקינו את ה-CLI הרשמי.",
+          "code": "npm install -g @qodo-ai/command\nqodo chat"
+        },
+        {
+          "step": 6,
+          "title": "הוספת best_practices.md (מומלץ)",
+          "description": "צרו קובץ כזה ב-root של הפרויקט או השתמשו ב-/generate-best-practices כדי ש-Qodo יכיר את הסטנדרטים של הצוות שלכם.",
+          "code": null
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Configurations מומלצים",
+      "tips": [
+        {
+          "title": "הגדרת ה-test framework בהגדרות",
+          "description": "למרות הזיהוי האוטומטי, מומלץ להגדיר במפורש כדי להבטיח שהבדיקות משתמשות בדיוק ב-patterns של הצוות שלכם.",
+          "code": "// .qodo/config.json\n{\n  \"testFramework\": \"vitest\",\n  \"testingLibrary\": \"@testing-library/angular\",\n  \"mockFramework\": \"vitest\",\n  \"coverageProvider\": \"v8\"\n}"
+        },
+        {
+          "title": "בחירה בין Agentic ל-Standard Mode",
+          "description": "Agentic Mode הופך את האינטראקציה לדינמית — Qodo יוזם עזרה ומקבל החלטות אוטונומיות. Standard Mode נותן לכם שליטה ידנית דרך פקודות מפורשות.",
+          "code": null
+        },
+        {
+          "title": "מיקוד בהתנהגות (Behavior) ולא רק בשורות",
+          "description": "כשמג'נרטים tests, בקשו מ-Qodo להתמקד ב-'behavior coverage'. זה מייצר בדיקות שמוודאות לוגיקה ולא רק הרצת שורות 'יבשה'."
+        },
+        {
+          "title": "חיבור כלי MCP ליכולות מורחבות",
+          "description": "הפעילו כלי MCP מוגדרים (Jira, GitHub) עם API key. ה-Terminal Agentic Tool מאפשר ל-Qodo להריץ פקודות ישירות ב-IDE שלכם.",
+          "code": null
+        }
+      ]
+    },
+    "bestPractices": {
+      "title": "טיפים ו-Best Practices",
+      "tips": [
+        {
+          "title": "התמקדו בקוד בעל הסיכון הגבוה ביותר",
+          "description": "אל תנסו לייצר בדיקות לכל הפרויקט בבת אחת. התחילו במודלים שמטפלים בכסף, אבטחה, מוטציות של דאטה או חוקים עסקיים מורכבים."
+        },
+        {
+          "title": "בדקו את הבדיקות המג'ונרטות",
+          "description": "Qodo מייצר בדיקות שמשקפות את המצב הנוכחי — כולל באגים קיימים. ודאו שהבדיקה מצפה להתנהגות הנכונה ולא רק משמרת התנהגות שגויה קיימת."
+        },
+        {
+          "title": "השתמשו ב-Qodo לגלות edge cases",
+          "description": "את ה-happy path אתם יודעים לכתוב לבד. השתמשו ב-Qodo ספציפית למציאת מה שקל לשכוח: null inputs, רשימות ריקות, timeout ברשת וערכי קצה."
+        },
+        {
+          "title": "הריצו /review-uncommitted לפני כל commit",
+          "description": "ה-workflow הזה עובר על השינויים שלכם, מסמן בעיות לפי חומרה ומציע תיקונים בקליק אחד — תופס טעויות לפני שהן נכנסות ל-git history."
+        },
+        {
+          "title": "השתמשו ב-agent skills בתוך Claude Code",
+          "description": "חברו את יכולות הסקירה של Qodo ליכולות הכתיבה של Claude כדי לתקן הערות PR בלי לצאת מה-chat."
+        }
+      ]
+    },
+    "workflows": {
+      "title": "Workflows מובנים (Slash Commands)",
+      "description": "Qodo כולל workflows מובנים המופעלים ב-IDE chat. כל אחד מהם מבצע משימה ממוקדת בצורה אוטונומית.",
+      "builtInWorkflows": [
+        { "command": "/review-uncommitted", "description": "סקירת שינויים לפני commit — מקבלים walkthrough והצעות לתיקון בקליק" },
+        { "command": "/review", "description": "סקירת שינויי Git, סימון בעיות לפי חומרה והצעות תיקון" },
+        { "command": "/unit-test", "description": "יצירת סט של unit tests לקטע קוד ספציפי" },
+        { "command": "/fix", "description": "סקירת קוד לאיתור בעיות והצעת תיקונים ליישום" },
+        { "command": "/cleanup", "description": "הסרת dead code, שאריות debug ואכיפת DRY עם ולידציה של tests" },
+        { "command": "/docs", "description": "הוספה או עדכון של docstrings ותגובות לפי ה-style של הפרויקט" },
+        { "command": "/generate-best-practices", "description": "יצירת קובץ best_practices.md מובנה עם patterns ודוגמאות" }
+      ],
+      "customWorkflows": {
+        "title": "יצירת Custom Workflows",
+        "steps": [
+          "הקלידו / ב-chat ובחרו 'Create new workflow'",
+          "תנו שם ותיאור ל-workflow החדש",
+          "הגדירו הוראות בשפה טבעית צעד-אחר-צעד שהסוכן יבצע",
+          "ניתן להגדיר plan mode ו-output schema",
+          "שתפו עם הצוות דרך קבצי TOML ב-source control"
+        ]
+      }
+    }
+  },
+  "prompts": [
+    {
+      "id": "qodo-coverage",
+      "title": "ניתוח פערי Coverage",
+      "description": "זיהוי נתיבי קוד לא מכוסים ויצירת הבדיקות החסרות.",
+      "category": "Testing",
+      "content": "Analyze this code for test coverage gaps:\n\n```typescript\n[paste your service, component, or function here]\n```\n\nFor each untested path:\n1. Describe the scenario not covered\n2. Explain why it matters (what bug could it hide?)\n3. Generate a Vitest test case for it\n4. Rate the risk: high / medium / low\n\nPrioritize by risk level, not alphabetically.",
+      "tags": ["testing", "coverage", "quality"]
+    },
+    {
+      "id": "qodo-security",
+      "title": "סקירת אבטחה (Security Review)",
+      "description": "סריקת קוד ל-vulnerabilities של OWASP Top 10 עם דירוג חומרה.",
+      "category": "Security",
+      "content": "Review this code for security vulnerabilities:\n\n```typescript\n[paste your code here]\n```\n\nCheck for OWASP Top 10 including:\n- XSS via innerHTML or unsafe template binding\n- Injection vulnerabilities (SQL, command, template)\n- Sensitive data exposure (logging, error messages)\n- Missing input validation at system boundaries\n- Hardcoded secrets or credentials\n- Insecure dependency usage\n\nFor each finding:\n- Severity: Critical / High / Medium / Low\n- CWE ID if applicable\n- Exact location in the code\n- Remediation with a concrete code fix",
+      "tags": ["security", "owasp", "review"]
+    },
+    {
+      "id": "qodo-api",
+      "title": "API Contract Validator",
+      "description": "ג'נרציה של type-safe interfaces, schemas ו-test factories מתגובת API.",
+      "category": "API",
+      "content": "Given this API response:\n\n```json\n[paste your API response here]\n```\n\nGenerate:\n1. TypeScript interface with precise types (no `any`, no `unknown` without narrowing)\n2. Zod validation schema that matches the interface\n3. A test data factory function using the interface\n4. Example usage with error handling and type narrowing\n\nRules:\n- Make nullable fields optional\n- Use string literal unions for enum-like fields\n- Use branded types for IDs (e.g., `string & { readonly __brand: 'UserId' }`)",
+      "tags": ["api", "typescript", "validation", "zod"]
+    },
+    {
+      "id": "qodo-edge-cases",
+      "title": "Edge Case Generator",
+      "description": "פירוט כל מקרי הקצה של פונקציה ויצירת tests עבורם.",
+      "category": "Testing",
+      "content": "List all edge cases that should be tested for this function:\n\n```typescript\n[paste your function here]\n```\n\nFor each edge case:\n1. The input combination that triggers it\n2. The expected behavior\n3. Why it is likely to be missed\n4. A Vitest test that covers it\n\nCategorize by: boundary values / null/undefined / async errors / concurrent calls / invalid types.",
+      "tags": ["testing", "edge-cases", "quality"]
+    },
+    {
+      "id": "qodo-cleanup",
+      "title": "Code Cleanup עם ולידציה",
+      "description": "הסרת dead code ושאריות debug — מאומת על ידי בדיקות.",
+      "category": "Refactoring",
+      "content": "[Use /cleanup workflow in Qodo Gen, or paste code here]\n\nClean up this code:\n\n```typescript\n[paste your code here]\n```\n\nPlease:\n1. Identify and remove dead code and unused imports\n2. Remove debug leftovers (console.log, commented-out code, TODO hacks)\n3. Apply DRY — extract repeated patterns into shared functions\n4. Apply style fixes consistent with the project\n5. Validate that cleanup preserves behavior by running or generating tests\n6. Show a summary of everything removed/changed",
+      "tags": ["refactoring", "cleanup", "dead-code", "dry"]
+    }
+  ]
+}

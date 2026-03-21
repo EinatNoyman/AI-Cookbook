@@ -1,0 +1,472 @@
+{
+  "id": "claude",
+  "name": "Claude",
+  "icon": "✦",
+  "tagline": "ה-AI של Anthropic ל-nuanced reasoning, עבודה עם קוד ב-long-context, וקולבורציה חכמה",
+  "overview": {
+    "description": "Claude הוא עוזר ה-AI של Anthropic, שנבנה עם דגש על safety, הבנה מעמיקה (nuanced reasoning) ושימושיות. בניגוד לכלים שמוטמעים בתוך ה-IDE, Claude מצטיין בשיחות ארוכות, דיונים ארכיטקטוניים מורכבים ומשימות שדורשות reasoning קפדני על כמויות גדולות של context. הוא זמין דרך claude.ai, ה-Claude Code CLI, ואינטגרציות API – מה שהופך אותו ליעיל באותה מידה גם לשיחות exploratory וגם ל-automated workflows. ה-Claude Code, ה-agentic CLI של Anthropic, מביא את היכולות של Claude ישירות ל-terminal שלך עם tool-based actions: קריאה/כתיבה של קבצים, הרצת פקודות, הרצת tests ואפילו שליטה ב-browsers דרך MCP servers.",
+    "pros": [
+      "מצוין ב-complex reasoning ופתרון בעיות multi-step",
+      "תומך ב-contexts ארוכים מאוד (מעל 200K tokens) עבור codebases גדולים",
+      "מעולה ב-code review, refactoring והסבר של קוד קיים",
+      "עוקב בעקביות אחרי הוראות מורכבות וממוספרות לאורך שיחות ארוכות",
+      "פיצ'ר ה-Projects מספק context קבוע (persistent) לאורך כל ה-sessions",
+      "Claude Code CLI מביא agentic coding מלא לתוך ה-terminal workflow שלך",
+      "מעולה בכתיבה ועדכון של technical documentation",
+      "יכולות tool use עדיפות – יודע לשלב כלים למשימות מורכבות טוב יותר מהמתחרים",
+      "ניתן להרחיב את Claude Code דרך MCP servers לטובת browser automation, external APIs ועוד",
+      "אינטגרציה עם GitHub Actions לטובת automated PR reviews ופתרון issues",
+      "מערכת Hooks מאפשרת quality checks אוטומטיים (type checking, duplicate detection) בזמן עריכת קוד",
+      "SDK זמין ב-CLI, TypeScript ו-Python לצורך אינטגרציה ב-pipelines"
+    ],
+    "cons": [
+      "לא מוטמע באופן native בתוך ה-IDEs – דורש extensions או הגדרת CLI",
+      "אין awareness ל-codebase בזמן אמת בלי שיתוף קבצים מפורש",
+      "יכול להיות verbose מדי – לפעמים דורש הוראה מפורשת להיות concise",
+      "המודלים הכי חזקים (Opus, Sonnet) דורשים paid subscription",
+      "יותר מדי irrelevant context פוגע בביצועים – דורש context management קפדני",
+      "Plan Mode ו-Thinking Mode צורכים tokens נוספים (שיקול עלות)"
+    ],
+    "whenToUse": [
+      "Refactoring מורכב שדורש הבנה של ה-intent על פני מספר קבצים",
+      "החלטות ארכיטקטורה ודיוני technical design",
+      "Deep code review עם ניתוח nuanced של security או ביצועים",
+      "כתיבה, שיפור או עדכון של technical documentation",
+      "הסבר של codebases לא מוכרים או legacy code לחבר צוות חדש",
+      "מיגציה של patterns או APIs בצורה סיסטמטית בתוך codebase גדול",
+      "Brainstorming לפתרונות של bugs מאתגרים עם context מלא",
+      "Automated PR reviews וטיפול ב-issues דרך אינטגרציית GitHub Actions",
+      "Performance optimization – פרופיילינג, benchmarking והטמעת תיקונים",
+      "Data analysis באמצעות Jupyter notebooks עם exploration איטרטיבי",
+      "Browser automation ו-UI testing דרך Playwright MCP server"
+    ],
+    "strengths": {
+      "title": "מה Claude עושה טוב במיוחד עבור Developers",
+      "areas": [
+        {
+          "title": "Agentic Code Execution (Claude Code)",
+          "details": [
+            "קורא, כותב ועורך קבצים ישירות ב-project מה-terminal",
+            "מריץ פקודות, מריץ tests ועושה איטרציות על תוצאות באופן אוטונומי",
+            "מתכנן multi-step implementations לפני ביצוע דרך Plan Mode",
+            "מבצע commits לשינויים עם git messages תיאוריים באופן אוטומטי",
+            "הציג שיפור של פי 3.9 ב-throughput בזמן אופטימיזציה לספריית Chalk JS"
+          ]
+        },
+        {
+          "title": "Complex Reasoning וארכיטקטורה",
+          "details": [
+            "Extended Thinking mode לניתוח אלגוריתמי וארכיטקטוני עמוק",
+            "מטפל ב-multi-file refactoring תוך שמירה על ה-intent בין הקבצים",
+            "מזהה סיכוני חשיפת PII על ידי ניתוח infrastructure flow (למשל Terraform + Lambda + S3)",
+            "מצטיין ב-trade-off analysis ותיעוד החלטות design"
+          ]
+        },
+        {
+          "title": "Extensibility דרך MCP Servers",
+          "details": [
+            "מתחבר לכלים חיצוניים כמו Playwright לטובת browser automation",
+            "יודע לנווט באפליקציות, לקחת screenshots ולעשות איטרציות על UI styling אוטומטית",
+            "תומך ב-custom MCP servers לטובת workflows ספציפיים של הצוות",
+            "מאפשר end-to-end development automation מעבר לעריכת קוד בלבד"
+          ]
+        },
+        {
+          "title": "Automated Quality Assurance דרך Hooks",
+          "details": [
+            "Pre-tool hooks יכולים לחסום גישה לקבצים רגישים (למשל קבצי .env)",
+            "Post-tool hooks מריצים type checkers (כמו tsc --no-emit) אחרי כל עריכת קובץ",
+            "Hooks למניעת duplicate code תופסים פונקציות רדונדנטיות לפני שהן נכנסות לקוד",
+            "Hooks מחזירים שגיאות ל-Claude לצורך self-correction אוטומטי"
+          ]
+        },
+        {
+          "title": "CI/CD ואינטגרציית GitHub",
+          "details": [
+            "רץ בתוך GitHub Actions שמופעלים על ידי PRs ו-issues",
+            "תיוג @Claude ב-issues/PRs מקצה משימות ישירות",
+            "Code review אוטומטי על pull requests חדשים",
+            "יכול להריץ browser tests וליצור verification checklists ב-CI"
+          ]
+        }
+      ]
+    },
+    "lesserKnownCapabilities": {
+      "title": "יכולות שרוב האנשים לא מכירים",
+      "items": [
+        {
+          "title": "Custom Commands",
+          "details": [
+            "יצירת slash commands לשימוש חוזר על ידי הנחת קבצי .md בנתיב .claude/commands/",
+            "פקודות מקבלות runtime arguments דרך ה-placeholder $arguments",
+            "אוטומציה של משימות רפטטיביות: dependency auditing, test generation, תיקון vulnerability",
+            "שיתוף פקודות עם הצוות על ידי הוספתן ל-source control"
+          ]
+        },
+        {
+          "title": "Context Control Shortcuts",
+          "details": [
+            "Escape — עצירת Claude באמצע תגובה לצורך redirection",
+            "Escape + # (Memory) — שמירת תיקון כדי ש-Claude לא יחזור על הטעות שוב",
+            "Double Escape — חזרה אחורה (rewind) בשיחה לנקודה מוקדמת יותר",
+            "Compact command — סיכום היסטוריית השיחה תוך שימור הידע שנלמד",
+            "Clear command — התחלה נקייה למשימות לא קשורות"
+          ]
+        },
+        {
+          "title": "Screenshot Integration",
+          "details": [
+            "הדבקת screenshots עם Control-V (לא Command-V ב-macOS) בתוך Claude Code",
+            "Claude מנתח אלמנטים של UI כדי להבין מה עליו לשנות",
+            "שימושי ל-visual debugging ואיטרציות על ה-UI"
+          ]
+        },
+        {
+          "title": "Plan Mode ו-Thinking Mode",
+          "details": [
+            "Plan Mode (לחיצה פעמיים על Shift + Tab) — סורק יותר קבצים ויוצר implementation plan מפורט לפני ביצוע",
+            "Thinking Mode ('Ultra think') — תקציב reasoning מורחב ללוגיקה מורכבת",
+            "Plan = רוחב (משימות multi-step), Think = עומק (bugs מאתגרים)",
+            "ניתן לשלב את שניהם למקסימום אפקטיביות בבעיות קשות"
+          ]
+        },
+        {
+          "title": "Claude Code SDK ל-Pipeline Integration",
+          "details": [
+            "ממשק פרוגרמטי דרך CLI, TypeScript או ספריות Python",
+            "אותם כלים כמו בגרסת ה-terminal, ניתן להטמעה ב-scripts ו-workflows",
+            "הרשאות read-only כברירת מחדל; הרשאות כתיבה מאופשרות דרך options.allowTools",
+            "אידיאלי ל-helper commands, hooks ואוטומציה בתוך projects קיימים"
+          ]
+        },
+        {
+          "title": "Hooks ל-Automated Guardrails",
+          "details": [
+            "Pre-tool hooks חוסמים פעולות (exit code 2) — למשל, מניעת קריאה של קבצי .env",
+            "Post-tool hooks מריצים בדיקות אחרי עריכה — למשל, TypeScript type checker, lint",
+            "Hooks מקבלים tool call data כ-JSON דרך stdin ללוגיקה גמישה",
+            "קונפיגורציה דרך settings.local.json או פקודת /hooks"
+          ]
+        }
+      ]
+    }
+  },
+  "guidelines": {
+    "installation": {
+      "title": "התקנה ו-Setup",
+      "steps": [
+        {
+          "step": 1,
+          "title": "גישה ל-Claude Web",
+          "description": "כנסו ל-claude.ai והירשמו. ה-free tier כולל את Claude Sonnet. הירשמו ל-Claude Pro לגישה בעדיפות, limit גבוה יותר וגישה ל-Opus.",
+          "code": null
+        },
+        {
+          "step": 2,
+          "title": "התקנת Claude Code CLI",
+          "description": "Claude Code הוא ה-agentic CLI הרשמי של Anthropic. הוא קורא, עורך ומריץ קוד בפרויקט שלכם ישירות מה-terminal. אחרי ההתקנה, בצעו authentication עם חשבון ה-Anthropic שלכם.",
+          "code": "npm install -g @anthropic-ai/claude-code\nclaude auth login"
+        },
+        {
+          "step": 3,
+          "title": "איניציאליזציה של הפרויקט עם /init",
+          "description": "הריצו /init בתוך Claude Code בשימוש הראשון. הוא מנתח את כל ה-codebase ויוצר קובץ CLAUDE.md עם סיכום פרויקט, overview של הארכיטקטורה וקבצי מפתח. הקובץ הזה נשלח אוטומטית בכל request.",
+          "code": null
+        },
+        {
+          "step": 4,
+          "title": "יצירת Project ב-claude.ai",
+          "description": "ב-claude.ai, צרו Project עבור ה-codebase שלכם. העלו קבצי מפתח — architecture docs, דוגמאות לקומפוננטות, coding standards — כדי לתת ל-Claude context קבוע לאורך כל השיחות בתוך הפרויקט.",
+          "code": null
+        },
+        {
+          "step": 5,
+          "title": "הוספת CLAUDE.md ל-repo",
+          "description": "Claude Code קורא אוטומטית את CLAUDE.md ב-root של הפרויקט. השתמשו בו כדי לתאר את ה-stack, ה-conventions וההעדפות שלכם כדי שכל session יתחיל עם context מלא. יש שלוש רמות: project-level (מבוצע לו commit, משותף לצוות), local-level (אישי, לא מבוצע לו commit), ו-machine-level (גלובלי לכל הפרויקטים).",
+          "code": "# Project: My App\n## Stack: Angular 21, Nx, Tailwind CSS 4\n## Conventions: Standalone components, signals over RxJS\n## Testing: Vitest + @testing-library/angular\n## Prefer: concise responses, code over explanation"
+        },
+        {
+          "step": 6,
+          "title": "הגדרת אינטגרציית GitHub (אופציונלי)",
+          "description": "הריצו /install GitHub app בתוך Claude Code. התקינו את אפליקציית Claude Code ב-GitHub, הוסיפו את ה-API key שלכם, ו-PR שיג'ונרט אוטומטית יוסיף שני GitHub Actions: תמיכה ב-mention @Claude ב-issues/PRs, ו-PR code review אוטומטי.",
+          "code": null
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Configurations מומלצים",
+      "tips": [
+        {
+          "title": "בחירת המודל הנכון למשימה",
+          "description": "השתמשו ב-claude-opus-4 לדיוני ארכיטקטורה מורכבים ו-multi-step reasoning. השתמשו ב-claude-sonnet-4 למשימות coding יומיומיות — הוא מהיר משמעותית וחסכוני יותר ועדיין מאוד capable.",
+          "code": null
+        },
+        {
+          "title": "כתיבת system prompt חזק",
+          "description": "אם אתם משתמשים ב-API, הגדירו את ה-context שלכם פעם אחת ב-system prompt. זה מונע חזרה על עצמכם בכל הודעת משתמש ומבטיח התנהגות עקבית.",
+          "code": "You are a senior frontend engineer in an Angular 21 Nx monorepo.\nAlways use standalone components, signal-based state, and Tailwind CSS.\nRespond concisely. Prefer code over prose. Never add unnecessary comments."
+        },
+        {
+          "title": "רפרנס לקבצים קריטיים ב-CLAUDE.md",
+          "description": "הוסיפו רפרנסים לקבצי מפתח כמו database schemas, shared types או API contracts בתוך CLAUDE.md כך שהם תמיד יהיו זמינים כ-context ללא צורך בהעלאה ידנית מחדש.",
+          "code": null
+        },
+        {
+          "title": "העלאת קבצי מפתח ל-Project שלכם",
+          "description": "הוסיפו את ה-tsconfig.base.json שלכם, קומפוננטה מייצגת, קובץ design tokens וכל architecture docs לתוך ה-Project. ה-context הזה נשמר וחוסך את הצורך להסביר את ה-setup שלכם מחדש.",
+          "code": null
+        },
+        {
+          "title": "הפעלת Extended Thinking לבעיות קשות",
+          "description": "לאתגרים אלגוריתמיים מורכבים או ניתוח trade-offs בארכיטקטורה, השתמשו ב-Extended Thinking mode. Claude יבצע reasoning לבעיה צעד-אחר-צעד לפני שיענה.",
+          "code": null
+        },
+        {
+          "title": "הוספת MCP servers ליכולות מורחבות",
+          "description": "השתמשו ב-claude mcp add [name] [start-command] כדי לחבר כלים חיצוניים. למשל, הוסיפו את Playwright ל-browser automation. אשרו אוטומטית כלים על ידי הוספת 'MCP__[servername]' למערך ה-allow ב-settings.local.json.",
+          "code": "claude mcp add playwright npx @anthropic-ai/playwright-mcp"
+        },
+        {
+          "title": "הגדרת Hooks לבדיקות איכות אוטומטיות",
+          "description": "הוסיפו pre-tool ו-post-tool hooks ל-settings.local.json שלכם כדי להריץ אוטומטית type checks אחרי עריכות, לחסום גישה לקבצים רגישים או לאכוף code quality standards. השתמשו בפקודת /hooks או ערכו את ה-config ידנית.",
+          "code": null
+        }
+      ]
+    },
+    "bestPractices": {
+      "title": "טיפים ו-Best Practices",
+      "tips": [
+        {
+          "title": "שתפו context מלא לפני שאתם שואלים",
+          "description": "אל תתנו ל-Claude לנחש. הדביקו את הקבצים הרלוונטיים, תארו את המטרה בבירור וציינו אילוצים — 'אל תוסיף dependencies', 'שמור על אותו public API surface', 'TypeScript strict mode'. איכות ה-context קובעת ישירות את איכות ה-output."
+        },
+        {
+          "title": "השתמשו ב-@ mentions ל-context ממוקד",
+          "description": "ב-Claude Code, השתמשו ב-@filename כדי לכלול קבצים ספציפיים ב-request שלכם. זה מספק context ממוקד במקום לתת ל-Claude לחפש בכל ה-codebase, מה שמוביל לתוצאות מהירות ומדויקות יותר."
+        },
+        {
+          "title": "השתמשו ב-# (Memory) לשמירת תיקונים",
+          "description": "כש-Claude חוזר על טעות, לחצו על Escape ואז השתמשו ב-# כדי לשמור את התיקון ל-CLAUDE.md. זה מונע מהטעות לקרות שוב ב-sessions עתידיים — זה כמו לאמן את Claude על ה-patterns של הצוות שלכם."
+        },
+        {
+          "title": "בקשו reasoning לפני הקוד",
+          "description": "למשימות מורכבות, הוסיפו בתחילת הפרומפט 'explain your approach before writing any code'. זה מכריח structured thinking, מציף הנחות יסוד מוקדם ומאפשר לכם לתקן את הכיוון לפני ש-Claude כותב 200 שורות בכיוון הלא נכון."
+        },
+        {
+          "title": "השתמשו ברשימות דרישות ממוספרות",
+          "description": "פרטו דרישות כפריטים ממוספרים: 1. שמור על אותו function signature. 2. הוסף error handling ל-null. 3. כתוב Vitest tests. Claude מעולה במעקב ועמידה ברשימות מובנות — הוא אפילו יאשר שכל סעיף טופל."
+        },
+        {
+          "title": "השתמשו ב-Plan Mode לרוחב, וב-Think Mode לעומק",
+          "description": "הפעילו Plan Mode (פעמיים Shift + Tab) למשימות multi-step שמתפרסות על קבצים רבים. השתמשו ב-Thinking Mode ('Ultra think') ללוגיקה מסובכת או debugging. שלבו את שניהם לבעיות הקשות ביותר. שימו לב: שניהם צורכים tokens נוספים."
+        },
+        {
+          "title": "השתמשו ב-Compact במקום להתחיל מחדש",
+          "description": "כשהשיחה נהיית ארוכה ומבולגנת, השתמשו בפקודת Compact כדי לסכם את ההיסטוריה תוך שימור מה ש-Claude למד. השתמשו ב-Clear רק כשעוברים למשימה שונה לחלוטין."
+        },
+        {
+          "title": "בצעו איטרציות במקום להתחיל מחדש",
+          "description": "Claude מטפל בתיקונים פרוגרסיביים בצורה טובה מאוד. במקום להתחיל מהתחלה, אמרו 'כמעט נכון, אבל ה-return type צריך להיות Observable ולא Signal, והמתודה צריכה להיות private'. שיפור הדרגתי (multi-turn) מנצח פרומפטים ענקיים בסיבוב אחד."
+        },
+        {
+          "title": "בקשו השוואות של before/after",
+          "description": "למשימות refactoring, בקשו פירוט side-by-side של before/after. זה מקל על הווריפיקציה שההתנהגות נשמרה ועוזר להבין את ה-intent של כל שינוי."
+        }
+      ]
+    },
+    "keyboardShortcuts": {
+      "title": "קיצורי מקלדת ופקודות ב-Claude Code",
+      "shortcuts": [
+        { "key": "Escape", "action": "עצירת Claude באמצע תגובה" },
+        { "key": "Escape + #", "action": "שמירת תיקון ל-memory בתוך CLAUDE.md" },
+        { "key": "Double Escape", "action": "חזרה אחורה בשיחה לנקודה מוקדמת" },
+        { "key": "Shift + Tab (פעמיים)", "action": "הפעלת Plan Mode" },
+        { "key": "Control-V", "action": "הדבקת screenshot (ב-macOS: להשתמש ב-Control-V ולא ב-Command-V)" },
+        { "key": "/init", "action": "איניציאליזציה של הפרויקט — יוצר CLAUDE.md" },
+        { "key": "/compact", "action": "סיכום השיחה ושימור הידע שנצבר" },
+        { "key": "/clear", "action": "ניקוי השיחה להתחלה חדשה" },
+        { "key": "/hooks", "action": "קונפיגורציה של pre/post tool hooks" },
+        { "key": "/install GitHub app", "action": "הגדרת אינטגרציית GitHub Actions" },
+        { "key": "@filename", "action": "הכללת קובץ ספציפי כ-context" },
+        { "key": "# instruction", "action": "הוספת זיכרון (memory) ל-CLAUDE.md" }
+      ]
+    },
+    "claudeCodeContextTags": {
+      "title": "רפרנסים של Context ב-Claude Code",
+      "tags": [
+        { "tag": "@filename", "description": "הכללת קובץ ספציפי כ-context ממוקד" },
+        { "tag": "#", "description": "Memory mode — עריכת CLAUDE.md בשפה טבעית" },
+        { "tag": "CLAUDE.md (project)", "description": "משותף עם הצוות, נכנס ל-source control" },
+        { "tag": "CLAUDE.md (local)", "description": "הוראות אישיות, לא נכנס ל-source control" },
+        { "tag": "CLAUDE.md (machine)", "description": "הוראות גלובליות לכל הפרויקטים במחשב" }
+      ]
+    },
+    "mcpServers": {
+      "title": "הרחבת Claude Code עם MCP Servers",
+      "description": "MCP servers הם כלים חיצוניים שמרחיבים את היכולות של Claude Code. הם רצים לוקאלית או מרחוק ומאפשרים ל-Claude לתקשר עם browsers, APIs, databases ומערכות חיצוניות אחרות.",
+      "setup": "claude mcp add [name] [start-command]",
+      "autoApprove": "הוסיפו 'MCP__[servername]' למערך ה-allow ב-settings.local.json כדי לדלג על בקשות אישור.",
+      "examples": [
+        {
+          "name": "Playwright",
+          "purpose": "Browser automation — ניווט בדפים, לקיחת screenshots, בדיקת UI ואיטרציות על styling",
+          "install": "claude mcp add playwright npx @anthropic-ai/playwright-mcp"
+        }
+      ]
+    },
+    "hooks": {
+      "title": "Hooks — Guardrails אוטומטיים ל-Claude Code",
+      "description": "Hooks הם פקודות custom שרצות לפני או אחרי ש-Claude מפעיל כלים. הם מאפשרים quality checks אוטומטיים, שליטה בגישה לקבצים ו-feedback loops.",
+      "types": [
+        {
+          "type": "Pre-tool use",
+          "description": "רץ לפני ביצוע הכלי. יכול לבחון ולחסום פעולות (exit code 2). ה-stderr של ה-hook החסום נשלח כ-feedback ל-Claude.",
+          "useCases": ["חסימת גישה לקבצי .env", "מניעת כתיבה לספריות מוגנות", "ולידציה של inputs לפני ביצוע"]
+        },
+        {
+          "type": "Post-tool use",
+          "description": "רץ אחרי ביצוע הכלי. לא יכול לחסום, אבל יכול לספק feedback ל-Claude לצורך תיקון עצמי.",
+          "useCases": ["הרצת tsc --no-emit אחרי עריכות TypeScript כדי לתפוס שגיאות type", "זיהוי קוד משוכפל על ידי הפעלת instance משני של Claude", "עיצוב קבצים אוטומטי (formatting) אחרי יצירה", "הרצת tests אחרי שינויי קוד"]
+        }
+      ],
+      "configuration": {
+        "location": "settings.local.json (או הגדרות גלובליות/פרויקט)",
+        "structure": "לכל hook יש matcher (שמות כלים, למשל 'read|grep') ופקודה לביצוע",
+        "exitCodes": {
+          "0": "אישור ל-tool call להמשיך",
+          "2": "חסימת ה-tool call (ב-pre-hooks בלבד), ה-stderr נשלח כמשוב ל-Claude"
+        }
+      },
+      "recommendedHooks": [
+        {
+          "name": "TypeScript Type Checker",
+          "type": "post-tool",
+          "purpose": "תפיסת שגיאות type מיד לאחר עריכת קובץ על ידי הרצת tsc --no-emit",
+          "benefit": "Claude מתקן אוטומטית מקומות שנקראים שבורים כשחתימות של פונקציות משתנות"
+        },
+        {
+          "name": "Duplicate Code Prevention",
+          "type": "post-tool",
+          "purpose": "מפעיל instance משני של Claude כדי לבחון שינויים בספריות נבחרות ולחפש פונקציות/שאילתות משוכפלות",
+          "benefit": "מונע קוד רדונדנטי, במיוחד במשימות multi-step מורכבות. מומלץ להחיל רק על ספריות קריטיות כדי למזער overhead."
+        },
+        {
+          "name": "Sensitive File Blocker",
+          "type": "pre-tool",
+          "purpose": "חוסם את Claude מקריאה של .env וקבצים רגישים אחרים דרך כלי ה-read/grep",
+          "benefit": "מגן על secrets ו-credentials מחשיפה בטעות"
+        }
+      ]
+    },
+    "githubIntegration": {
+      "title": "אינטגרציית GitHub Actions",
+      "description": "Claude Code רץ בתוך GitHub Actions ומופעל על ידי pull requests ו-issues. הוא מקבל כלים ספציפיים ל-GitHub עבור commenting, committing ויצירת PRs.",
+      "setup": [
+        "הריצו /install GitHub app בתוך Claude Code",
+        "התקינו את אפליקציית Claude Code ב-organization שלכם ב-GitHub",
+        "הוסיפו את ה-Anthropic API key שלכם",
+        "PR שיג'ונרט אוטומטית יוסיף שני workflows של GitHub Actions"
+      ],
+      "defaultActions": [
+        "תמיכה ב-mention @Claude — תייגו את Claude ב-issues או PRs כדי להקצות לו משימות",
+        "Code review אוטומטי ל-PR על pull requests חדשים"
+      ],
+      "customization": [
+        "התאמה אישית של workflows דרך קבצי ה-config ב-.github/workflows",
+        "הוספת הוראות custom לטובת context או הנחיות",
+        "אינטגרציה של MCP servers (למשל Playwright לטובת browser testing ב-CI)",
+        "כל ההרשאות וכלי ה-MCP חייבים להיות מפורטים במפורש"
+      ]
+    }
+  },
+  "prompts": [
+    {
+      "id": "claude-refactor",
+      "title": "Refactor בביטחון",
+      "description": "בצע refactor לפונקציה תוך שמירה על כל ההתנהגות הקיימת והוספת tests.",
+      "category": "Refactoring",
+      "content": "Refactor the following function to improve readability and maintainability. Preserve all existing behavior.\n\n```typescript\n[paste your function here]\n```\n\nRequirements:\n1. Keep the same function signature\n2. Extract complex conditions into named variables\n3. Add JSDoc comments\n4. Write at least 3 unit tests that verify the original behavior is preserved\n5. Show a before/after summary of the key changes",
+      "tags": ["refactoring", "testing", "clean-code"]
+    },
+    {
+      "id": "claude-review",
+      "title": "Deep Code Review",
+      "description": "קבל code review מובנה עם דירוג חומרה ותיקונים קונקרטיים.",
+      "category": "Code Review",
+      "content": "Review the following code changes. For each issue found, provide:\n1. Severity: blocker / warning / suggestion\n2. Location: file and approximate line\n3. Problem: what is wrong and why it matters\n4. Fix: a concrete code change\n\nFocus on: logic errors, edge cases, security vulnerabilities, performance, and readability.\n\n```diff\n[paste your git diff here]\n```",
+      "tags": ["code-review", "quality", "security"]
+    },
+    {
+      "id": "claude-explain",
+      "title": "הסבר את ה-Codebase הזה",
+      "description": "בנה מודל מנטלי ברור של קוד לא מוכר במהירות.",
+      "category": "Documentation",
+      "content": "I am new to this codebase. Analyze the following code and give me:\n1. A high-level overview of what it does (2–3 sentences)\n2. The main components and how they interact\n3. Key patterns and conventions used\n4. Notable design decisions or trade-offs\n5. What I must understand before modifying this safely\n\n[paste your code or describe the repo structure]",
+      "tags": ["documentation", "onboarding", "architecture"]
+    },
+    {
+      "id": "claude-migrate-signals",
+      "title": "RxJS ← Angular Signals Migration",
+      "description": "המר ניהול state מבוסס BehaviorSubject/Observable ל-Angular Signals.",
+      "category": "Migration",
+      "content": "Convert this RxJS-based state management to Angular Signals:\n\n```typescript\n[paste your service with BehaviorSubjects / Observables]\n```\n\nRules:\n1. Replace BehaviorSubject with signal()\n2. Replace Observable pipe() chains with computed()\n3. Replace subscribe() calls with effect()\n4. Keep the same public API surface\n5. Mark all public state as readonly\n6. Show a before/after diff for each changed section",
+      "tags": ["signals", "rxjs", "migration", "angular"]
+    },
+    {
+      "id": "claude-architecture",
+      "title": "ביקורת ארכיטקטורה",
+      "description": "קבל ביקורת high-level עם הצעות לשיפור מדורגות.",
+      "category": "Architecture",
+      "content": "Review this architecture and identify:\n1. Single points of failure\n2. Scalability bottlenecks\n3. Tight coupling that will hurt maintainability\n4. Missing error handling or resilience patterns\n5. Security surface area that needs attention\n\nThen suggest 3 concrete improvements ranked by impact vs. effort.\n\n[describe your architecture or paste a file structure / diagram]",
+      "tags": ["architecture", "design", "scalability"]
+    },
+    {
+      "id": "claude-test-strategy",
+      "title": "אסטרטגיית טסטים לקומפוננטה",
+      "description": "ג'נרט תוכנית בדיקות מקיפה ו-test suite לקומפוננטת Angular.",
+      "category": "Testing",
+      "content": "Generate a comprehensive test suite for this Angular component:\n\n```typescript\n[paste your component here]\n```\n\nInclude:\n1. Happy path — all primary flows\n2. Edge cases — empty data, null inputs, max values\n3. Error states — failed API calls, invalid inputs\n4. Accessibility checks — keyboard navigation, ARIA attributes\n5. Use Vitest + @testing-library/angular\n6. Use Angular signals testing patterns (toSignal, fakeAsync where needed)",
+      "tags": ["testing", "vitest", "angular", "accessibility"]
+    },
+    {
+      "id": "claude-performance-optimize",
+      "title": "אופטימיזציית ביצועים",
+      "description": "נתח ובצע אופטימיזציה לביצועי מודול עם benchmarks ופרופיילינג.",
+      "category": "Performance",
+      "content": "Analyze the following code for performance issues:\n\n```typescript\n[paste your code here]\n```\n\nPlease:\n1. Identify the main performance bottlenecks\n2. Profile the critical paths and explain where time is spent\n3. Propose optimizations ranked by impact\n4. Implement the top improvements\n5. Show before/after benchmark comparisons\n6. Note any trade-offs (readability, memory, complexity)",
+      "tags": ["performance", "optimization", "profiling"]
+    },
+    {
+      "id": "claude-pr-review-auto",
+      "title": "PR Review (Claude Code / GitHub)",
+      "description": "סקירת PR אוטומטית — הדביקו diff או השתמשו ב-GitHub Actions.",
+      "category": "Code Review",
+      "content": "Review this pull request diff:\n\n```diff\n[paste your diff here]\n```\n\nFor each issue:\n1. Severity: blocker / warning / suggestion\n2. What changed and why it might be problematic\n3. Check for: PII exposure, security risks, missing error handling, breaking changes\n4. Suggest missing tests\n5. Provide a brief summary suitable for the PR comment",
+      "tags": ["code-review", "pull-request", "github", "security"]
+    },
+    {
+      "id": "claude-hook-setup",
+      "title": "הגדרת Hook ב-Claude Code",
+      "description": "צור pre-tool או post-tool hook לטובת quality checks אוטומטיים.",
+      "category": "DevOps",
+      "content": "I want to create a Claude Code hook that [describe what you want].\n\nContext:\n- Hook type: [pre-tool / post-tool]\n- Target tools: [read / grep / edit / write — or describe the action]\n- Desired behavior: [block / warn / run a check / auto-format]\n- Project language: [TypeScript / Python / etc.]\n\nPlease:\n1. Create the hook script\n2. Show the settings.local.json configuration\n3. Explain the exit codes and feedback mechanism\n4. Provide a test scenario to verify it works",
+      "tags": ["hooks", "devops", "automation", "claude-code"]
+    },
+    {
+      "id": "claude-custom-command",
+      "title": "יצירת Custom Command ב-Claude Code",
+      "description": "בנה slash command לשימוש חוזר עבור ה-workflows הנפוצים של הצוות שלך.",
+      "category": "Automation",
+      "content": "Create a custom Claude Code command for the following task:\n\n[describe the repetitive task — e.g., 'audit dependencies for vulnerabilities', 'generate a component with tests', 'check for unused exports']\n\nThe command should:\n1. Be a .md file I can place in .claude/commands/\n2. Accept arguments via $arguments where needed\n3. Include clear instructions for Claude to follow\n4. Handle edge cases gracefully\n5. Be shareable with the team via source control",
+      "tags": ["custom-commands", "automation", "claude-code", "workflow"]
+    },
+    {
+      "id": "claude-mcp-browser-test",
+      "title": "בדיקות Browser עם Playwright MCP",
+      "description": "השתמשו ב-Claude Code + Playwright MCP כדי לנווט, לצלם מסך ולבדוק את ה-UI של האפליקציה.",
+      "category": "Testing",
+      "content": "Using the Playwright MCP server, please:\n\n1. Navigate to [URL, e.g., http://localhost:4200]\n2. Take a screenshot of the [page / component / section]\n3. Analyze the UI for: layout issues, accessibility problems, visual inconsistencies\n4. Suggest specific CSS/HTML fixes\n5. Apply the fixes and take a new screenshot to compare\n\nContext: [Angular / React / etc.], using [Tailwind / SCSS / etc.]",
+      "tags": ["testing", "playwright", "mcp", "ui", "browser-automation"]
+    }
+  ]
+}

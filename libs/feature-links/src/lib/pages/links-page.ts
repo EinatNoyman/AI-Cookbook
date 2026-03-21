@@ -1,13 +1,6 @@
 import { Component, inject, computed } from '@angular/core';
-import { LinksService } from '@bmad-demo/shared-data';
+import { LinksService, LanguageService } from '@bmad-demo/shared-data';
 import { SkeletonComponent, EmptyStateComponent } from '@bmad-demo/shared-ui';
-
-const LINKS_SUBTITLES = [
-  'Your bookmarks bar wishes it was this organized.',
-  'Curated links, zero browser tab guilt.',
-  'Everything you need, one click away.',
-  'Links so good, you might actually click them.',
-];
 
 @Component({
   selector: 'app-links-page',
@@ -16,8 +9,8 @@ const LINKS_SUBTITLES = [
   template: `
     <section>
       <div class="mb-8">
-        <h1 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Developer Links</h1>
-        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">{{ linksSubtitle }}</p>
+        <h1 class="text-2xl font-bold text-slate-900 dark:text-slate-100">{{ langService.t().linksTitle }}</h1>
+        <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">{{ linksSubtitle() }}</p>
       </div>
 
       @if (linksService.isLoading()) {
@@ -58,7 +51,7 @@ const LINKS_SUBTITLES = [
             </div>
           </div>
         } @empty {
-          <ui-empty-state emoji="🔗" subtitle="No links match. Time to bookmark the void." />
+          <ui-empty-state emoji="🔗" [subtitle]="langService.t().noLinks" />
         }
       }
     </section>
@@ -66,7 +59,12 @@ const LINKS_SUBTITLES = [
 })
 export class LinksPage {
   protected readonly linksService = inject(LinksService);
-  protected readonly linksSubtitle = LINKS_SUBTITLES[Math.floor(Math.random() * LINKS_SUBTITLES.length)];
+  protected readonly langService = inject(LanguageService);
+  private readonly subtitleIndex = Math.floor(Math.random() * 4);
+
+  protected readonly linksSubtitle = computed(() =>
+    this.langService.t().linksSubtitles[this.subtitleIndex]
+  );
 
   protected readonly groupedLinks = computed(() => {
     const map = this.linksService.linksByCategory();
